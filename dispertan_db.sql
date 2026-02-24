@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Feb 2026 pada 04.53
+-- Waktu pembuatan: 24 Feb 2026 pada 08.12
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -85,6 +85,28 @@ CREATE TABLE `failed_jobs` (
   `exception` longtext NOT NULL,
   `failed_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `file_dinas`
+--
+
+CREATE TABLE `file_dinas` (
+  `id` int(11) NOT NULL,
+  `uraian` text NOT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `file_dinas`
+--
+
+INSERT INTO `file_dinas` (`id`, `uraian`, `file`, `created_at`, `updated_at`) VALUES
+(1, 'Standar Pelayanan Dinas Pertanian Kabupaten Grobogan', '1771909356_SOP_compressed.pdf', '2026-02-23 21:33:14', '2026-02-23 23:43:49'),
+(2, 'Perbup 78 Th 2021 SOTK Dispertan Hsl', '1771915384_19. Perbup 78 Th 2021 SOTK Dispertan Hsl PB blm td tgn.pdf', '2026-02-23 23:43:04', '2026-02-23 23:43:04');
 
 -- --------------------------------------------------------
 
@@ -250,6 +272,28 @@ CREATE TABLE `sessions` (
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `skms`
+--
+
+CREATE TABLE `skms` (
+  `id` int(11) NOT NULL,
+  `tahun` varchar(4) NOT NULL,
+  `triwulan` varchar(20) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `skms`
+--
+
+INSERT INTO `skms` (`id`, `tahun`, `triwulan`, `file`, `created_at`, `updated_at`) VALUES
+(2, '2026', 'Triwulan II', 'SKM_1771916665_BILLING_CODE_1771816650.pdf', '2026-02-24 00:04:25', '2026-02-24 00:04:25');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `users`
 --
 
@@ -294,6 +338,12 @@ ALTER TABLE `cache_locks`
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
+
+--
+-- Indeks untuk tabel `file_dinas`
+--
+ALTER TABLE `file_dinas`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `jobs`
@@ -341,6 +391,12 @@ ALTER TABLE `sessions`
   ADD KEY `sessions_last_activity_index` (`last_activity`);
 
 --
+-- Indeks untuk tabel `skms`
+--
+ALTER TABLE `skms`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
@@ -364,6 +420,12 @@ ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT untuk tabel `file_dinas`
+--
+ALTER TABLE `file_dinas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT untuk tabel `jobs`
 --
 ALTER TABLE `jobs`
@@ -380,6 +442,12 @@ ALTER TABLE `migrations`
 --
 ALTER TABLE `profile`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `skms`
+--
+ALTER TABLE `skms`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
