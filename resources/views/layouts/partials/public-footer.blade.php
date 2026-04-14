@@ -1,4 +1,8 @@
-<footer class="bg-slate-900 text-white pt-16 pb-8">
+{{-- <footer class="bg-slate-900 text-white pt-16 pb-8"> --}}
+<footer class="relative bg-slate-900 text-white pt-16 mt-16 pb-8 overflow-hidden">
+    <div class="absolute inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat opacity-30"
+        style="background-image: url('{{ asset('storage/background/tugu_simpang_lima.png') }}');">
+    </div>
     <div class="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
             {{-- Kolom 1: Identitas --}}

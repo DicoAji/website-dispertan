@@ -18,6 +18,8 @@ class Profile extends Model
         'telp',
         'facebook',
         'instagram',
-        'youtube'
+        'youtube',
+        'maklumat_layanan',
+        'tugas_fungsi',
     ];
 }

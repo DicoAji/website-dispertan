@@ -58,9 +58,56 @@
                     <span class="ml-2 font-medium">SKM (Survei)</span>
                 </a>
 
-                <a href="#" class="flex items-center py-3 px-4 rounded-lg hover:bg-green-700 transition">
-                    <i class="fas fa-file-alt w-6"></i> Laporan
-                </a>
+
+                <details class="group" {{ request()->is('admin/*') ? 'open' : '' }}>
+                    <summary
+                        class="list-none cursor-pointer wS-full flex items-center justify-between py-3 px-4 rounded-lg {{ request()->is('admin/skm*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition outline-none">
+                        <div class="flex items-center">
+                            <i class="fas fa-poll w-6"></i>
+                            <span class="ml-2 font-medium">Bidang</span>
+                        </div>
+                        <i
+                            class="fas fa-chevron-down text-xs transition-transform duration-200 group-open:rotate-180"></i>
+                    </summary>
+
+                    <div class="mt-2 ml-6 space-y-1 border-l-2 border-green-800 animate-fade-in">
+                        <a href="{}"
+                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'tanaman-pangan' ? 'text-yellow-400 font-bold' : '' }}">
+                            Tanaman Pangan
+                        </a>
+                        <a href="{}"
+                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'holtikultura' ? 'text-yellow-400 font-bold' : '' }}">
+                            Holtikultura
+                        </a>
+                        <a href="{}"
+                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'perkebunan' ? 'text-yellow-400 font-bold' : '' }}">
+                            Perkebunan
+                        </a>
+                        <a href="{}"
+                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'psp' ? 'text-yellow-400 font-bold' : '' }}">
+                            PSP
+                        </a>
+                        <a href="{}"
+                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'sekretariat' ? 'text-yellow-400 font-bold' : '' }}">
+                            Sekretariat
+                        </a>
+                        <a href="{}"
+                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'uptd-balai-benih' ? 'text-yellow-400 font-bold' : '' }}">
+                            UPTD Balai Benih
+                        </a>
+                        <a href="{}"
+                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'uptd-laboratorium' ? 'text-yellow-400 font-bold' : '' }}">
+                            UPTD Laboratorium
+                        </a>
+                    </div>
+                </details>
+
+                <style>
+                    /* Menghilangkan panah bawaan browser pada elemen summary */
+                    summary::-webkit-details-marker {
+                        display: none;
+                    }
+                </style>
             </nav>
         </div>
 

@@ -3,13 +3,13 @@
 @section('title', 'Pegawai')
 
 @section('content')
-    <section class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4 max-w-7xl">
+    <section class="">
+        <div class="container mx-auto px-4 max-w-7xl space-y-8">
             {{-- Header Halaman --}}
-            <div class="text-center  mt-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-2">Daftar Pegawai</h2>
-                <p class="text-green-600 font-medium italic">Pegawai {{ $profile->nama_opd ?? 'Dinas Pertanian' }}</p>
-                <div class="h-1 w-20 bg-green-500 mx-auto mt-4 rounded-full"></div>
+            <div class="text-center  mt-12 mb-3">
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Daftar Pegawai</h2>
+                <p class="text-green-600 font-medium italic">{{ $profile->nama_opd ?? 'Dinas Pertanian Kabupaten Grobogan' }}
+                </p>
             </div>
 
             {{-- Filter Pencarian --}}
@@ -31,7 +31,7 @@
             </div>
 
             {{-- Grid Pegawai (Hanya SATU Loop Utama) --}}
-            <div id="container-pegawai" class="grid  mt-6 grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
+            <div id="container-pegawai" class="grid   grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
                 @forelse($pegawai as $p)
                     @php
                         // Tentukan foto default berdasarkan gender dari database

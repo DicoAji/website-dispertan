@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Feb 2026 pada 08.12
+-- Waktu pembuatan: 14 Apr 2026 pada 08.09
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -44,7 +44,8 @@ CREATE TABLE `berita` (
 INSERT INTO `berita` (`id`, `judul`, `tanggal_berita`, `foto_berita`, `deskripsi`, `created_at`, `updated_at`) VALUES
 (8, 'Berita 1', '2026-02-23', '1771822337_WhatsApp Image 2026-02-13 at 11.46.57.jpeg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2026-02-22 21:52:17', '2026-02-22 21:52:17'),
 (9, 'Berita 2', '2026-02-23', '1771828481_WhatsApp Image 2026-02-13 at 11.46.57.jpeg', 't is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '2026-02-22 23:34:41', '2026-02-22 23:34:41'),
-(10, 'Berita 3', '2026-02-23', '1771828614_WhatsApp Image 2026-02-13 at 11.46.57.jpeg', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '2026-02-22 23:36:54', '2026-02-22 23:36:54');
+(10, 'Berita 3', '2026-02-23', '1771828614_WhatsApp Image 2026-02-13 at 11.46.57.jpeg', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '2026-02-22 23:36:54', '2026-02-22 23:36:54'),
+(11, 'Berita 4', '2026-04-13', '1776044962_image 19.png', 'Lorem ipisumasdhgas asdadgh dsgadghasm  asds asdha asdgasd yaags', '2026-04-12 18:49:22', '2026-04-12 18:49:22');
 
 -- --------------------------------------------------------
 
@@ -106,7 +107,8 @@ CREATE TABLE `file_dinas` (
 
 INSERT INTO `file_dinas` (`id`, `uraian`, `file`, `created_at`, `updated_at`) VALUES
 (1, 'Standar Pelayanan Dinas Pertanian Kabupaten Grobogan', '1771909356_SOP_compressed.pdf', '2026-02-23 21:33:14', '2026-02-23 23:43:49'),
-(2, 'Perbup 78 Th 2021 SOTK Dispertan Hsl', '1771915384_19. Perbup 78 Th 2021 SOTK Dispertan Hsl PB blm td tgn.pdf', '2026-02-23 23:43:04', '2026-02-23 23:43:04');
+(2, 'Perbup 78 Th 2021 SOTK Dispertan Hsl', '1771915384_19. Perbup 78 Th 2021 SOTK Dispertan Hsl PB blm td tgn.pdf', '2026-02-23 23:43:04', '2026-02-23 23:43:04'),
+(3, 'Rencana Kerja Dinas Pertanian 2026', '1775097108_rencana_kerja.pdf', '2026-04-01 19:31:48', '2026-04-01 19:31:48');
 
 -- --------------------------------------------------------
 
@@ -244,15 +246,17 @@ CREATE TABLE `profile` (
   `youtube` varchar(255) DEFAULT NULL,
   `struktur_organisasi` varchar(255) DEFAULT 'struktur_organisasi_dispertan_grobogan.png',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `maklumat_layanan` varchar(255) DEFAULT NULL,
+  `tugas_fungsi` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data untuk tabel `profile`
 --
 
-INSERT INTO `profile` (`id`, `nama_opd`, `visi`, `misi`, `alamat`, `email`, `telp`, `facebook`, `instagram`, `youtube`, `struktur_organisasi`, `created_at`, `updated_at`) VALUES
-(1, 'Dinas Pertanian Kabupaten Grobogan', 'Menuju Grobogan Maju, Sejahtera dan Berkelanjutan', 'Menguatkan pertumbuhan dan daya saing ekonomi masyarakat berbasis sektor unggulan <br> Mengurangi kemiskinan dan pengangguran <br>\nMeningkatkan kualitas sumber daya manusia yang sehat, cerdas, dan berbudaya <br> Membangun infrastruktur yang handal dan merata, serta meningkatkan ketangguhan wilayah dan lingkungan hidup yang berkualitas <br>\nMeningkatkan kualitas tata kelola pemerintahan dan pelayanan publik dengan penguatan reformasi birokrasi', 'Jl. Pangeran Diponegoro No.20, 58114, Area Sawah, Kalongan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 5811', '@dispertan_grobogan', '(0292) 421478', 'https://www.facebook.com/dinaspertaniankabupatengrobogan', 'https://www.instagram.com/dispertan_grobogan/', 'https://www.youtube.com/channel/UCsrzepHBJH06Dxbtr3E2zeA', 'struktur-1771744736.png', '2026-02-22 04:44:47', '2026-02-23 05:31:29');
+INSERT INTO `profile` (`id`, `nama_opd`, `visi`, `misi`, `alamat`, `email`, `telp`, `facebook`, `instagram`, `youtube`, `struktur_organisasi`, `created_at`, `updated_at`, `maklumat_layanan`, `tugas_fungsi`) VALUES
+(1, 'Dinas Pertanian Kabupaten Grobogan', 'Menuju Grobogan Maju, Sejahtera dan Berkelanjutan', 'Menguatkan pertumbuhan dan daya saing ekonomi masyarakat berbasis sektor unggulan <br> \r\nMengurangi kemiskinan dan pengangguran <br>\r\nMeningkatkan kualitas sumber daya manusia yang sehat, cerdas, dan berbudaya <br> \r\nMembangun infrastruktur yang handal dan merata, serta meningkatkan ketangguhan wilayah dan lingkungan hidup yang berkualitas <br>\r\nMeningkatkan kualitas tata kelola pemerintahan dan pelayanan publik dengan penguatan reformasi birokrasi', 'Jl. Pangeran Diponegoro No.20, 58114, Area Sawah, Kalongan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 5811', '@dispertan_grobogan', '(0292) 421478', 'https://www.facebook.com/dinaspertaniankabupatengrobogan', 'https://www.instagram.com/dispertan_grobogan/', 'https://www.youtube.com/channel/UCsrzepHBJH06Dxbtr3E2zeA', 'struktur-1771744736.png', '2026-02-22 04:44:47', '2026-04-12 20:47:08', 'maklumat-1776052028.jpg', 'tugas-fungsi-1774840584.pdf');
 
 -- --------------------------------------------------------
 
@@ -411,7 +415,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
@@ -423,7 +427,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `file_dinas`
 --
 ALTER TABLE `file_dinas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `jobs`

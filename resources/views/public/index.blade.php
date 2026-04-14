@@ -4,8 +4,8 @@
 
 @section('content')
 
-    <section id="indicators-carousel" class="relative w-full" data-carousel="static">
-        <div class="relative h-96 overflow-hidden rounded-base md-h-135">
+    {{-- <section id="indicators-carousel" class="relative w-full" data-carousel="static">
+        <div class="relative h-128 overflow-hidden rounded-base md:h-[500px]">
 
             <div class="absolute inset-0 h-full w-full hidden duration-700 ease-in-out bg-center bg-cover"
                 style="background-image: url('{{ asset('storage/corausel/lahan.png') }}')" data-carousel-item="active">
@@ -13,7 +13,7 @@
                 <div
                     class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center z-20 w-full px-4">
                     <h2 class="text-3xl sm:text-4xl font-bold md:text-5xl">
-                        Menuju Indonesia Swasembada Pangan
+                        Selamat Datang
                     </h2>
                     <p class="text-xs md:text-lg max-w-2xl mx-auto opacity-60">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -99,81 +99,170 @@
                 <span class="sr-only">Next</span>
             </span>
         </button>
-    </section>
+    </section> --}}
 
-    <!-- STATISTIK -->
-    <section class="bg-primary-light py-5">
-        <div class="px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center">
-                <div
-                    class="bg-green-50 p-3 md:p-5 shadow-sm  border border-green-100 flex flex-col justify-center transition hover:scale-105">
-                    <p class="md:text-5xl text-2xl font-bold text-green-700 counter" data-target="20">
-                        0
+    {{-- section hero section --}}
+    <section class="relative bg-cover bg-center bg-no-repeat  -mt-16 py-4"
+        style="background-image: url('{{ asset('storage/background/bg-hero.png') }}');">
+        <div class="absolute inset-0"></div>
+
+        <div class="relative container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+                <div class="flex flex-col items-start text-left z-10">
+                    <h1 class="text-4xl md:text-6xl lg:text-6xl font-extrabold text-white  leading-tight">
+                        <span class="bold text-2xl md:text-2xl font-semibold   mb-2">Selamat Datang di</span> <br>
+                        <span class="bold ">Website Resmi</span>
+                        <span class="bold text-yellow-400">Dinas Pertanian</span>
+                        <span class="bold text-3xl md:text-4xl mt-2 ">Kabupaten Grobogan</span>
+                    </h1>
+
+                    <p class="mt-6 text-lg  text-white max-w-lg leading-relaxed">
+                        Unlock smarter farming with tailored agri-solutions that boost yields, preserve resources, and
+                        secure food futures.
                     </p>
-                    <p class="text-green-600 mt-1 text-[10px] md:text-xs font-bold uppercase tracking-wider">
-                        Varietas Unggulan
-                    </p>
+
+                    <a href="#"
+                        class="mt-8 inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
+                        GET STARTED
+                    </a>
                 </div>
 
-                <div
-                    class="bg-blue-50 p-3 md:p-5 shadow-sm  border border-blue-100 flex flex-col justify-center transition hover:scale-105">
-                    <p class="md:text-5xl text-2xl font-bold text-blue-700 counter" data-target="1500000">
-                        0
-                    </p>
-                    <p class="text-blue-600 mt-1 text-[10px] md:text-xs font-bold uppercase tracking-wider">
-                        Hektar Lahan
-                    </p>
-                </div>
+                <div class="relative flex justify-center z-10 mt-16 md:mt-0">
+                    <img src="/storage/background/pak_kukuh.png" alt="Pak Kukuh"
+                        class="relative bottom-0 z-10 w-full max-w-sm lg:max-w-md object-contain drop-shadow-2xl">
+                    <div class="absolute -bottom-8  md:-bottom-12 z-20 bg-white  shadow-2xl p-5 md:p-6 w-11/12 max-w-md">
+                        <div class="flex flex-row items-center justify-around divide-x-2 divide-gray-100">
 
-                <div
-                    class="bg-amber-50 p-3 md:p-5 shadow-sm border border-amber-100 flex flex-col justify-center transition hover:scale-105">
-                    <p class="md:text-5xl text-2xl font-bold text-amber-700 counter" data-target="15000">
-                        0
-                    </p>
-                    <p class="text-amber-600 mt-1 text-[10px] md:text-xs font-bold uppercase tracking-wider">
-                        Kelompok Tani
-                    </p>
-                </div>
-
-                <div
-                    class="bg-indigo-50 p-3 md:p-5 shadow-sm border border-indigo-100 flex flex-col justify-center transition hover:scale-105">
-                    <p class="md:text-5xl text-2xl font-bold text-indigo-700 counter" data-target="1200000">
-                        0
-                    </p>
-                    <p class="text-indigo-600 mt-1 text-[10px] md:text-xs font-bold uppercase tracking-wider">
-                        Ton Hasil Panen
-                    </p>
+                            <div class="flex-1 px-2 md:px-4 text-center">
+                                <h3 class="text-3xl font-extrabold text-gray-900">96%</h3>
+                                <p class="text-xs md:text-sm text-gray-500 mt-1 font-medium leading-snug">
+                                    Verified customer delight rating
+                                </p>
+                            </div>
+                            <div class="flex-1 px-2 md:px-4 text-center">
+                                <h3 class="text-3xl font-extrabold text-gray-900">12 +</h3>
+                                <p class="text-xs md:text-sm text-gray-500 mt-1 font-medium leading-snug">
+                                    Years of boosting agri-innovation
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PROF TANI -->
-    <section class="py-12 md:py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {{-- <h2 class="text-center text-lg md:text-4xl font-bold text-primary-dark mb-8 md:mb-12 uppercase tracking-tight">
-            Pelayanan Dinas
-            </h2> --}}
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <!-- STATISTIK -->
+    {{-- <section class="relative py-6 bg-center bg-cover bg-no-repeat"
+        style="background-image: url('{{ asset('storage/logo/bg-statistik.png') }}')">
+        <div class="px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 text-center">
+                <div class="shadow-sm  text-2xl flex flex-row items-center justify-center gap-2 transition ">
+                    <p class="font-semibold text-white counter" data-target="20">
+                        0
+                    </p>
+                    <p class="text-white text-xl font-semibold tracking-wider">
+                        kali hari ini
+                    </p>
+                </div>
+                <div class="shadow-sm  text-2xl flex flex-row items-center justify-center gap-2 transition ">
+                    <p class="font-semibold text-white counter" data-target="1500000">
+                        0
+                    </p>
+                    <p class="text-white text-xl font-semibold tracking-wider">
+                        Bulan Ini
+                    </p>
+                </div>
+
+                <div class="shadow-sm  text-2xl flex flex-row items-center justify-center gap-2 transition ">
+                    <p class="font-semibold text-white counter" data-target="15000">
+                        0
+                    </p>
+                    <p class="text-white text-xl font-semibold tracking-wider">
+                        Tahun Ini
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section> --}}
+
+    {{-- BERITA --}}
+    <section class=" bg-white mt-24" id="berita">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="">
+                <div class="text-center flex flex-col items-center border-b-3 ">
+                    <h2 class="text-lg md:text-4xl font-bold text-gray-800 text-center uppercase">Berita Terbaru</h2>
+                    <p class="text-green-600 font-medium">Informasi terkini seputar pertanian di Grobogan</p>
+                    </divc>
+                </div>
+                <div class="text-end  ">
+                    <a href="{{ url('/berita') }}" class="underline text-blue-600  items-center hover:font-bold transition">
+                        Lihat Semua Berita <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4  mt-6">
+                    @if (isset($berita) && $berita->count() > 0)
+                        @foreach ($berita->take(6) as $b)
+                            <div
+                                class="group flex flex-col border  overflow-hidden shadow-sm hover:shadow-md transition p-3">
+                                <a href="{{ url('/berita/' . $b->id) }}" class="flex flex-col h-full">
+                                    {{-- Container Gambar: w-full agar mengikuti kolom grid --}}
+                                    <div class="w-full h-40 md:h-52 overflow-hidden  shadow-md mb-4">
+                                        <img src="{{ asset('storage/berita/' . $b->foto_berita) }}"
+                                            alt="{{ $b->judul }}"
+                                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                                            onerror="this.onerror=null;this.src='{{ asset('img/no-image.png') }}'" />
+                                    </div>
+
+                                    <article class="flex flex-col flex-grow">
+                                        <span class="text-xs md:text-sm text-green-600 font-medium mb-1">
+                                            {{ \Carbon\Carbon::parse($b->tanggal_berita)->translatedFormat('d F Y') }}
+                                        </span>
+
+                                        <h4
+                                            class="text-sm md:text-lg font-bold text-gray-800 line-clamp-2 mb-2 group-hover:text-green-700 transition-colors">
+                                            {{ $b->judul }}
+                                        </h4>
+
+                                        <p class="text-gray-600 line-clamp-2 text-xs md:text-sm leading-relaxed">
+                                            {{ Str::words(strip_tags($b->deskripsi), 12, '...') }}
+                                        </p>
+                                    </article>
+                                </a>
+                            </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+    </section>
+
+    <!-- PROF TANI -->
+    <section class="mt-24 bg-gray-100 py-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8  ">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
                 <div class="space-y-4 md:space-y-6">
-                    <h3 class="text-2xl md:text-4xl font-extrabold text-gray-800 leading-tight">
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-gray-800 leading-tight uppercase">
                         Profesor Tani
                     </h3>
-                    <p class="text-gray-600 leading-relaxed text-sm md:text-base">
+                    <p class="text-gray-600 leading-relaxed ">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sodales, nulla ac pellentesque
-                        finibus, velit diam consequat ex, in hendrerit sem ante nec nisl. Mauris sit amet turpis vel lacus
-                        dapibus lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                        finibus, velit diam consequat ex, in hendrerit sem ante nec nisl. Mauris sit amet turpis vel
+                        lacus
+                        dapibus lacinia. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                        cubilia
                         curae; Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
                     </p>
-                    <div class="pt-2">
+                    <div class="">
                         <a href="https://profesortani.com/" target="_blank"
-                            class="inline-block px-8 py-3 bg-green-700 text-white font-bold rounded-lg shadow-lg hover:bg-green-800 transition duration-300 uppercase tracking-wider text-sm">
-                            Kunjungi Profesor Tani
+                            class="inline-block px-5 py-3 bg-yellow-400 text-white shadow-lg hover:bg-amber-500 transition duration-300 uppercase tracking-wider text-sm">
+                            Kunjungi
                         </a>
                     </div>
                 </div>
-                <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+                <div
+                    class="w-full aspect-video p-2  shadow-sm border border-gray-200 rounded-lg hover:shadow-md transition ">
                     <iframe class="w-full h-full" src="https://www.youtube.com/embed/jJ0Q9Uq_97o"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -183,75 +272,33 @@
         </div>
     </section>
 
-    {{-- BERITA --}}
-    <section class="py-16 bg-white" id="berita">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-end mb-10">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 uppercase">Berita Terbaru</h2>
-                    <p class="text-green-600 font-medium">Informasi terkini seputar pertanian di Grobogan</p>
-                </div>
-                <a href="{{ url('/berita') }}"
-                    class=" md:flex items-center text-green-600 font-bold hover:text-green-800 transition">
-                    SEMUA BERITA <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
-                @if (isset($berita) && $berita->count() > 0)
-                    @foreach ($berita->take(6) as $b)
-                        {{-- take(6) lebih cocok untuk grid 3 dan 2 agar barisnya genap --}}
-                        <div class="group flex flex-col">
-                            <a href="{{ url('/berita/' . $b->id) }}" class="flex flex-col h-full">
-                                {{-- Container Gambar: w-full agar mengikuti kolom grid --}}
-                                <div class="w-full h-40 md:h-52 overflow-hidden rounded-xl shadow-md mb-4">
-                                    <img src="{{ asset('storage/berita/' . $b->foto_berita) }}" alt="{{ $b->judul }}"
-                                        class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                                        onerror="this.onerror=null;this.src='{{ asset('img/no-image.png') }}'" />
-                                </div>
 
-                                <article class="flex flex-col flex-grow">
-                                    <span class="text-xs md:text-sm text-green-600 font-medium mb-1">
-                                        {{ \Carbon\Carbon::parse($b->tanggal_berita)->translatedFormat('d F Y') }}
-                                    </span>
-
-                                    <h4
-                                        class="text-sm md:text-lg font-bold text-gray-800 line-clamp-2 mb-2 group-hover:text-green-700 transition-colors">
-                                        {{ $b->judul }}
-                                    </h4>
-
-                                    <p class="text-gray-600 line-clamp-2 text-xs md:text-sm leading-relaxed">
-                                        {{ Str::words(strip_tags($b->deskripsi), 12, '...') }}
-                                    </p>
-                                </article>
-                            </a>
-                        </div>
-                    @endforeach
-                @endif
-            </div>
-        </div>
-    </section>
-
-    {{--
-    <section class="pengaduan py-20 bg-cover bg-center bg-fixed relative" style="background-image: url('{{ asset('img/bg-petani.jpg') }}')">
-        <div class="absolute inset-0 bg-green-900/80"></div>
-        <div class="relative max-w-4xl mx-auto px-4 z-10">
-            <div class="text-center mb-10 text-white">
-                <h2 class="text-3xl md:text-4xl font-bold uppercase">Unit Pengaduan / LAPOR!</h2>
-                <p class="mt-2 text-green-100">Sampaikan keluhan atau aspirasi Anda secara langsung kepada kami</p>
+    <section class="pengaduan  bg-center py-6  mt-12">
+        <div class="relative max-w-4xl mx-auto px-4">
+            <div class="text-center mb-4">
+                <h2 class="text-3xl md:text-4xl font-bold uppercase text-emerald-900">Unit Pengaduan / LAPOR!</h2>
+                <p class="mt-2 ">Sampaikan keluhan atau aspirasi Anda secara langsung kepada kami</p>
             </div>
 
             <div class="bg-white p-6 md:p-10 shadow-2xl rounded-3xl">
                 <form action="#" method="POST" class="space-y-4">
                     @csrf
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" name="nama" required class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500" placeholder="Nama Lengkap">
-                        <input type="email" name="email" required class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500" placeholder="Alamat Email">
-                    </div>
-                    <input type="number" name="telp" required class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500" placeholder="Nomor WhatsApp / HP">
-                    <textarea name="pengaduan" rows="4" required class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500" placeholder="Tuliskan aduan atau laporan Anda secara detail..."></textarea>
+                    <div class="">
+                        <input type="text" name="nama" required
+                            class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500"
+                            placeholder="Nama Lengkap">
 
-                    <button type="submit" class="w-full py-4 bg-green-700 text-white font-bold rounded-xl hover:bg-green-800 transition duration-300 shadow-lg shadow-green-200 uppercase tracking-widest">
+                    </div>
+                    <input type="number" name="telp" required
+                        class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500"
+                        placeholder="Nomor WhatsApp / HP">
+                    <textarea name="pengaduan" rows="4" required
+                        class="block w-full px-4 py-3 rounded-xl border-gray-200 focus:ring-green-500 focus:border-green-500"
+                        placeholder="Tuliskan aduan atau laporan Anda secara detail..."></textarea>
+
+                    <button type="submit"
+                        class="w-full py-4 bg-green-950 text-white font-bold rounded-xl hover:bg-green-800 transition duration-300 shadow-lg shadow-green-200 uppercase tracking-widest">
                         Kirim Laporan Sekarang
                     </button>
                 </form>
@@ -261,11 +308,13 @@
 
     <section class="bg-gray-50 py-20" id="kontak">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-center text-3xl md:text-4xl font-bold text-gray-800 mb-16 uppercase tracking-tight">Hubungi Kami</h2>
+            <h2 class="text-center text-3xl md:text-4xl font-bold text-gray-800 mb-16 uppercase tracking-tight">Hubungi Kami
+            </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                 <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <div class="bg-white p-8 shadow-sm border border-gray-100 rounded-3xl flex flex-col items-start hover:shadow-md transition">
+                    <div
+                        class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
                         <div class="bg-blue-50 p-4 rounded-2xl text-blue-600 mb-4">
                             <i class="fas fa-map-marker-alt text-2xl"></i>
                         </div>
@@ -273,15 +322,18 @@
                         <p class="text-gray-700 text-sm leading-relaxed">{{ $profile->alamat }}</p>
                     </div>
 
-                    <div class="bg-white p-8 shadow-sm border border-gray-100 rounded-3xl flex flex-col items-start hover:shadow-md transition">
+                    <div
+                        class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
                         <div class="bg-green-50 p-4 rounded-2xl text-green-600 mb-4">
-                            <i class="fab fa-whatsapp text-2xl"></i>
+
+                            <i class="fa-solid fa-phone text-2xl"></i>
                         </div>
-                        <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">WhatsApp / Telp</h4>
+                        <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Telp</h4>
                         <p class="text-gray-700 font-bold text-lg">{{ $profile->telp }}</p>
                     </div>
 
-                    <div class="bg-white p-8 shadow-sm border border-gray-100 rounded-3xl flex flex-col items-start hover:shadow-md transition">
+                    <div
+                        class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
                         <div class="bg-red-50 p-4 rounded-2xl text-red-600 mb-4">
                             <i class="fas fa-envelope text-2xl"></i>
                         </div>
@@ -289,7 +341,8 @@
                         <p class="text-gray-700 font-medium">{{ $profile->email }}</p>
                     </div>
 
-                    <div class="bg-white p-8 shadow-sm border border-gray-100 rounded-3xl flex flex-col items-start hover:shadow-md transition">
+                    <div
+                        class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
                         <div class="bg-orange-50 p-4 rounded-2xl text-orange-600 mb-4">
                             <i class="fas fa-clock text-2xl"></i>
                         </div>
@@ -298,12 +351,13 @@
                     </div>
                 </div>
 
-                <div class="md:col-span-1 bg-white shadow-xl rounded-3xl overflow-hidden minh[400px] border-4 border-white">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.528342718107!2d110.9161864!3d-7.0645601!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e70900000000000%3A0x0!2zN8KwMDMnNTIuNCJTIDExMMKwNTQnNTguMyJF!5e0!3m2!1sid!2sid!4v1620000000000!5m2!1sid!2sid"
-                            width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+                <div class="md:col-span-1 bg-white shadow-xl rounded-xl overflow-hidden minh[400px] border-4 border-white">
+                    <iframe
+                        src="https://maps.google.com/maps?width=600&height=400&hl=en&q=dinas%20pertanian%20grobogan&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                        width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
-    </section> --}}
+    </section>
 
 @endsection

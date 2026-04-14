@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FileDinas;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -83,4 +84,16 @@ class FileDinasController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }
+
+    // public function rencanaKerja()
+    // {
+    //     // Mengambil data profil dinas
+    //     $profile = Profile::first();
+
+    //     // Mengambil data file dinas dengan ID 3 (Rencana Kerja)
+    //     $rencanaKerja = FileDinas::find(3);
+
+    //     // Ganti 'public.rencana_kerja' dengan nama file Blade Anda sebenarnya
+    //     return view('public.rencana_kerja', compact('profile', 'rencanaKerja'));
+    // }
 }
