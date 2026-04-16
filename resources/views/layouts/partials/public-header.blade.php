@@ -1,468 +1,321 @@
-<header id="main-header" class="fixed top-0  w-full z-40  text-white transition-colors duration-300 md:shadow-lg">
-    <nav class="px-4 sm:px-6 lg:px-8 py-2">
-        <div class="flex flex-wrap items-center justify-between mx-auto h-14">
-            <a href="{{ url('/') }}" class="flex items-center space-x-2">
-                <img src="{{ asset('storage/logo/lambang_grobogan.png') }}" class="w-6 h-full"
-                    alt="Logo Dinas Pertanian Grobogan" />
-                <div class="text-white -space-y-1 border-l-2 border-green-500 pl-2 uppercase">
-                    <p class="text-xs font-semibold">Dinas Pertanian</p>
-                    <p class="text-xs font-semibold">Kabupaten Grobogan</p>
-                </div>
+<header class="sticky top-0 z-50 bg-white shadow-sm ">
+    <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+        <a href="{{ url('/') }}" class="flex items-center space-x-1">
+            <img src="{{ asset('storage/logo/lambang_grobogan.png') }}" class="w-6 h-full"
+                alt="Logo Dinas Pertanian Grobogan" />
+            <div class="-space-y-1 border-l-2 border-green-500 pl-2 uppercase">
+                <p class="text-xs font-semibold">Dinas Pertanian</p>
+                <p class="text-xs font-semibold">Kabupaten Grobogan</p>
+            </div>
+        </a>
+
+        <nav class="hidden md:flex items-center text-sm ">
+            <a href="{{ url('/') }}"
+                class="nav-link hover:text-emerald-700 font-medium px-3 py-2 transition-colors duration-200">
+                Beranda
             </a>
 
-            <button type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-base lg:hidden focus:outline-none "
-                aria-controls="navbar-default" aria-expanded="false" id="mobile-menu-button">
-                <span class="sr-only">Open main menu</span>
-                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                    fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
-                </svg>
-            </button>
+            <div class="relative group">
+                <button
+                    class="nav-link flex items-center gap-1 font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
+                    Profil
+                    <i
+                        class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <div
+                    class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
+                    <a href="profile/sejarah.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Sejarah dan Dasar Hukum</a>
+                    <a href="{{ url('/visimisi') }}"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Visi Misi</a>
+                    <a href="{{ url('/struktur-organisasi') }}"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Struktur Organisasi</a>
+                    <a href="{{ route('public.tugas_fungsi') }}"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Tugas & Fungsi</a>
+                    <a href="{{ route('public.maklumat') }}"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Maklumat Pelayanan</a>
+                    <a href="{{ url('/pegawai') }}"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Daftar Pegawai</a>
+                </div>
+            </div>
 
-            <div class="hidden w-full lg:block lg:w-auto" id="navbar-default">
-                <div class=" hidden lg:flex items-center navbar-menu">
-                    <a href="{{ url('/') }}"
-                        class=" hover:bg-white hover:text-black px-3 text-sm py-2  font-medium transition-colors duration-200">
-                        Beranda
-                    </a>
+            <div class="relative group">
+                <button
+                    class="nav-link flex items-center gap-1 font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
+                    Program
+                    <i
+                        class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <div
+                    class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
+                    <a href="{{ url('/rencana-kerja') }}"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Rencana Kerja</a>
+                    <a href="program/program_kegiatan.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Program & Kegiatan</a>
+                    <a href="program/target_capaian.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Target & Capaian</a>
+                    <a href="program/inovasi_daerah.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Inovasi Daerah</a>
+                    <a href="program/kalender_kegiatan.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Kalender Kegiatan</a>
+                </div>
+            </div>
 
-                    <div class="relative group">
-                        <button
-                            class=" hover:bg-white text-sm hover:text-black px-3  py-2 font-medium flex items-center transition-colors duration-200">
-                            Profil
-                            <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="absolute left-0 mt-0 w-60 bg-white text-black shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-y-0 group-hover:scale-y-100 origin-top z-50">
-                            <a href="profile/sejarah.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Sejarah dan
-                                Dasar Hukum</a>
-                            <a href="{{ url('/visimisi') }}" class="block px-4 py-2 text-sm hover:bg-gray-100">Visi
-                                Misi</a>
-                            <a href="{{ url('/struktur-organisasi') }}"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Struktur Organisasi</a>
-                            <a href="{{ route('public.tugas_fungsi') }}"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Tugas
-                                & Fungsi</a>
-                            <a href="{{ route('public.maklumat') }}"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Maklumat Pelayanan</a>
-                            <a href="{{ url('/pegawai') }}" class="block px-4 py-2 text-sm hover:bg-gray-100">Daftar
-                                Pegawai</a>
-                        </div>
-                    </div>
+            <div class="relative group">
+                <button
+                    class="nav-link flex items-center gap-1 font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
+                    Layanan
+                    <i
+                        class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <div
+                    class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
+                    <a href="layanan_publik/sop_pelayanan.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">SOP Pelayanan</a>
+                    <a href="layanan_publik/standar_pelayanan.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Standar Pelayanan</a>
+                    <a href="layanan_publik/formulir_permohonan.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Formulir Permohonan</a>
+                    <a href="layanan_publik/konsultasi_petani.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Konsultasi Petani</a>
+                    <a href="layanan_publik/konsultasi_petani.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Taksi Tani</a>
+                </div>
+            </div>
 
-                    <div class="relative group">
-                        <button
-                            class="  hover:bg-white hover:text-black px-3 py-2 text-sm font-medium flex items-center transition-colors duration-200">
-                            Program
-                            <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="absolute left-0 mt-0 w-60 bg-white text-black shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-y-0 group-hover:scale-y-100 origin-top z-50">
-                            <a href="{{ url('/rencana-kerja') }}"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Rencana Kerja</a>
-                            <a href="program/program_kegiatan.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Program & Kegiatan</a>
-                            <a href="program/target_capaian.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Target & Capaian</a>
-                            <a href="program/inovasi_daerah.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Inovasi Daerah</a>
-                            <a href="program/kalender_kegiatan.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Kalender Kegiatan</a>
-                        </div>
-                    </div>
+            <div class="relative group">
+                <button
+                    class="nav-link flex items-center gap-1 font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
+                    Informasi
+                    <i
+                        class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <div
+                    class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-60 animate-in fade-in slide-in-from-top-2 z-50">
+                    <a href="data_informasi/informasi_opt_iklim.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Informasi OPT & Perkiraan
+                        Iklim</a>
+                    <a href="data_informasi/penyuluhan_artikel_teknis.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Penyuluhan & Artikel
+                        Teknis</a>
+                    <a href="data_informasi/ppid.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">PPID</a>
+                </div>
+            </div>
 
-                    <div class="relative group">
-                        <button
-                            class=" hover:bg-white hover:text-black px-3 py-2 text-sm font-medium flex items-center transition-colors duration-200">
-                            Layanan Publik
-                            <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="absolute left-0 mt-0 w-60 bg-white text-black shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-y-0 group-hover:scale-y-100 origin-top z-50">
-                            <a href="layanan_publik/sop_pelayanan.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">SOP Pelayanan</a>
-                            <a href="layanan_publik/standar_pelayanan.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Standar Pelayanan</a>
-                            <a href="layanan_publik/formulir_permohonan.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Formulir Permohonan</a>
-                            <a href="layanan_publik/konsultasi_petani.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Konsultasi Petani</a>
-                            <a href="layanan_publik/konsultasi_petani.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Taksi Tani</a>
-                        </div>
-                    </div>
+            <div class="relative group">
+                <button
+                    class="nav-link flex items-center gap-1 font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
+                    Dokumen
+                    <i
+                        class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <div
+                    class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
+                    <a href="dokumen/renstra_dinas.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Renstra Dinas</a>
+                    <a href="dokumen/rka_dpa.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">RKA/DPA</a>
+                    <a href="dokumen/lkjip.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">LKJIP</a>
+                    <a href="dokumen/rtp_spip.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">RTP/SPIP</a>
+                    <a href="dokumen/rencana_aksi_opd.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Rencana Aksi OPD</a>
+                    <a href="dokumen/sop_bidang.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">SOP Bidang</a>
+                    <a href="dokumen/peraturan_regulasi.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Peraturan & Regulasi</a>
+                </div>
+            </div>
 
-                    <div class="relative group">
-                        <button
-                            class=" hover:bg-white hover:text-black px-3 py-2 text-sm font-medium flex items-center transition-colors duration-200">
-                            Informasi
-                            <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="absolute left-0 mt-0 w-60 bg-white text-black shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-y-0 group-hover:scale-y-100 origin-top z-50">
-                            <a href="data_informasi/informasi_opt_iklim.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Informasi OPT & Perkiraan Iklim</a>
-                            <a href="data_informasi/penyuluhan_artikel_teknis.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Penyuluhan & Artikel Teknis</a>
-                            <a href="data_informasi/ppid.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">PPID</a>
-                        </div>
-                    </div>
+            <div class="relative group">
+                <button
+                    class="nav-link flex items-center gap-1 font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
+                    Berita
+                    <i
+                        class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <div
+                    class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-64 animate-in fade-in slide-in-from-top-2 z-50">
+                    <a href="dokumen/berita.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Berita</a>
+                    <a href="dokumen/artikel_wawasan_pertanian.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Artikel & Wawasan
+                        Pertanian</a>
+                    <a href="dokumen/galeri_foto.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Galeri Foto</a>
+                    <a href="dokumen/video.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Video</a>
+                </div>
+            </div>
 
+            <div class="relative group">
+                <button
+                    class="nav-link flex items-center gap-1 font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
+                    Bidang/UPTD
+                    <i
+                        class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <div
+                    class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
+                    <a href="bidang_uptd/tanaman_pangan.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Tanaman Pangan</a>
+                    <a href="bidang_uptd/hortikultura.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Hortikultura</a>
+                    <a href="bidang_uptd/perkebunan.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Perkebunan</a>
+                    <a href="bidang_uptd/psp.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">PSP</a>
+                    <a href="bidang_uptd/uptd_balai_benih.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">UPTD Balai Benih</a>
+                    <a href="bidang_uptd/uptd_laboratorium.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">UPTD Laboratorium</a>
+                </div>
+            </div>
+            <div class="relative group">
+                <button class="nav-link flex items-center gap-1 font-medium transition-colors duration-200">
+                    Tambahan
+                    <i
+                        class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
+                </button>
+                <div
+                    class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
+                    <a href="bidang_uptd/tanaman_pangan.html"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700"></a>
+                </div>
+            </div>
+        </nav>
 
-                    <div class="relative group">
-                        <button
-                            class=" hover:bg-white hover:text-black px-3 py-2 text-sm font-medium flex items-center transition-colors duration-200">
-                            Dokumen
-                            <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="absolute left-0 mt-0 w-60 bg-white text-black shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-y-0 group-hover:scale-y-100 origin-top z-50">
-                            <a href="dokumen/renstra_dinas.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Renstra Dinas</a>
-                            <a href="dokumen/rka_dpa.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">RKA/DPA</a>
-                            <a href="dokumen/lkjip.html" class="block px-4 py-2 text-sm hover:bg-gray-100">LKJIP</a>
-                            <a href="dokumen/rtp_spip.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">RTP/SPIP</a>
-                            <a href="dokumen/rencana_aksi_opd.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Rencana Aksi OPD</a>
-                            <a href="dokumen/sop_bidang.html" class="block px-4 py-2 text-sm hover:bg-gray-100">SOP
-                                Bidang</a>
-                            <a href="dokumen/peraturan_regulasi.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Peraturan & Regulasi</a>
-                        </div>
-                    </div>
+        <div class="hidden sm:block">
+            <a href="" target="_blank">
+                <img src="{{ asset('storage/logo/3_abad.png') }}" alt="3 abad grobogan" class="h-10 w-auto" />
+            </a>
+        </div>
 
-                    <div class="relative group">
-                        <button
-                            class=" hover:bg-white hover:text-black px-3 py-2 text-sm font-medium flex items-center transition-colors duration-200">
-                            Berita dan Publikasi
-                            <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="absolute left-0 mt-0 w-60 bg-white text-black shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-y-0 group-hover:scale-y-100 origin-top z-50">
-                            <a href="dokumen/berita.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Berita</a>
-                            <a href="dokumen/artikel_wawasan_pertanian.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Artikel & Wawasan Pertanian</a>
-                            <a href="dokumen/galeri_foto.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Galeri Foto</a>
-                            <a href="dokumen/video.html" class="block px-4 py-2 text-sm hover:bg-gray-100">Video</a>
-                        </div>
-                    </div>
+        <button class="md:hidden text-emerald-800 p-2 focus:outline-none" id="menuBtn">
+            <i class="fa fa-bars text-2xl"></i>
+        </button>
+    </div>
 
-                    <div class="relative group">
-                        <button
-                            class=" hover:bg-white hover:text-black px-3 py-2 text-sm font-medium flex items-center transition-colors duration-200">
-                            Bidang/UPTD
-                            <svg class="ml-1 w-4 h-4 transition-transform duration-200 group-hover:rotate-180"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </button>
-                        <div
-                            class="absolute left-0 mt-0 w-60 bg-white text-black shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform scale-y-0 group-hover:scale-y-100 origin-top z-50">
-                            <a href="bidang_uptd/tanaman_pangan.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Tanaman Pangan</a>
-                            <a href="bidang_uptd/hortikultura.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Hortikultura</a>
-                            <a href="bidang_uptd/perkebunan.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">Perkebunan</a>
-                            <a href="bidang_uptd/psp.html" class="block px-4 py-2 text-sm hover:bg-gray-100">PSP</a>
-                            <a href="bidang_uptd/uptd_balai_benih.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">UPTD Balai Benih</a>
-                            <a href="bidang_uptd/uptd_laboratorium.html"
-                                class="block px-4 py-2 text-sm hover:bg-gray-100">UPTD Laboratorium</a>
-                        </div>
-                    </div>
+    <nav id="mobileMenu"
+        class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full left-0 top-full shadow-lg pb-4 z-50">
+        <div class="flex flex-col px-6 py-4 space-y-4 max-h-[80vh] overflow-y-auto pb-10">
+            <a href="{{ url('/') }}" class="text-emerald-700 font-bold hover:text-emerald-800">Beranda</a>
+
+            <div class="flex flex-col">
+                <div class="text-gray-700 font-medium mb-2">Profil</div>
+                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
+                    <a href="profile/sejarah.html" class="text-sm text-gray-600 hover:text-emerald-700">Sejarah dan
+                        Dasar Hukum</a>
+                    <a href="{{ url('/visimisi') }}" class="text-sm text-gray-600 hover:text-emerald-700">Visi
+                        Misi</a>
+                    <a href="{{ url('/struktur-organisasi') }}"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Struktur Organisasi</a>
+                    <a href="{{ route('public.tugas_fungsi') }}"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Tugas & Fungsi</a>
+                    <a href="{{ route('public.maklumat') }}"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Maklumat Pelayanan</a>
+                    <a href="{{ url('/pegawai') }}" class="text-sm text-gray-600 hover:text-emerald-700">Daftar
+                        Pegawai</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="text-gray-700 font-medium mb-2">Program</div>
+                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
+                    <a href="{{ url('/rencana-kerja') }}"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Rencana Kerja</a>
+                    <a href="program/program_kegiatan.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Program & Kegiatan</a>
+                    <a href="program/target_capaian.html" class="text-sm text-gray-600 hover:text-emerald-700">Target
+                        & Capaian</a>
+                    <a href="program/inovasi_daerah.html" class="text-sm text-gray-600 hover:text-emerald-700">Inovasi
+                        Daerah</a>
+                    <a href="program/kalender_kegiatan.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Kalender Kegiatan</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="text-gray-700 font-medium mb-2">Layanan </div>
+                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
+                    <a href="layanan_publik/sop_pelayanan.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">SOP Pelayanan</a>
+                    <a href="layanan_publik/standar_pelayanan.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Standar Pelayanan</a>
+                    <a href="layanan_publik/formulir_permohonan.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Formulir Permohonan</a>
+                    <a href="layanan_publik/konsultasi_petani.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Konsultasi Petani</a>
+                    <a href="layanan_publik/konsultasi_petani.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Taksi Tani</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="text-gray-700 font-medium mb-2">Informasi</div>
+                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
+                    <a href="data_informasi/informasi_opt_iklim.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Informasi OPT & Perkiraan Iklim</a>
+                    <a href="data_informasi/penyuluhan_artikel_teknis.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Penyuluhan & Artikel Teknis</a>
+                    <a href="data_informasi/ppid.html" class="text-sm text-gray-600 hover:text-emerald-700">PPID</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="text-gray-700 font-medium mb-2">Dokumen</div>
+                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
+                    <a href="dokumen/renstra_dinas.html" class="text-sm text-gray-600 hover:text-emerald-700">Renstra
+                        Dinas</a>
+                    <a href="dokumen/rka_dpa.html" class="text-sm text-gray-600 hover:text-emerald-700">RKA/DPA</a>
+                    <a href="dokumen/lkjip.html" class="text-sm text-gray-600 hover:text-emerald-700">LKJIP</a>
+                    <a href="dokumen/rtp_spip.html" class="text-sm text-gray-600 hover:text-emerald-700">RTP/SPIP</a>
+                    <a href="dokumen/rencana_aksi_opd.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Rencana Aksi OPD</a>
+                    <a href="dokumen/sop_bidang.html" class="text-sm text-gray-600 hover:text-emerald-700">SOP
+                        Bidang</a>
+                    <a href="dokumen/peraturan_regulasi.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Peraturan & Regulasi</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="text-gray-700 font-medium mb-2">Berita</div>
+                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
+                    <a href="dokumen/berita.html" class="text-sm text-gray-600 hover:text-emerald-700">Berita</a>
+                    <a href="dokumen/artikel_wawasan_pertanian.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Artikel & Wawasan Pertanian</a>
+                    <a href="dokumen/galeri_foto.html" class="text-sm text-gray-600 hover:text-emerald-700">Galeri
+                        Foto</a>
+                    <a href="dokumen/video.html" class="text-sm text-gray-600 hover:text-emerald-700">Video</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="text-gray-700 font-medium mb-2">Bidang/UPTD</div>
+                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
+                    <a href="bidang_uptd/tanaman_pangan.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Tanaman Pangan</a>
+                    <a href="bidang_uptd/hortikultura.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Hortikultura</a>
+                    <a href="bidang_uptd/perkebunan.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Perkebunan</a>
+                    <a href="bidang_uptd/psp.html" class="text-sm text-gray-600 hover:text-emerald-700">PSP</a>
+                    <a href="bidang_uptd/uptd_balai_benih.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">UPTD Balai Benih</a>
+                    <a href="bidang_uptd/uptd_laboratorium.html"
+                        class="text-sm text-gray-600 hover:text-emerald-700">UPTD Laboratorium</a>
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <div class="text-gray-700 font-medium mb-2">Tambahan</div>
+                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
+                    <a href="" class="text-sm text-gray-600 hover:text-emerald-700"></a>
                 </div>
             </div>
         </div>
     </nav>
-
-    <div id="mobile-menu" class="lg:hidden hidden bg-emerald-950 shadow-lg border-t border-gray-700 pb-2">
-        <ul class="font-medium flex flex-col p-4">
-            <li>
-                <a href="#" class="block py-2 px-3 text-white rounded hover:bg-[#4a5f4a]">Beranda</a>
-            </li>
-
-            <li class="mobile-dropdown-parent">
-                <button type="button"
-                    class="flex justify-between items-center w-full py-2 px-3 text-gray-200 rounded hover:bg-[#4a5f4a] mobile-dropdown-button">
-                    Profil
-                    <svg class="ml-1 w-4 h-4 transform transition duration-300 mobile-dropdown-icon" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                        </path>
-                    </svg>
-                </button>
-                <ul class="ml-4 border-l border-gray-600 space-y-1 hidden mobile-dropdown-content">
-                    <li>
-                        <a href="profile/sejarah.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Sejarah dan Dasar
-                            Hukum</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/visimisi') }}"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Visi Misi</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/struktur-organisasi') }}"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Struktur Organisasi</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('public.tugas_fungsi') }}"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Tugas & Fungsi</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('public.maklumat') }}"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Maklumat Pelayanan</a>
-                    </li>
-                    <li>
-                        <a href="{{ url('/pegawai') }}"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Daftar Pegawai</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="mobile-dropdown-parent">
-                <button type="button"
-                    class="flex justify-between items-center w-full py-2 px-3 text-gray-200 rounded hover:bg-[#4a5f4a] mobile-dropdown-button">
-                    Program
-                    <svg class="ml-1 w-4 h-4 transform transition duration-300 mobile-dropdown-icon" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                        </path>
-                    </svg>
-                </button>
-                <ul class="ml-4 border-l border-gray-600 space-y-1 hidden mobile-dropdown-content">
-                    <li>
-                        <a href="{{ url('/rencana-kerja') }}"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Rencana Kerja</a>
-                    </li>
-                    <li>
-                        <a href="program/program_kegiatan.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Program & Sub Kegiatan</a>
-                    </li>
-                    <li>
-                        <a href="program/target_capaian.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Target & Capaian</a>
-                    </li>
-                    <li>
-                        <a href="program/inovasi_daerah.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Inovasi Daerah</a>
-                    </li>
-                    <li>
-                        <a href="program/kalender_kegiatan.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Kalender Kegiatan</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="mobile-dropdown-parent">
-                <button type="button"
-                    class="flex justify-between items-center w-full py-2 px-3 text-gray-200 rounded hover:bg-[#4a5f4a] mobile-dropdown-button">
-                    Layanan Publik
-                    <svg class="ml-1 w-4 h-4 transform transition duration-300 mobile-dropdown-icon" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                        </path>
-                    </svg>
-                </button>
-                <ul class="ml-4 border-l border-gray-600 space-y-1 hidden mobile-dropdown-content">
-                    <li>
-                        <a href="layanan_publik/sop_pelayanan.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">SOP Pelayanan</a>
-                    </li>
-                    <li>
-                        <a href="layanan_publik/standar_pelayanan.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Standar Pelayanan</a>
-                    </li>
-                    <li>
-                        <a href="layanan_publik/formulir_permohonan.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Formulir Permohonan</a>
-                    </li>
-                    <li>
-                        <a href="layanan_publik/konsultasi_petani.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Konsultasi Petani</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="mobile-dropdown-parent">
-                <button type="button"
-                    class="flex justify-between items-center w-full py-2 px-3 text-gray-200 rounded hover:bg-[#4a5f4a] mobile-dropdown-button">
-                    Informasi
-                    <svg class="ml-1 w-4 h-4 transform transition duration-300 mobile-dropdown-icon" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                        </path>
-                    </svg>
-                </button>
-                <ul class="ml-4 border-l border-gray-600 space-y-1 hidden mobile-dropdown-content">
-                    <li>
-                        <a href="data_informasi/informasi_opt_iklim.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Informasi OPT & Perkiraan
-                            Iklim</a>
-                    </li>
-                    <li>
-                        <a href="data_informasi/penyuluhan_artikel_teknis.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Penyuluhan & Artikel
-                            Teknis</a>
-                    </li>
-                    <li>
-                        <a href="data_informasi/ppid.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">PPID
-                            Teknis</a>
-                    </li>
-                </ul>
-            </li>
-
-
-            <li class="mobile-dropdown-parent">
-                <button type="button"
-                    class="flex justify-between items-center w-full py-2 px-3 text-gray-200 rounded hover:bg-[#4a5f4a] mobile-dropdown-button">
-                    Dokumen
-                    <svg class="ml-1 w-4 h-4 transform transition duration-300 mobile-dropdown-icon" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                        </path>
-                    </svg>
-                </button>
-                <ul class="ml-4 border-l border-gray-600 space-y-1 hidden mobile-dropdown-content">
-                    <li>
-                        <a href="dokumen/renstra_dinas.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Renstra Dinas</a>
-                    </li>
-                    <li>
-                        <a href="dokumen/rka_dpa.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">RKA/DPA</a>
-                    </li>
-                    <li>
-                        <a href="dokumen/lkjip.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">LKJIP</a>
-                    </li>
-                    <li>
-                        <a href="dokumen/rtp_spip.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">RTP/SPIP</a>
-                    </li>
-                    <li>
-                        <a href="dokumen/rencana_aksi_opd.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Rencana Aksi OPD</a>
-                    </li>
-                    <li>
-                        <a href="dokumen/sop_bidang.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">SOP Bidang</a>
-                    </li>
-                    <li>
-                        <a href="dokumen/peraturan_regulasi.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Peraturan & Regulasi</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="mobile-dropdown-parent">
-                <button type="button"
-                    class="flex justify-between items-center w-full py-2 px-3 text-gray-200 rounded hover:bg-[#4a5f4a] mobile-dropdown-button">
-                    Berita dan Publikasi
-                    <svg class="ml-1 w-4 h-4 transform transition duration-300 mobile-dropdown-icon" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                        </path>
-                    </svg>
-                </button>
-                <ul class="ml-4 border-l border-gray-600 space-y-1 hidden mobile-dropdown-content">
-                    <li>
-                        <a href="dokumen/berita.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Berita</a>
-                    </li>
-                    <li>
-                        <a href="dokumen/artikel_wawasan_pertanian.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Artikel & Wawasan
-                            Pertanian</a>
-                    </li>
-                    <li>
-                        <a href="dokumen/galeri_foto.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Galeri Foto</a>
-                    </li>
-                    <li>
-                        <a href="dokumen/video.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Video</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li class="mobile-dropdown-parent">
-                <button type="button"
-                    class="flex justify-between items-center w-full py-2 px-3 text-gray-200 rounded hover:bg-[#4a5f4a] mobile-dropdown-button">
-                    Bidang/UPTD
-                    <svg class="ml-1 w-4 h-4 transform transition duration-300 mobile-dropdown-icon" fill="none"
-                        stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
-                        </path>
-                    </svg>
-                </button>
-                <ul class="ml-4 border-l border-gray-600 space-y-1 hidden mobile-dropdown-content">
-                    <li>
-                        <a href="bidang_uptd/tanaman_pangan.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Tanaman Pangan</a>
-                    </li>
-                    <li>
-                        <a href="bidang_uptd/hortikultura.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Hortikultura</a>
-                    </li>
-                    <li>
-                        <a href="bidang_uptd/perkebunan.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">Perkebunan</a>
-                    </li>
-                    <li>
-                        <a href="bidang_uptd/psp.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">PSP</a>
-                    </li>
-                    <li>
-                        <a href="bidang_uptd/uptd_balai_benih.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">UPTD Balai Benih</a>
-                    </li>
-                    <li>
-                        <a href="bidang_uptd/uptd_laboratorium.html"
-                            class="block py-2 px-3 text-sm text-gray-300 hover:bg-[#4a5f4a]">UPTD Laboratorium</a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
 </header>
-<div class="mb-32"></div>
+{{-- <div class="mb-16"></div> --}}

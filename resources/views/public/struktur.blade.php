@@ -2,12 +2,12 @@
 @section('title', 'Struktur Organisasi')
 
 @section('content')
-    <section class=" ">
+    <section class="pt-12">
         <div class="container mx-auto px-4 max-w-5xl space-y-8">
             {{-- Header Halaman --}}
             <div class="text-center ">
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Struktur Organisasi</h2>
-                <p class="text-green-600 font-medium italic">{{ $profile->nama_opd ?? 'Dinas Pertanian Kabupaten Grobogan' }}
+                <h2 class="text-2xl font-bold text-gray-900 mb-1">Struktur Organisasi</h2>
+                <p class="text-green-600  italic">{{ $profile->nama_opd ?? 'Dinas Pertanian Kabupaten Grobogan' }}
                 </p>
             </div>
 

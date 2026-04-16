@@ -3,12 +3,12 @@
 @section('title', 'Pegawai')
 
 @section('content')
-    <section class="">
+    <section class="pt-12">
         <div class="container mx-auto px-4 max-w-7xl space-y-8">
             {{-- Header Halaman --}}
-            <div class="text-center  mt-12 mb-3">
-                <h2 class="text-2xl font-bold text-gray-900 mb-2">Daftar Pegawai</h2>
-                <p class="text-green-600 font-medium italic">{{ $profile->nama_opd ?? 'Dinas Pertanian Kabupaten Grobogan' }}
+            <div class="text-center  mb-3">
+                <h2 class="text-2xl font-bold text-gray-900 mb-1">Daftar Pegawai</h2>
+                <p class="text-green-600  italic">{{ $profile->nama_opd ?? 'Dinas Pertanian Kabupaten Grobogan' }}
                 </p>
             </div>
 
