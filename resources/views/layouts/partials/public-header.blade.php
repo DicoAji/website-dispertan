@@ -50,13 +50,13 @@
                     class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
                     <a href="{{ url('/rencana-kerja') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Rencana Kerja</a>
-                    <a href="program/program_kegiatan.html"
+                    <a href="{{ url('/program-kegiatan') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Program & Kegiatan</a>
-                    <a href="program/target_capaian.html"
+                    <a href="{{ url('/target-capaian') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Target & Capaian</a>
-                    <a href="program/inovasi_daerah.html"
+                    <a href="{{ url('/inovasi-daerah') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Inovasi Daerah</a>
-                    <a href="program/kalender_kegiatan.html"
+                    <a href="{{ url('/kalender-kegiatan') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Kalender Kegiatan</a>
                 </div>
             </div>
@@ -70,15 +70,15 @@
                 </button>
                 <div
                     class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
-                    <a href="layanan_publik/sop_pelayanan.html"
+                    <a href="{{ url('/sop-pelayanan') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">SOP Pelayanan</a>
-                    <a href="layanan_publik/standar_pelayanan.html"
+                    <a href="{{ url('/standar-pelayanan') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Standar Pelayanan</a>
-                    <a href="layanan_publik/formulir_permohonan.html"
+                    <a href="{{ url('/formulir-permohonan') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Formulir Permohonan</a>
-                    <a href="layanan_publik/konsultasi_petani.html"
+                    <a href="{{ url('/konsultasi-petani') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Konsultasi Petani</a>
-                    <a href="layanan_publik/konsultasi_petani.html"
+                    <a href="{{ url('/taksi-tani') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Taksi Tani</a>
                 </div>
             </div>
@@ -92,13 +92,13 @@
                 </button>
                 <div
                     class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-60 animate-in fade-in slide-in-from-top-2 z-50">
-                    <a href="data_informasi/informasi_opt_iklim.html"
+                    <a href="{{ url('/informasi-opt-iklim') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Informasi OPT & Perkiraan
                         Iklim</a>
-                    <a href="data_informasi/penyuluhan_artikel_teknis.html"
+                    <a href="{{ url('/penyuluhan-artikel-teknis') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Penyuluhan & Artikel
                         Teknis</a>
-                    <a href="data_informasi/ppid.html"
+                    <a href="{{ url('/ppid') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">PPID</a>
                 </div>
             </div>
@@ -112,19 +112,19 @@
                 </button>
                 <div
                     class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
-                    <a href="dokumen/renstra_dinas.html"
+                    <a href="{{ url('/renstra-dinas') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Renstra Dinas</a>
-                    <a href="dokumen/rka_dpa.html"
+                    <a href="{{ url('/rka-dpa') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">RKA/DPA</a>
-                    <a href="dokumen/lkjip.html"
+                    <a href="{{ url('/lkjip') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">LKJIP</a>
-                    <a href="dokumen/rtp_spip.html"
+                    <a href="{{ url('/rtp-spip') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">RTP/SPIP</a>
-                    <a href="dokumen/rencana_aksi_opd.html"
+                    <a href="{{ url('/rencana-aksi-opd') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Rencana Aksi OPD</a>
-                    <a href="dokumen/sop_bidang.html"
+                    <a href="{{ url('/sop-bidang') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">SOP Bidang</a>
-                    <a href="dokumen/peraturan_regulasi.html"
+                    <a href="{{ url('/peraturan-regulasi') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Peraturan & Regulasi</a>
                 </div>
             </div>
@@ -138,14 +138,14 @@
                 </button>
                 <div
                     class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-64 animate-in fade-in slide-in-from-top-2 z-50">
-                    <a href="dokumen/berita.html"
+                    <a href="{{ url('/berita') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Berita</a>
-                    <a href="dokumen/artikel_wawasan_pertanian.html"
+                    <a href="{{ url('/artikel-wawasan-pertanian') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Artikel & Wawasan
                         Pertanian</a>
-                    <a href="dokumen/galeri_foto.html"
+                    <a href="{{ url('/galeri-foto') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Galeri Foto</a>
-                    <a href="dokumen/video.html"
+                    <a href="{{ url('/video') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Video</a>
                 </div>
             </div>
@@ -159,17 +159,17 @@
                 </button>
                 <div
                     class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
-                    <a href="bidang_uptd/tanaman_pangan.html"
+                    <a href="{{ route('public.tanaman_pangan') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Tanaman Pangan</a>
-                    <a href="bidang_uptd/hortikultura.html"
+                    <a href="{{ route('public.hortikultura') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Hortikultura</a>
-                    <a href="bidang_uptd/perkebunan.html"
+                    <a href="{{ route('public.perkebunan') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Perkebunan</a>
-                    <a href="bidang_uptd/psp.html"
+                    <a href="{{ route('public.psp') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">PSP</a>
-                    <a href="bidang_uptd/uptd_balai_benih.html"
+                    <a href="{{ route('public.uptd_balai_benih') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">UPTD Balai Benih</a>
-                    <a href="bidang_uptd/uptd_laboratorium.html"
+                    <a href="{{ route('public.uptd_laboratorium') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">UPTD Laboratorium</a>
                 </div>
             </div>
@@ -206,7 +206,8 @@
             <div class="flex flex-col">
                 <div class="text-gray-700 font-medium mb-2">Profil</div>
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
-                    <a href="profile/sejarah.html" class="text-sm text-gray-600 hover:text-emerald-700">Sejarah dan
+                    <a href="{{ url('/sejarah-dasar-hukum') }}"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Sejarah dan
                         Dasar Hukum</a>
                     <a href="{{ url('/visimisi') }}" class="text-sm text-gray-600 hover:text-emerald-700">Visi
                         Misi</a>
@@ -226,13 +227,15 @@
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
                     <a href="{{ url('/rencana-kerja') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Rencana Kerja</a>
-                    <a href="program/program_kegiatan.html"
+                    <a href="{{ url('/program-kegiatan') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Program & Kegiatan</a>
-                    <a href="program/target_capaian.html" class="text-sm text-gray-600 hover:text-emerald-700">Target
+                    <a href="{{ url('/target-capaian') }}"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Target
                         & Capaian</a>
-                    <a href="program/inovasi_daerah.html" class="text-sm text-gray-600 hover:text-emerald-700">Inovasi
+                    <a href="{{ url('/inovasi-daerah') }}"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Inovasi
                         Daerah</a>
-                    <a href="program/kalender_kegiatan.html"
+                    <a href="{{ url('/kalender-kegiatan') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Kalender Kegiatan</a>
                 </div>
             </div>
@@ -240,27 +243,27 @@
             <div class="flex flex-col">
                 <div class="text-gray-700 font-medium mb-2">Layanan </div>
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
-                    <a href="layanan_publik/sop_pelayanan.html"
-                        class="text-sm text-gray-600 hover:text-emerald-700">SOP Pelayanan</a>
-                    <a href="layanan_publik/standar_pelayanan.html"
+                    <a href="{{ url('/sop-pelayanan') }}" class="text-sm text-gray-600 hover:text-emerald-700">SOP
+                        Pelayanan</a>
+                    <a href="{{ url('/standar-pelayanan') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Standar Pelayanan</a>
-                    <a href="layanan_publik/formulir_permohonan.html"
+                    <a href="{{ url('/formulir-permohonan') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Formulir Permohonan</a>
-                    <a href="layanan_publik/konsultasi_petani.html"
+                    <a href="{{ url('/konsultasi-petani') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Konsultasi Petani</a>
-                    <a href="layanan_publik/konsultasi_petani.html"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Taksi Tani</a>
+                    <a href="{{ url('/taksi-tani') }}" class="text-sm text-gray-600 hover:text-emerald-700">Taksi
+                        Tani</a>
                 </div>
             </div>
 
             <div class="flex flex-col">
                 <div class="text-gray-700 font-medium mb-2">Informasi</div>
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
-                    <a href="data_informasi/informasi_opt_iklim.html"
+                    <a href="{{ url('/informasi-opt-iklim') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Informasi OPT & Perkiraan Iklim</a>
-                    <a href="data_informasi/penyuluhan_artikel_teknis.html"
+                    <a href="{{ url('/penyuluhan-artikel-teknis') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Penyuluhan & Artikel Teknis</a>
-                    <a href="data_informasi/ppid.html" class="text-sm text-gray-600 hover:text-emerald-700">PPID</a>
+                    <a href="{{ url('/ppid') }}" class="text-sm text-gray-600 hover:text-emerald-700">PPID</a>
                 </div>
             </div>
 
@@ -270,13 +273,14 @@
                     <a href="dokumen/renstra_dinas.html" class="text-sm text-gray-600 hover:text-emerald-700">Renstra
                         Dinas</a>
                     <a href="dokumen/rka_dpa.html" class="text-sm text-gray-600 hover:text-emerald-700">RKA/DPA</a>
-                    <a href="dokumen/lkjip.html" class="text-sm text-gray-600 hover:text-emerald-700">LKJIP</a>
-                    <a href="dokumen/rtp_spip.html" class="text-sm text-gray-600 hover:text-emerald-700">RTP/SPIP</a>
-                    <a href="dokumen/rencana_aksi_opd.html"
+                    <a href="{{ url('/lkjip') }}" class="text-sm text-gray-600 hover:text-emerald-700">LKJIP</a>
+                    <a href="{{ url('/rtp-spip') }}"
+                        class="text-sm text-gray-600 hover:text-emerald-700">RTP/SPIP</a>
+                    <a href="{{ url('/rencana-aksi-opd') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Rencana Aksi OPD</a>
-                    <a href="dokumen/sop_bidang.html" class="text-sm text-gray-600 hover:text-emerald-700">SOP
+                    <a href="{{ url('/sop-bidang') }}" class="text-sm text-gray-600 hover:text-emerald-700">SOP
                         Bidang</a>
-                    <a href="dokumen/peraturan_regulasi.html"
+                    <a href="{{ url('/peraturan-regulasi') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Peraturan & Regulasi</a>
                 </div>
             </div>
@@ -284,28 +288,28 @@
             <div class="flex flex-col">
                 <div class="text-gray-700 font-medium mb-2">Berita</div>
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
-                    <a href="dokumen/berita.html" class="text-sm text-gray-600 hover:text-emerald-700">Berita</a>
-                    <a href="dokumen/artikel_wawasan_pertanian.html"
+                    <a href="{{ url('/berita') }}" class="text-sm text-gray-600 hover:text-emerald-700">Berita</a>
+                    <a href="{{ url('/artikel-wawasan-pertanian') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Artikel & Wawasan Pertanian</a>
-                    <a href="dokumen/galeri_foto.html" class="text-sm text-gray-600 hover:text-emerald-700">Galeri
+                    <a href="{{ url('/galeri-foto') }}" class="text-sm text-gray-600 hover:text-emerald-700">Galeri
                         Foto</a>
-                    <a href="dokumen/video.html" class="text-sm text-gray-600 hover:text-emerald-700">Video</a>
+                    <a href="{{ url('/video') }}" class="text-sm text-gray-600 hover:text-emerald-700">Video</a>
                 </div>
             </div>
 
             <div class="flex flex-col">
                 <div class="text-gray-700 font-medium mb-2">Bidang/UPTD</div>
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
-                    <a href="bidang_uptd/tanaman_pangan.html"
+                    <a href="{{ route('public.tanaman_pangan') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Tanaman Pangan</a>
-                    <a href="bidang_uptd/hortikultura.html"
+                    <a href="{{ route('public.hortikultura') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Hortikultura</a>
-                    <a href="bidang_uptd/perkebunan.html"
+                    <a href="{{ route('public.perkebunan') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Perkebunan</a>
-                    <a href="bidang_uptd/psp.html" class="text-sm text-gray-600 hover:text-emerald-700">PSP</a>
-                    <a href="bidang_uptd/uptd_balai_benih.html"
+                    <a href="{{ route('public.psp') }}" class="text-sm text-gray-600 hover:text-emerald-700">PSP</a>
+                    <a href="{{ route('public.uptd_balai_benih') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">UPTD Balai Benih</a>
-                    <a href="bidang_uptd/uptd_laboratorium.html"
+                    <a href="{{ route('public.uptd_laboratorium') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">UPTD Laboratorium</a>
                 </div>
             </div>

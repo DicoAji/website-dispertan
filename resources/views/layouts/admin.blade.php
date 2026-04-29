@@ -31,76 +31,38 @@
                     class="flex items-center py-3 px-4 rounded-lg transition {{ request()->is('admin') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }}">
                     <i class="fas fa-home w-6"></i> Dashboard
                 </a>
+                <a href="{{ route('admin.berita.index') }}"
+                    class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/berita*') ? 'bg-green-900' : 'hover:bg-green-700' }}">
+                    <i class="fas fa-newspaper w-6"></i>
+                    <span class="ml-2">Berita</span>
+                </a>
+                <a href="{{ route('file_dinas.index') }}"
+                    class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/file-dinas*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
+                    <i class="fas fa-folder-open w-6"></i>
+                    <span class="ml-2 ">File Dinas</span>
+                </a>
+                <a href="{{ route('admin.bidang.index') }}"
+                    class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/bidang*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
+                    <i class="fa-solid fa-puzzle-piece w-6"></i>
+                    <span class="ml-2 font-medium">Bidang</span>
+                </a>
 
                 <a href="{{ route('pegawai.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('pegawai.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
                     <i class="fas fa-users w-6"></i> Data Pegawai
                 </a>
 
-                <a href="{{ route('berita.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('berita.*') ? 'bg-green-900' : 'hover:bg-green-700' }}">
-                    <i class="fas fa-newspaper w-6"></i> Berita
-                </a>
-
                 <a href="{{ route('profile.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('profile.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
                     <i class="fas fa-building w-6"></i> Profil Dinas
                 </a>
-                <a href="{{ route('file_dinas.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/file-dinas*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fas fa-folder-open w-6"></i>
 
-                    <span class="ml-2 font-medium">File Dinas</span>
-                </a>
                 <a href="{{ route('skm.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/skm*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
                     <i class="fas fa-poll w-6"></i>
                     <span class="ml-2 font-medium">SKM (Survei)</span>
                 </a>
 
-
-                <details class="group" {{ request()->is('admin/*') ? 'open' : '' }}>
-                    <summary
-                        class="list-none cursor-pointer wS-full flex items-center justify-between py-3 px-4 rounded-lg {{ request()->is('admin/skm*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition outline-none">
-                        <div class="flex items-center">
-                            <i class="fas fa-poll w-6"></i>
-                            <span class="ml-2 font-medium">Bidang</span>
-                        </div>
-                        <i
-                            class="fas fa-chevron-down text-xs transition-transform duration-200 group-open:rotate-180"></i>
-                    </summary>
-
-                    <div class="mt-2 ml-6 space-y-1 border-l-2 border-green-800 animate-fade-in">
-                        <a href="{}"
-                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'tanaman-pangan' ? 'text-yellow-400 font-bold' : '' }}">
-                            Tanaman Pangan
-                        </a>
-                        <a href="{}"
-                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'holtikultura' ? 'text-yellow-400 font-bold' : '' }}">
-                            Holtikultura
-                        </a>
-                        <a href="{}"
-                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'perkebunan' ? 'text-yellow-400 font-bold' : '' }}">
-                            Perkebunan
-                        </a>
-                        <a href="{}"
-                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'psp' ? 'text-yellow-400 font-bold' : '' }}">
-                            PSP
-                        </a>
-                        <a href="{}"
-                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'sekretariat' ? 'text-yellow-400 font-bold' : '' }}">
-                            Sekretariat
-                        </a>
-                        <a href="{}"
-                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'uptd-balai-benih' ? 'text-yellow-400 font-bold' : '' }}">
-                            UPTD Balai Benih
-                        </a>
-                        <a href="{}"
-                            class="block py-2 px-4 text-sm rounded-lg hover:bg-green-700 transition {{ request()->query('bidang') == 'uptd-laboratorium' ? 'text-yellow-400 font-bold' : '' }}">
-                            UPTD Laboratorium
-                        </a>
-                    </div>
-                </details>
 
                 <style>
                     /* Menghilangkan panah bawaan browser pada elemen summary */

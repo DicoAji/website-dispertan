@@ -292,7 +292,7 @@
 
                             <input type="file" name="maklumat_layanan" accept="image/*"
                                 class="w-full text-sm pointer-events-auto text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-green-50 file:text-green-700 border rounded-lg p-1">
-                            <p class="text-[10px] text-gray-400 mt-1 italic">*Format: JPG, PNG, JPEG. Maks: 2MB</p>
+                            <p class="text-[10px] text-gray-400 mt-1 italic">*Format: JPG, PNG, JPEG. </p>
                         </div>
                     </div>
 

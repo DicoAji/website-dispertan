@@ -7,9 +7,12 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\FileDinasController;
 use App\Http\Controllers\SkmController;
+use App\Http\Controllers\BidangController;
+use App\Models\Bidang;
+
+
 
 // PUBLICC
-// Route::get('/', [PublicController::class, 'index'])->name('public.index');
 Route::get('/', function () {
     $berita = \App\Models\Berita::latest()->take(6)->get();
     $profile = \App\Models\Profile::first();
@@ -38,25 +41,135 @@ Route::get('/tugas-fungsi', function () {
     return view('public.tugas_fungsi', compact('profile'));
 })->name('public.tugas_fungsi');
 
-
 Route::get('/rencana-kerja', function () {
     $profile = \App\Models\Profile::first();
-    // Hanya kirim 'profile'. Hapus 'fileDinas' dari compact.
     return view('public.rencana_kerja', compact('profile'));
 })->name('public.rencana_kerja');
+
+Route::get('/lkjip', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.lkjip', compact('profile'));
+})->name('public.lkjip');
+
+Route::get('/sop-pelayanan', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.sop_pelayanan', compact('profile'));
+})->name('public.sop_pelayanan');
+
+Route::get('/program-kegiatan', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.program_kegiatan', compact('profile'));
+})->name('public.program_kegiatan');
+Route::get('/target-capaian', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.target_capaian', compact('profile'));
+})->name('public.target_capaian');
+Route::get('/inovasi-daerah', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.inovasi_daerah', compact('profile'));
+})->name('public.inovasi_daerah');
+Route::get('/standar-pelayanan', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.standar_pelayanan', compact('profile'));
+})->name('public.standar_pelayanan');
+Route::get('/informasi-opt-iklim', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.informasi_opt_iklim', compact('profile'));
+})->name('public.informasi_opt_iklim');
+Route::get('/penyuluhan-artikel-teknis', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.penyuluhan_artikel_teknis', compact('profile'));
+})->name('public.penyuluhan_artikel_teknis');
+Route::get('/ppid', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.ppid', compact('profile'));
+})->name('public.ppid');
+Route::get('/renstra_dinas', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.renstra_dinas', compact('profile'));
+})->name('public.renstra_dinas');
+Route::get('/rtp-spip', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.rtp_spip', compact('profile'));
+})->name('public.rtp_spip');
+Route::get('/rencana-aksi-opd', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.rencana_aksi_opd', compact('profile'));
+})->name('public.rencana_aksi_opd');
+Route::get('/sop-bidang', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.sop_bidang', compact('profile'));
+})->name('public.sop_bidang');
+Route::get('/peraturan-regulasi', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.peraturan_regulasi', compact('profile'));
+})->name('public.peraturan_regulasi');
+Route::get('/berita', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.berita', compact('profile'));
+})->name('berita.index');
+
+
+// BIDANG PUBLIC
+Route::get('/tanaman-pangan', function () {
+    $profile = \App\Models\Profile::first(); // <-- Panggil data profile
+    $bidang = \App\Models\Bidang::where('kategori', 'Tanaman Pangan')->latest()->get();
+    // <-- Kirim kedua variabelnya
+    return view('public.bidang.tanaman_pangan', compact('bidang', 'profile'));
+})->name('public.tanaman_pangan');
+
+Route::get('/hortikultura', function () {
+    $profile = \App\Models\Profile::first(); // <-- Panggil data profile
+    $bidang = \App\Models\Bidang::where('kategori', 'Hortikultura')->latest()->get();
+    // <-- Kirim kedua variabelnya
+    return view('public.bidang.hortikultura', compact('bidang', 'profile'));
+})->name('public.hortikultura');
+
+Route::get('/perkebunan', function () {
+    $profile = \App\Models\Profile::first(); // <-- Panggil data profile
+    $bidang = \App\Models\Bidang::where('kategori', 'Perkebunan')->latest()->get();
+    // <-- Kirim kedua variabelnya
+    return view('public.bidang.perkebunan', compact('bidang', 'profile'));
+})->name('public.perkebunan');
+
+Route::get('/psp', function () {
+    $profile = \App\Models\Profile::first(); // <-- Panggil data profile
+    $bidang = \App\Models\Bidang::where('kategori', 'psp')->latest()->get();
+    // <-- Kirim kedua variabelnya
+    return view('public.bidang.psp', compact('bidang', 'profile'));
+})->name('public.psp');
+
+Route::get('/sekretariat', function () {
+    $profile = \App\Models\Profile::first(); // <-- Panggil data profile
+    $bidang = \App\Models\Bidang::where('kategori', 'Sekretariat')->latest()->get();
+    // <-- Kirim kedua variabelnya
+    return view('public.bidang.sekretariat', compact('bidang', 'profile'));
+})->name('public.sekretariat');
+
+Route::get('/uptd_laboratorium', function () {
+    $profile = \App\Models\Profile::first(); // <-- Panggil data profile
+    $bidang = \App\Models\Bidang::where('kategori', 'UPTD Laboratorium')->latest()->get();
+    // <-- Kirim kedua variabelnya
+    return view('public.bidang.uptd_laboratorium', compact('bidang', 'profile'));
+})->name('public.uptd_laboratorium');
+
+Route::get('/uptd_balai_benih', function () {
+    $profile = \App\Models\Profile::first(); // <-- Panggil data profile
+    $bidang = \App\Models\Bidang::where('kategori', 'UPTD Balai Benih')->latest()->get();
+    // <-- Kirim kedua variabelnya
+    return view('public.bidang.uptd_balai_benih', compact('bidang', 'profile'));
+})->name('public.uptd_balai_benih');
+
 
 
 
 
 
 // ADMINNNNNN
-
-// Redirect halaman utama ke admin
 Route::get('/admin', function () {
     return redirect('/admin');
 });
 
-// Route Admin
 Route::prefix('admin')->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard');
@@ -68,6 +181,14 @@ Route::prefix('admin')->group(function () {
     Route::post('/pegawai', [PegawaiController::class, 'store'])->name('pegawai.store'); // Route simpan data
     Route::delete('/pegawai/{nip}', [PegawaiController::class, 'destroy'])->name('pegawai.destroy');
     Route::put('/pegawai/{nip}', [PegawaiController::class, 'update'])->name('pegawai.update');
+
+
+    Route::prefix('admin')->group(function () {
+        // Tambahkan "admin." pada bagian name()
+        Route::get('/berita', [BeritaController::class, 'index'])->name('admin.berita.index');
+        Route::post('/berita', [BeritaController::class, 'store'])->name('admin.berita.store');
+        Route::delete('/berita/{id}', [BeritaController::class, 'destroy'])->name('admin.berita.destroy');
+    });
 
     // Route Berita
     Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
@@ -91,8 +212,9 @@ Route::prefix('admin')->group(function () {
     Route::put('/skm/{id}', [SkmController::class, 'update'])->name('skm.update');
     Route::delete('/skm/{id}', [SkmController::class, 'destroy'])->name('skm.destroy');
 
-
-    // // Bidang
-    // Route::get('/bidang/{kategori}', [SkmController::class, 'bidangIndex'])->name('bidang.index');
-    // Route::post('/bidang/{kategori}/update', [SkmController::class, 'bidangUpdate'])->name('bidang.update');
+    // BIDANG
+    Route::get('/bidang', [BidangController::class, 'index'])->name('admin.bidang.index');
+    Route::post('/bidang', [BidangController::class, 'store'])->name('admin.bidang.store'); // Proses simpan data bidang baru
+    Route::put('/bidang/{id}', [BidangController::class, 'update'])->name('admin.bidang.update');
+    Route::delete('/bidang/{id}', [BidangController::class, 'destroy'])->name('admin.bidang.destroy');
 });

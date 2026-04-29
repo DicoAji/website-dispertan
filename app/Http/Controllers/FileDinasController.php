@@ -20,11 +20,11 @@ class FileDinasController extends Controller
     {
         $request->validate([
             'uraian' => 'required',
-            'file' => 'required|mimes:pdf|max:2048',
+            'file' => 'required|mimes:pdf|',
 
         ], [
             'file.mimes' => 'File harus berformat PDF.',
-            'file.max' => 'Ukuran file maksimal 2 MB.'
+
         ]);
 
         $nama_file = null;
@@ -46,12 +46,12 @@ class FileDinasController extends Controller
     {
         // 1. Validasi Input
         $request->validate([
-            'uraian' => 'required|string|max:255',
-            'file'   => 'nullable|mimes:pdf|max:2048', // Maksimal 5MB, nullable jika tidak ingin ganti file
+            'uraian' => 'required|string',
+            'file'   => 'nullable|mimes:pdf',
         ], [
             'uraian.required' => 'Uraian dokumen tidak boleh kosong.',
             'file.mimes'      => 'Dokumen harus berformat PDF.',
-            'file.max'        => 'Ukuran dokumen maksimal adalah 2MB.'
+
         ]);
 
         try {
@@ -84,16 +84,4 @@ class FileDinasController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }
-
-    // public function rencanaKerja()
-    // {
-    //     // Mengambil data profil dinas
-    //     $profile = Profile::first();
-
-    //     // Mengambil data file dinas dengan ID 3 (Rencana Kerja)
-    //     $rencanaKerja = FileDinas::find(3);
-
-    //     // Ganti 'public.rencana_kerja' dengan nama file Blade Anda sebenarnya
-    //     return view('public.rencana_kerja', compact('profile', 'rencanaKerja'));
-    // }
 }

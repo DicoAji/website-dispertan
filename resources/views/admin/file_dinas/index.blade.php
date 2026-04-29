@@ -17,7 +17,7 @@
             <table class="w-full text-left">
                 <thead class="bg-gray-50 border-b">
                     <tr>
-                        <th class="px-6 py-3 text-sm font-semibold text-gray-600">No</th>
+                        <th class="px-6 py-3 text-sm font-semibold text-gray-600">No id</th>
                         <th class="px-6 py-3 text-sm font-semibold text-gray-600">Uraian</th>
                         <th class="px-6 py-3 text-sm font-semibold text-gray-600">File</th>
                         <th class="px-6 py-3 text-sm font-semibold text-gray-600 text-center">Aksi</th>
@@ -26,7 +26,7 @@
                 <tbody class="divide-y">
                     @forelse($files as $index => $f)
                         <tr class="hover:bg-gray-50 transition">
-                            <td class="px-6 py-4 text-sm">{{ $index + 1 }}</td>
+                            <td class="px-6 py-4 text-sm">{{ $f->id }}</td>
                             <td class="px-6 py-4 text-sm font-medium text-gray-800">{{ $f->uraian }}</td>
                             <td class="px-6 py-4 text-sm">
                                 <a href="{{ asset('storage/dokumen/' . $f->file) }}" target="_blank"
@@ -70,7 +70,6 @@
                         <textarea name="uraian" class="w-full border rounded-xl p-3 outline-none focus:ring-2 focus:ring-green-500" required></textarea>
                     </div>
                     <div>
-                        <label class="block text-sm text-red-500 font-semibold mb-1">File PDF (Maks 2MB)</label>
                         <input type="file" name="file" accept=".pdf" class="w-full text-sm" required>
                     </div>
                 </div>
@@ -112,7 +111,6 @@
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold mb-1">Ganti File PDF (Opsional)</label>
                         <input type="file" name="file" accept=".pdf" class="w-full text-sm">
                         <p class="text-[10px] text-gray-500 mt-1 italic">*Biarkan kosong jika tidak ingin mengubah file PDF
                         </p>

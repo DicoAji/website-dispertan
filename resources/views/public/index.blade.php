@@ -11,19 +11,19 @@
             </div>
             <div class="container mx-auto px-4 relative z-10 text-white">
                 <div class="w-full text-center">
-
-                    <h1 class="text-4xl md:text-6xl font-bold  leading-tight">
-                        Dinas Pertanian Kab.Grobogan
+                    <span
+                        class=" items-center gap-2   rounded-full text-xs font-bold tracking-wider uppercase mb-2 inline-flex">
+                        Selamat Datang di Website
+                    </span>
+                    <h1 class="text-white text-4xl md:text-6xl mb-3 uppercase font-extrabold leading-tight  drop-shadow-lg">
+                        Dinas Pertanian<br />
+                        Kabupaten Grobogan
                     </h1>
+
                     <p class="text-lg md:text-xl mb-8 opacity-90">
                         Portal resmi Dinas Pertanian Kab.Grobogan
                     </p>
-                    <div class="flex flex-wrap gap-4 W-ful text-center justify-center">
-                        <a href="https://infopangan.jakarta.go.id/" class="btn-primary">Eksplore</a>
-                        <a href="/ppid"
-                            class="bg-white/20 backdrop-blur-md text-white px-6 py-2 rounded-full font-semibold hover:bg-white/30 transition-all border border-white/30">Info
-                            Berita</a>
-                    </div>
+
                 </div>
             </div>
         </section>
@@ -38,20 +38,29 @@
                 </div>
 
                 <div class="flex overflow-x-auto gap-6 pb-6 hide-scrollbar">
-                    <div class="mobile-card flex-shrink-0 w-64 p-6 bg-slate-50 border-slate-100">
+                    <div
+                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-6 bg-slate-50 border border-slate-100 rounded-xl">
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-slate-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
                         <div
                             class="w-16 h-16 bg-slate-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
                             <i class="fa fa-briefcase"></i>
                         </div>
+
                         <h3 class="font-bold text-xl mb-2 text-slate-900 text-center">
                             Sekretariat
                         </h3>
+
                         <p class="text-sm text-slate-700 text-center">
                             Pengelolaan administrasi dan tata kelola pelayanan internal.
                         </p>
                     </div>
 
-                    <div class="mobile-card flex-shrink-0 w-64 p-6 bg-blue-50 border-blue-100">
+                    <div
+                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-6 bg-blue-50 border border-blue-100 rounded-xl">
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-blue-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
+
                         <div
                             class="w-16 h-16 bg-blue-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
                             <i class="fa-solid fa-tractor"></i>
@@ -64,7 +73,11 @@
                         </p>
                     </div>
 
-                    <div class="mobile-card flex-shrink-0 w-64 p-6 bg-amber-50 border-amber-100">
+                    <div
+                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-6 bg-amber-50 border border-amber-100 rounded-xl">
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-amber-600 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
+
                         <div
                             class="w-16 h-16 bg-amber-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
                             <i class="fa-solid fa-seedling"></i>
@@ -77,7 +90,11 @@
                         </p>
                     </div>
 
-                    <div class="mobile-card flex-shrink-0 w-64 p-6 bg-emerald-50 border-emerald-100">
+                    <div
+                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-6 bg-emerald-50 border border-emerald-100 rounded-xl">
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-emerald-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
+
                         <div
                             class="w-16 h-16 bg-emerald-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
                             <i class="fa fa-tree"></i>
@@ -90,7 +107,11 @@
                         </p>
                     </div>
 
-                    <div class="mobile-card flex-shrink-0 w-64 p-6 bg-rose-50 border-rose-100">
+                    <div
+                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-6 bg-rose-50 border border-rose-100 rounded-xl">
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-rose-600 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
+
                         <div
                             class="w-16 h-16 bg-rose-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
                             <i class="fa-solid fa-pepper-hot"></i>
@@ -152,11 +173,12 @@
         </section>
 
         <!-- PROF TANI -->
-        <section class=" py-20">
-            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 ">
+        <section class=" text-white">
+            <div
+                class="max-w-6xl mx-auto py-8 px-10 md:py-12 md:px-16 space-y-16 rounded-[2rem]  bg-gradient-to-br from-[#0a4038] to-[#0daf94]">
                 <div class="text-center ">
-                    <h2 class="text-3xl font-bold text-gray-800 mb-1">Apa Itu “Profesor Tani”?</h2>
-                    <p class="text-sm text-gray-600  leading-relaxed">
+                    <h2 class="text-3xl md:text-4xl font-bold  mb-2">Profesor Tani</h2>
+                    <p class="text-sm text-white leading-relaxed">
                         “Profesor Tani” juga merupakan julukan untuk petani dan penyuluh pertanian
                         (PPL) sebagai garda terdepan ketahanan pangan.
                     </p>
@@ -166,57 +188,57 @@
                         <div class="w-full " data-aos="fade-up" data-aos-delay="300">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div class="flex flex-col">
-                                    <div class="text-blue-600 text-3xl mb-3">
+                                    <div class="ext-white text-3xl mb-3">
                                         <i class="fa-solid fa-chart-line"></i>
                                     </div>
-                                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Peningkatan Usaha</h4>
-                                    <p class="text-gray-600 text-sm">Peningkatan Produktivitas kerja dan pengetahuan
+                                    <h4 class="text-xl font-semibold ext-white mb-2">Peningkatan Usaha</h4>
+                                    <p class="ext-white text-sm">Peningkatan Produktivitas kerja dan pengetahuan
                                         petani.
                                     </p>
                                 </div>
 
                                 <div class="flex flex-col">
-                                    <div class="text-blue-600 text-3xl mb-3">
+                                    <div class="text-white text-3xl mb-3">
                                         <i class="fa-solid fa-lightbulb"></i>
                                     </div>
-                                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Solusi Inovatif</h4>
-                                    <p class="text-gray-600 text-sm">
+                                    <h4 class="text-xl font-semibold text-white mb-2">Solusi Inovatif</h4>
+                                    <p class="text-white text-sm">
                                         Menerapkan solusi yang inovatif untuk mendukung kegiatan Pertanian.
                                     </p>
                                 </div>
 
                                 <div class="flex flex-col">
-                                    <div class="text-blue-600 text-3xl mb-3">
+                                    <div class="text-white text-3xl mb-3">
                                         <i class="fa-solid fa-users"></i>
                                     </div>
-                                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Petani Ahli (Profesor Tani)
+                                    <h4 class="text-xl font-semibold text-white mb-2">Petani Ahli (Profesor Tani)
                                     </h4>
-                                    <p class="text-gray-600 text-sm">
+                                    <p class="text-white text-sm">
                                         Setiap petani menjadi ahli untuk bidangnya masing-masing dan saling
                                         berbagi.
                                     </p>
                                 </div>
 
                                 <div class="flex flex-col">
-                                    <div class="text-blue-600 text-3xl mb-3">
+                                    <div class="text-white text-3xl mb-3">
                                         <i class="fa-solid fa-trophy"></i>
                                     </div>
-                                    <h4 class="text-xl font-semibold text-gray-800 mb-2">Hasil Terbaik</h4>
-                                    <p class="text-gray-600 text-sm">Upaya mencapai hasil terbaik.</p>
+                                    <h4 class="text-xl font-semibold text-white mb-2">Hasil Terbaik</h4>
+                                    <p class="text-white text-sm">Upaya mencapai hasil terbaik.</p>
                                 </div>
                             </div>
                         </div>
 
                     </div>
                     <div class="w-full aspect-video p-2  shadow-sm   hover:shadow-md transition ">
-                        <iframe class="w-full h-full rounded-2xl" src="https://www.youtube.com/embed/jJ0Q9Uq_97o"
+                        <iframe class="w-full border h-full rounded-2xl" src="https://www.youtube.com/embed/jJ0Q9Uq_97o"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowfullscreen></iframe>
                     </div>
                 </div>
                 <div class="block w-full text-center justify-center">
-                    <a href="https://profesortani.com/" target="_blank" class="btn-primary inline-block">
+                    <a href="https://profesortani.com/" target="_blank" class="btn-primary py-3 px-5 inline-block">
                         Kunjungi Profesor Tani
                     </a>
                 </div>

@@ -14,6 +14,7 @@ class BeritaController extends Controller
         return view('admin.berita.index', compact('berita'));
     }
 
+
     public function store(Request $request)
     {
         $request->validate([

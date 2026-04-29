@@ -27,8 +27,10 @@
                 <ul class="space-y-3 text-gray-400 text-sm">
                     <li><a href="{{ url('/') }}" class="hover:text-green-400 transition">Beranda</a></li>
                     <li><a href="{{ url('/visimisi') }}" class="hover:text-green-400 transition">Visi & Misi</a></li>
-                    <li><a href="#" class="hover:text-green-400 transition">Struktur Organisasi</a></li>
-                    <li><a href="#" class="hover:text-green-400 transition">Kontak Kami</a></li>
+                    <li><a href="{{ url('/struktur-organisasi') }}" class="hover:text-green-400 transition">Struktur
+                            Organisasi</a>
+                    </li>
+                    <li><a href="{{ url('/#kontak') }}" class="hover:text-green-400 transition">Kontak Kami</a></li>
                 </ul>
             </div>
 
@@ -58,7 +60,8 @@
 
         <div class="mt-12 pt-6 border-t border-slate-800 text-center">
             <p class="text-xs text-gray-500">
-                &copy; {{ date('Y') }} {{ $profile->nama_opd ?? 'Dinas Pertanian' }}. Seluruh Hak Cipta Dilindungi.
+                &copy; {{ date('Y') }} {{ $profile->nama_opd ?? 'Dinas Pertanian' }}. Seluruh Hak Cipta
+                Dilindungi.
             </p>
         </div>
     </div>
