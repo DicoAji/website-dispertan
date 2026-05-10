@@ -24,7 +24,7 @@
                 </button>
                 <div
                     class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
-                    <a href="profile/sejarah.html"
+                    <a href="{{ url('/sejarah-dasar-hukum') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Sejarah dan Dasar Hukum</a>
                     <a href="{{ url('/visimisi') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Visi Misi</a>
@@ -56,7 +56,7 @@
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Target & Capaian</a>
                     <a href="{{ url('/inovasi-daerah') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Inovasi Daerah</a>
-                    <a href="{{ url('/kalender-kegiatan') }}"
+                    <a href="{{ route('public.kalender_kegiatan') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Kalender Kegiatan</a>
                 </div>
             </div>
@@ -78,8 +78,7 @@
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Formulir Permohonan</a>
                     <a href="{{ url('/konsultasi-petani') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Konsultasi Petani</a>
-                    <a href="{{ url('/taksi-tani') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Taksi Tani</a>
+
                 </div>
             </div>
 
@@ -175,14 +174,14 @@
             </div>
             <div class="relative group">
                 <button class="nav-link flex items-center gap-1 font-medium transition-colors duration-200">
-                    Tambahan
+                    Lainnya
                     <i
                         class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
                 </button>
                 <div
                     class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
                     <a href="bidang_uptd/tanaman_pangan.html"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700"></a>
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Taksi Tani</a>
                 </div>
             </div>
         </nav>
@@ -235,7 +234,7 @@
                     <a href="{{ url('/inovasi-daerah') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Inovasi
                         Daerah</a>
-                    <a href="{{ url('/kalender-kegiatan') }}"
+                    <a href="{{ route('public.kalender_kegiatan') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Kalender Kegiatan</a>
                 </div>
             </div>
@@ -314,9 +313,9 @@
                 </div>
             </div>
             <div class="flex flex-col">
-                <div class="text-gray-700 font-medium mb-2">Tambahan</div>
+                <div class="text-gray-700 font-medium mb-2">Lainnya</div>
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
-                    <a href="" class="text-sm text-gray-600 hover:text-emerald-700"></a>
+                    <a href="" class="text-sm text-gray-600 hover:text-emerald-700">Taksi Tani</a>
                 </div>
             </div>
         </div>

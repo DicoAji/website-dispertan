@@ -8,6 +8,7 @@ use App\Http\Controllers\PublicController;
 use App\Http\Controllers\FileDinasController;
 use App\Http\Controllers\SkmController;
 use App\Http\Controllers\BidangController;
+use App\Http\Controllers\KalenderKegiatanController;
 use App\Models\Bidang;
 
 
@@ -40,6 +41,11 @@ Route::get('/tugas-fungsi', function () {
     $profile = \App\Models\Profile::first();
     return view('public.tugas_fungsi', compact('profile'));
 })->name('public.tugas_fungsi');
+
+Route::get('/sejarah-dasar-hukum', function () {
+    $profile = \App\Models\Profile::first();
+    return view('public.sejarah_dasar_hukum', compact('profile'));
+})->name('public.sejarah_dasar_hukum');
 
 Route::get('/rencana-kerja', function () {
     $profile = \App\Models\Profile::first();
@@ -108,7 +114,14 @@ Route::get('/berita', function () {
     $profile = \App\Models\Profile::first();
     return view('public.berita', compact('profile'));
 })->name('berita.index');
+Route::get('/galeri-foto', function () {
+    $profile = \App\Models\Profile::first();
 
+    // Mengambil semua data foto dari database, diurutkan dari yang terbaru
+    $koleksiFoto = \App\Models\GaleriFoto::latest()->get();
+
+    return view('public.galeri_foto', compact('profile', 'koleksiFoto'));
+})->name('public.galeri_foto');
 
 // BIDANG PUBLIC
 Route::get('/tanaman-pangan', function () {
@@ -159,6 +172,13 @@ Route::get('/uptd_balai_benih', function () {
     // <-- Kirim kedua variabelnya
     return view('public.bidang.uptd_balai_benih', compact('bidang', 'profile'));
 })->name('public.uptd_balai_benih');
+
+Route::get('/kalender-kegiatan', function () {
+    $profile = \App\Models\Profile::first();
+    $kegiatan = \App\Models\KalenderKegiatan::orderBy('tanggal', 'asc')->get();
+
+    return view('public.kalender_kegiatan', compact('profile', 'kegiatan'));
+})->name('public.kalender_kegiatan');
 
 
 
@@ -217,4 +237,10 @@ Route::prefix('admin')->group(function () {
     Route::post('/bidang', [BidangController::class, 'store'])->name('admin.bidang.store'); // Proses simpan data bidang baru
     Route::put('/bidang/{id}', [BidangController::class, 'update'])->name('admin.bidang.update');
     Route::delete('/bidang/{id}', [BidangController::class, 'destroy'])->name('admin.bidang.destroy');
+
+    // KALENDER KEGIATAN
+    Route::get('/kalender', [KalenderKegiatanController::class, 'index'])->name('admin.kalender.index');
+    Route::post('/kalender', [KalenderKegiatanController::class, 'store'])->name('admin.kalender.store');
+    Route::put('/kalender/{id}', [KalenderKegiatanController::class, 'update'])->name('admin.kalender.update');
+    Route::delete('/kalender/{id}', [KalenderKegiatanController::class, 'destroy'])->name('admin.kalender.destroy');
 });

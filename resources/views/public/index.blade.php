@@ -178,7 +178,7 @@
                 class="max-w-6xl mx-auto py-8 px-10 md:py-12 md:px-16 space-y-16 rounded-[2rem]  bg-gradient-to-br from-[#0a4038] to-[#0daf94]">
                 <div class="text-center ">
                     <h2 class="text-3xl md:text-4xl font-bold  mb-2">Profesor Tani</h2>
-                    <p class="text-sm text-white leading-relaxed">
+                    <p class="text-md text-white leading-relaxed">
                         “Profesor Tani” juga merupakan julukan untuk petani dan penyuluh pertanian
                         (PPL) sebagai garda terdepan ketahanan pangan.
                     </p>
@@ -188,7 +188,7 @@
                         <div class="w-full " data-aos="fade-up" data-aos-delay="300">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div class="flex flex-col">
-                                    <div class="ext-white text-3xl mb-3">
+                                    <div class="ext-white text-2xl mb-2">
                                         <i class="fa-solid fa-chart-line"></i>
                                     </div>
                                     <h4 class="text-xl font-semibold ext-white mb-2">Peningkatan Usaha</h4>
@@ -198,7 +198,7 @@
                                 </div>
 
                                 <div class="flex flex-col">
-                                    <div class="text-white text-3xl mb-3">
+                                    <div class="text-white text-2xl mb-2">
                                         <i class="fa-solid fa-lightbulb"></i>
                                     </div>
                                     <h4 class="text-xl font-semibold text-white mb-2">Solusi Inovatif</h4>
@@ -208,7 +208,7 @@
                                 </div>
 
                                 <div class="flex flex-col">
-                                    <div class="text-white text-3xl mb-3">
+                                    <div class="text-white text-2xl mb-2">
                                         <i class="fa-solid fa-users"></i>
                                     </div>
                                     <h4 class="text-xl font-semibold text-white mb-2">Petani Ahli (Profesor Tani)
@@ -220,7 +220,7 @@
                                 </div>
 
                                 <div class="flex flex-col">
-                                    <div class="text-white text-3xl mb-3">
+                                    <div class="text-white text-2xl mb-2">
                                         <i class="fa-solid fa-trophy"></i>
                                     </div>
                                     <h4 class="text-xl font-semibold text-white mb-2">Hasil Terbaik</h4>
@@ -231,6 +231,8 @@
 
                     </div>
                     <div class="w-full aspect-video p-2  shadow-sm   hover:shadow-md transition ">
+                        {{-- <img src="{{ asset('storage/logo/profesor_tani.png') }}" alt="Background"
+                            class="w-full border h-full rounded-2xl" /> --}}
                         <iframe class="w-full border h-full rounded-2xl" src="https://www.youtube.com/embed/jJ0Q9Uq_97o"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

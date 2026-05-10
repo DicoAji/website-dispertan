@@ -44,17 +44,21 @@
                 <a href="{{ route('admin.bidang.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/bidang*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
                     <i class="fa-solid fa-puzzle-piece w-6"></i>
-                    <span class="ml-2 font-medium">Bidang</span>
+                    <span class="ml-2">Bidang</span>
                 </a>
 
                 <a href="{{ route('pegawai.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('pegawai.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fas fa-users w-6"></i> Data Pegawai
+                    <i class="fas fa-users w-6"></i> <span class="ml-2"> Data Pegawai</span>
                 </a>
 
                 <a href="{{ route('profile.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('profile.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
                     <i class="fas fa-building w-6"></i> Profil Dinas
+                </a>
+                <a href="{{ route('admin.kalender.index') }}"
+                    class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('admin.kalender.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-800' }}">
+                    <i class="fas fa-calendar-alt w-6"></i> Jadwal Kegiatan
                 </a>
 
                 <a href="{{ route('skm.index') }}"
