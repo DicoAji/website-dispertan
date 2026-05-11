@@ -9,9 +9,10 @@ use App\Http\Controllers\FileDinasController;
 use App\Http\Controllers\SkmController;
 use App\Http\Controllers\BidangController;
 use App\Http\Controllers\KalenderKegiatanController;
+use App\Http\Controllers\GaleriFotoController;
+use App\Http\Controllers\TambahanMenuController;
 use App\Models\Bidang;
-
-
+use App\Models\GaleriFoto;
 
 // PUBLICC
 Route::get('/', function () {
@@ -181,6 +182,12 @@ Route::get('/kalender-kegiatan', function () {
 })->name('public.kalender_kegiatan');
 
 
+Route::get('/layanan-informasi/{id}', function ($id) {
+    $profile = \App\Models\Profile::first();
+    $item = \App\Models\Menu::findOrFail($id);
+    return view('public.menu_detail', compact('profile', 'item'));
+})->name('public.menu.show');
+
 
 
 
@@ -243,4 +250,15 @@ Route::prefix('admin')->group(function () {
     Route::post('/kalender', [KalenderKegiatanController::class, 'store'])->name('admin.kalender.store');
     Route::put('/kalender/{id}', [KalenderKegiatanController::class, 'update'])->name('admin.kalender.update');
     Route::delete('/kalender/{id}', [KalenderKegiatanController::class, 'destroy'])->name('admin.kalender.destroy');
+
+    // GaleriFoto
+    Route::get('/galeri', [GaleriFotoController::class, 'index'])->name('admin.galeri.index');
+    Route::post('/galeri', [GaleriFotoController::class, 'store'])->name('admin.galeri.store');
+    Route::put('/galeri/{id}', [GaleriFotoController::class, 'update'])->name('admin.galeri.update');
+    Route::delete('/galeri/{id}', [GaleriFotoController::class, 'destroy'])->name('admin.galeri.destroy');
+
+    // Tambahan Menu
+    Route::get('/tambahan-menu', [TambahanMenuController::class, 'index'])->name('admin.tambahan_menu.index');
+    Route::post('/tambahan-menu', [TambahanMenuController::class, 'store'])->name('admin.tambahan_menu.store');
+    Route::delete('/tambahan-menu/{id}', [TambahanMenuController::class, 'destroy'])->name('admin.tambahan_menu.destroy');
 });

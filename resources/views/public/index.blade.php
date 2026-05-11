@@ -283,16 +283,14 @@
 
         <section class="bg-gray-50 py-20" id="kontak">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-center text-3xl md:text-4xl font-semibold text-gray-400 mb-16 tracking-tight">Hubungi
-                    Kami
-                </h2>
+
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
                     <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div
                             class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
-                            <div class="bg-blue-50 p-4 rounded-2xl text-blue-600 mb-4">
-                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            <div class="bg-blue-50 p-2 rounded-2xl text-blue-600 mb-4">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
                             </div>
                             <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Alamat Kantor</h4>
                             <p class="text-gray-700 text-sm leading-relaxed">{{ $profile->alamat }}</p>
@@ -300,27 +298,27 @@
 
                         <div
                             class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
-                            <div class="bg-green-50 p-4 rounded-2xl text-green-600 mb-4">
+                            <div class="bg-green-50 p-2 rounded-2xl text-green-600 mb-4">
 
-                                <i class="fa-solid fa-phone text-2xl"></i>
+                                <i class="fa-solid fa-phone text-xl"></i>
                             </div>
                             <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Telp</h4>
-                            <p class="text-gray-700 font-bold text-lg">{{ $profile->telp }}</p>
+                            <p class="text-gray-700 text-md">{{ $profile->telp }}</p>
                         </div>
 
                         <div
                             class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
-                            <div class="bg-red-50 p-4 rounded-2xl text-red-600 mb-4">
-                                <i class="fas fa-envelope text-2xl"></i>
+                            <div class="bg-red-50 p-2 rounded-2xl text-red-600 mb-4">
+                                <i class="fas fa-envelope text-xl"></i>
                             </div>
-                            <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Email Resmi</h4>
-                            <p class="text-gray-700 font-medium">{{ $profile->email }}</p>
+                            <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Email </h4>
+                            <p class="text-gray-700 text-md">{{ $profile->email }}</p>
                         </div>
 
                         <div
                             class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
-                            <div class="bg-orange-50 p-4 rounded-2xl text-orange-600 mb-4">
-                                <i class="fas fa-clock text-2xl"></i>
+                            <div class="bg-orange-50 p-2 rounded-2xl text-orange-600 mb-4">
+                                <i class="fas fa-clock text-xl"></i>
                             </div>
                             <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Jam Operasional</h4>
                             <p class="text-gray-700 text-sm">Senin - Jumat: 07:15 - 15:30 WIB</p>

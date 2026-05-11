@@ -106,7 +106,7 @@
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-semibold mb-1">Waktu (Cth: 09:00 WIB)</label>
+                        <label class="block text-sm font-semibold mb-1">Waktu (Contoh: 09:00 WIB)</label>
                         <input type="text" name="waktu"
                             class="w-full border rounded-lg p-2.5 outline-none focus:ring-2 focus:ring-blue-500" required>
                     </div>
@@ -152,8 +152,8 @@
                             class="w-full border rounded-lg p-2.5 outline-none focus:ring-2 focus:ring-amber-500 bg-white"
                             required>
                             <option value="Penyuluhan">Penyuluhan</option>
-                            <option value="Rapat Internal">Rapat Internal</option>
-                            <option value="Event Terbuka">Event Terbuka</option>
+                            <option value="Rapat Internal">Rapat</option>
+                            <option value="Event Terbuka">Event</option>
                             <option value="Lainnya">Lainnya</option>
                         </select>
                     </div>
