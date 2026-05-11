@@ -18,7 +18,6 @@
                         <div
                             class="group relative overflow-hidden rounded-xl shadow-md border border-gray-100 bg-white cursor-pointer hover:shadow-xl transition-all duration-300">
 
-                            {{-- Area Gambar --}}
                             <div class="relative aspect-[4/3] overflow-hidden bg-gray-100">
                                 {{-- Menggunakan asset() untuk memanggil file gambar asli dari storage --}}
                                 <img src="{{ asset('storage/galeri/' . $foto->file) }}" alt="{{ $foto->kegiatan }}"
@@ -39,9 +38,7 @@
                                     title="{{ $foto->kegiatan }}">
                                     {{ $foto->kegiatan }}
                                 </h3>
-
                             </div>
-
                         </div>
                     @endforeach
                 </div>

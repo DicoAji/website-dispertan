@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Apr 2026 pada 08.09
+-- Waktu pembuatan: 11 Bulan Mei 2026 pada 06.40
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -42,10 +42,36 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id`, `judul`, `tanggal_berita`, `foto_berita`, `deskripsi`, `created_at`, `updated_at`) VALUES
-(8, 'Berita 1', '2026-02-23', '1771822337_WhatsApp Image 2026-02-13 at 11.46.57.jpeg', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', '2026-02-22 21:52:17', '2026-02-22 21:52:17'),
-(9, 'Berita 2', '2026-02-23', '1771828481_WhatsApp Image 2026-02-13 at 11.46.57.jpeg', 't is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', '2026-02-22 23:34:41', '2026-02-22 23:34:41'),
-(10, 'Berita 3', '2026-02-23', '1771828614_WhatsApp Image 2026-02-13 at 11.46.57.jpeg', 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn\'t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.', '2026-02-22 23:36:54', '2026-02-22 23:36:54'),
-(11, 'Berita 4', '2026-04-13', '1776044962_image 19.png', 'Lorem ipisumasdhgas asdadgh dsgadghasm  asds asdha asdgasd yaags', '2026-04-12 18:49:22', '2026-04-12 18:49:22');
+(12, 'Selamat memperingati Hari Krida Pertanian 21 Juni 2025', '2026-04-16', '1776316199_berita1 (1).png', 'Hari ini, kita memperingati perjuangan dan dedikasi para petani Indonesia.\r\nMereka yang setiap hari menanam asa, memanen harapan, dan menjaga ketahanan pangan negeri.\r\nMari kita dukung sektor pertanian dengan semangat inovasi, kolaborasi, dan keberlanjutan.\r\nKarena dari benih yang bermutu, tumbuh negeri yang maju.', '2026-04-15 22:09:59', '2026-04-15 22:09:59'),
+(13, 'Grobogan Gelar Panen Raya Jagung Serentak Kuartal II, Produksi Capai 800 Ribu Ton per Tahun', '2026-04-16', '1776316379_berita2.png', 'GROBOGAN, Suaramerdeka.com - Pemerintah Kabupaten Grobogan menggelar kegiatan Panen Raya Jagung Serentak Kuartal II Tahun 2025 di Desa Tambakselo, Kecamatan Wirosari, Rabu 5 Juni 2025.\r\nKegiatan ini menjadi simbol keberhasilan Grobogan dalam mempertahankan predikat sebagai lumbung pangan Provinsi Jawa Tengah, sekaligus penghasil jagung terbesar di Indonesia.', '2026-04-15 22:12:59', '2026-04-15 22:12:59'),
+(14, 'Panen Raya, Harga Gabah di Grobogan Masih Tembus Rp 7.100 /kg', '2026-04-16', '1776316543_ilustrasi-panen-padi-di-kabupaten-grobogan-jawa-te-20260213101410.jpg', 'Murianews, Grobogan – Memasuki puncak musim panen raya pertama di tahun 2026, harga gabah di tingkat petani Kabupaten Grobogan, Jawa Tengah masih menggembirakan. Saat ini, harga Gabah Kering Panen (GKP) menyentuh angka Rp 710.000 per kwintalnya atau Rp 7.100 per kilogram.\r\n\r\nKepala Bidang Tanaman Pangan Dinas Pertanian Grobogan, Cahyo Mulyadi, menyampaikan, harga gabah petani Grobogan tersebut tergolong stabil. Dan masih tetap menguntungkan bagi para petani di tengah melimpahnya pasokan gabah.\r\n\r\nMenurutnya, di Kabupaten Grobogan luas panen pada bulan Februari ini diperkirakan mencapai sekitar 25 ribu hektare. Luasan itu tersebar di berbagai wilayah kecamatan se Kabupaten Grobogan.\r\n\r\nArtikel ini telah tayang di Murianews.com dengan judul \"Panen Raya, Harga Gabah di Grobogan Masih Tembus Rp 7.100 /kg\", Klik untuk baca: https://berita.murianews.com/saiful-anwar/460470/panen-raya-harga-gabah-di-grobogan-masih-tembus-rp-7-100-kg .', '2026-04-15 22:15:43', '2026-04-15 22:15:43');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `bidang`
+--
+
+CREATE TABLE `bidang` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `uraian` varchar(255) NOT NULL,
+  `deskripsi` text DEFAULT NULL,
+  `kategori` varchar(255) NOT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `gambar` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `bidang`
+--
+
+INSERT INTO `bidang` (`id`, `uraian`, `deskripsi`, `kategori`, `file`, `gambar`, `created_at`, `updated_at`) VALUES
+(2, 'Uraian pekerjaan bidang Kebun 1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Perkebunan', NULL, 'bidang/perkebunan/1777178420_img_mar.jpeg', '2026-04-25 21:40:20', NULL),
+(3, 'Uraian pekerjaan bidang pangan 1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Tanaman Pangan', 'bidang/tanaman_pangan/1777186828_file_BILLING_CODE_1770621296.pdf', 'bidang/tanaman_pangan/1777186828_img_instagram_com_deanadhaa.jpg', '2026-04-26 00:00:28', NULL),
+(4, 'uraian pekerjaan bidang psp', 'agdjhagdjha', 'PSP', 'bidang/psp/1777193981_file_BILLING_CODE_1770710391.pdf', NULL, '2026-04-26 01:59:41', NULL),
+(5, 'uraian pekerjaan bidang hortikultura', 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).', 'Hortikultura', 'bidang/hortikultura/1777194030_file_BILLING_CODE_1770710321.pdf', 'bidang/hortikultura/1777194030_img_2.jpg', '2026-04-26 02:00:30', NULL);
 
 -- --------------------------------------------------------
 
@@ -107,8 +133,41 @@ CREATE TABLE `file_dinas` (
 
 INSERT INTO `file_dinas` (`id`, `uraian`, `file`, `created_at`, `updated_at`) VALUES
 (1, 'Standar Pelayanan Dinas Pertanian Kabupaten Grobogan', '1771909356_SOP_compressed.pdf', '2026-02-23 21:33:14', '2026-02-23 23:43:49'),
-(2, 'Perbup 78 Th 2021 SOTK Dispertan Hsl', '1771915384_19. Perbup 78 Th 2021 SOTK Dispertan Hsl PB blm td tgn.pdf', '2026-02-23 23:43:04', '2026-02-23 23:43:04'),
-(3, 'Rencana Kerja Dinas Pertanian 2026', '1775097108_rencana_kerja.pdf', '2026-04-01 19:31:48', '2026-04-01 19:31:48');
+(2, 'SOP Pelayanan', '1771915384_19. Perbup 78 Th 2021 SOTK Dispertan Hsl PB blm td tgn.pdf', '2026-02-23 23:43:04', '2026-04-16 05:41:51'),
+(3, 'Rencana Kerja Dinas Pertanian 2026', '1778243570_RENJA DISPERTAN 2026.pdf', '2026-04-01 19:31:48', '2026-05-08 05:32:50'),
+(4, 'LKjIP DINAS PERTANIAN TAHUN 2025', '1776342402_LKjIP DINAS PERTANIAN TAHUN 2025.pdf', '2026-04-16 05:26:42', '2026-04-16 05:26:42'),
+(5, 'Program Kegiatan (dummy)', '1776392657_Program Kegiatan.pdf', '2026-04-16 19:24:17', '2026-04-16 19:24:17'),
+(6, 'Target Capaian dummy', '1776392966_Target Capaian.pdf', '2026-04-16 19:29:26', '2026-04-16 19:29:26'),
+(7, 'Inovasi Daerah dummy', '1776392998_Inovasi Daerah.pdf', '2026-04-16 19:29:58', '2026-04-16 19:29:58'),
+(8, 'Standar Pelayanan Dummy', '1776393326_Standar Pelayanan.pdf', '2026-04-16 19:35:26', '2026-04-16 19:35:26'),
+(9, 'Informasi OPT dan Perkiraan Iklim dummy', '1777434517_Informasi OPT dan Perkiraan Iklim.pdf', '2026-04-28 20:48:37', '2026-04-29 00:39:36'),
+(10, 'Penyuluhan dan Artikel Teknis dummy', '1777434830_Penyuluhan dan Artikel Teknis.pdf', '2026-04-28 20:53:50', '2026-04-29 00:39:42'),
+(11, 'Renstra dinas dummy', '1777448366_Rensra Dinas.pdf', '2026-04-29 00:39:26', '2026-04-29 00:39:49'),
+(12, 'RTP/SPIP dummy', '1777448595_RTPSPIP.pdf', '2026-04-29 00:43:15', '2026-04-29 00:43:22'),
+(13, 'Rencana Aksi OPD dummy', '1777448648_Rencana Aksi OPD.pdf', '2026-04-29 00:44:08', '2026-04-29 00:44:08'),
+(14, 'SOP Bidang Dummy', '1777448678_SOP bidang.pdf', '2026-04-29 00:44:38', '2026-04-29 00:44:38'),
+(15, 'Peraturan Bupati Grobogan Nomor 27 Tahun 2018', '1778242238_perbupnomor27tahun2018perubahanatasperaturanbupatigroboganno.67tahun2016tentangkedudukansusunanorganisasitugaspokokfungsiuraiantugasjabatandantatakerjadinaspertaniankab.grob.pdf', '2026-04-29 00:49:06', '2026-05-08 05:10:38');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `galeri_fotos`
+--
+
+CREATE TABLE `galeri_fotos` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `kegiatan` varchar(255) NOT NULL,
+  `file` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `galeri_fotos`
+--
+
+INSERT INTO `galeri_fotos` (`id`, `kegiatan`, `file`, `created_at`, `updated_at`) VALUES
+(1, 'foto kegiatan 1', '1778465632_Y172XTS0bYo9dExPpgGIzsWNCkXG32PYXmDl727N.jpg', '2026-05-10 19:13:52', '2026-05-10 19:13:52');
 
 -- --------------------------------------------------------
 
@@ -144,6 +203,54 @@ CREATE TABLE `job_batches` (
   `created_at` int(11) NOT NULL,
   `finished_at` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `kalender_kegiatan`
+--
+
+CREATE TABLE `kalender_kegiatan` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama_kegiatan` varchar(255) NOT NULL,
+  `kategori` varchar(255) NOT NULL,
+  `tanggal` date NOT NULL,
+  `waktu` varchar(255) NOT NULL,
+  `lokasi` varchar(255) NOT NULL,
+  `deskripsi` text DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `kalender_kegiatan`
+--
+
+INSERT INTO `kalender_kegiatan` (`id`, `nama_kegiatan`, `kategori`, `tanggal`, `waktu`, `lokasi`, `deskripsi`, `created_at`, `updated_at`) VALUES
+(1, 'Jadwal Kegiatan', 'Penyuluhan', '2026-04-29', '09.00 WIB', 'Aula Dinas', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `menu`
+--
+
+CREATE TABLE `menu` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `menu` varchar(255) NOT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `menu`
+--
+
+INSERT INTO `menu` (`id`, `menu`, `link`, `file`, `created_at`, `updated_at`) VALUES
+(1, 'Taksi Tani', 'https://psp.pertanian.go.id/berita/program-taksi-alsintan-kementan-untuk-kemandirian-petani', NULL, '2026-05-10 20:18:43', '2026-05-10 20:18:43'),
+(2, 'tambahan 2 dummy', NULL, '1778470379_Telkom.pdf', '2026-05-10 20:32:59', '2026-05-10 20:32:59');
 
 -- --------------------------------------------------------
 
@@ -199,8 +306,6 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`nip`, `nama_lengkap`, `jabatan`, `foto`, `created_at`, `updated_at`, `gender`) VALUES
-('196802271989032004', 'WINARSIH', 'Pengadministrasi Perkantoran', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:01', 'p'),
-('196803251996032003', 'Ir. POERBORINI SOENOTO, M.M.', 'Kepala UPTD Laboratorium Pertanian Kelas', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:05', 'p'),
 ('196902161990032003', 'NUR AFIFAH', 'Analis Tata Usaha', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:08', 'p'),
 ('197106251994032005', 'SITI SUYANTI, S.P, M.M', 'Penelaah Teknis Kebijakan', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:10', 'p'),
 ('197502062025212007', 'WAHYU SULISTIOWATI, S.Sos.', 'Penata Layanan Operasional', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:14', 'p'),
@@ -256,7 +361,7 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`id`, `nama_opd`, `visi`, `misi`, `alamat`, `email`, `telp`, `facebook`, `instagram`, `youtube`, `struktur_organisasi`, `created_at`, `updated_at`, `maklumat_layanan`, `tugas_fungsi`) VALUES
-(1, 'Dinas Pertanian Kabupaten Grobogan', 'Menuju Grobogan Maju, Sejahtera dan Berkelanjutan', 'Menguatkan pertumbuhan dan daya saing ekonomi masyarakat berbasis sektor unggulan <br> \r\nMengurangi kemiskinan dan pengangguran <br>\r\nMeningkatkan kualitas sumber daya manusia yang sehat, cerdas, dan berbudaya <br> \r\nMembangun infrastruktur yang handal dan merata, serta meningkatkan ketangguhan wilayah dan lingkungan hidup yang berkualitas <br>\r\nMeningkatkan kualitas tata kelola pemerintahan dan pelayanan publik dengan penguatan reformasi birokrasi', 'Jl. Pangeran Diponegoro No.20, 58114, Area Sawah, Kalongan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 5811', '@dispertan_grobogan', '(0292) 421478', 'https://www.facebook.com/dinaspertaniankabupatengrobogan', 'https://www.instagram.com/dispertan_grobogan/', 'https://www.youtube.com/channel/UCsrzepHBJH06Dxbtr3E2zeA', 'struktur-1771744736.png', '2026-02-22 04:44:47', '2026-04-12 20:47:08', 'maklumat-1776052028.jpg', 'tugas-fungsi-1774840584.pdf');
+(1, 'Dinas Pertanian Kabupaten Grobogan', 'Menuju Grobogan Maju, Sejahtera dan Berkelanjutan', 'Menguatkan pertumbuhan dan daya saing ekonomi masyarakat berbasis sektor unggulan <br> \r\nMengurangi kemiskinan dan pengangguran <br>\r\nMeningkatkan kualitas sumber daya manusia yang sehat, cerdas, dan berbudaya <br> \r\nMembangun infrastruktur yang handal dan merata, serta meningkatkan ketangguhan wilayah dan lingkungan hidup yang berkualitas <br>\r\nMeningkatkan kualitas tata kelola pemerintahan dan pelayanan publik dengan penguatan reformasi birokrasi', 'Jl. Pangeran Diponegoro No.20, 58114, Area Sawah, Kalongan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 5811', '@dispertan_grobogan', '(0292) 421478', 'https://www.facebook.com/dinaspertaniankabupatengrobogan', 'https://www.instagram.com/dispertan_grobogan/', 'https://www.youtube.com/channel/UCsrzepHBJH06Dxbtr3E2zeA', 'struktur-1771744736.png', '2026-02-22 04:44:47', '2026-05-08 05:15:29', 'maklumat-1776052028.jpg', 'tugas-fungsi-1778242529.pdf');
 
 -- --------------------------------------------------------
 
@@ -323,6 +428,12 @@ ALTER TABLE `berita`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `bidang`
+--
+ALTER TABLE `bidang`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `cache`
 --
 ALTER TABLE `cache`
@@ -350,6 +461,12 @@ ALTER TABLE `file_dinas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `galeri_fotos`
+--
+ALTER TABLE `galeri_fotos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `jobs`
 --
 ALTER TABLE `jobs`
@@ -360,6 +477,18 @@ ALTER TABLE `jobs`
 -- Indeks untuk tabel `job_batches`
 --
 ALTER TABLE `job_batches`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `kalender_kegiatan`
+--
+ALTER TABLE `kalender_kegiatan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `menu`
+--
+ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -415,7 +544,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT untuk tabel `bidang`
+--
+ALTER TABLE `bidang`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
@@ -427,13 +562,31 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `file_dinas`
 --
 ALTER TABLE `file_dinas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT untuk tabel `galeri_fotos`
+--
+ALTER TABLE `galeri_fotos`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `jobs`
 --
 ALTER TABLE `jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `kalender_kegiatan`
+--
+ALTER TABLE `kalender_kegiatan`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `menu`
+--
+ALTER TABLE `menu`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
