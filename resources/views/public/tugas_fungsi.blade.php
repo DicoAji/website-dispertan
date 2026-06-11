@@ -22,7 +22,7 @@
                                 {{ $profile->tugas_fungsi }}
                             </h2>
                             <a href="{{ asset('storage/profil_dinas/' . $profile->tugas_fungsi) }}" download
-                                class="btn-secondary">
+                                class="btn-secondary rounded-full">
                                 <i class="fas fa-download mr-2"></i> Unduh PDF
                             </a>
                         </div>

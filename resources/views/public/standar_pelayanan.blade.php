@@ -23,7 +23,7 @@
                             {{ $lkjip->uraian }}
                         </h2>
                         <a href="{{ asset('storage/dokumen/' . $lkjip->file) }}" download
-                            class="inline-flex items-center px-5 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-bold transition shadow-md rounded">
+                            class="inline-flex items-center px-5 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-bold transition shadow-md rounded-full">
                             <i class="fas fa-download mr-2"></i> Unduh PDF
                         </a>
                     </div>

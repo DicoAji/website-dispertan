@@ -11,8 +11,10 @@ use App\Http\Controllers\BidangController;
 use App\Http\Controllers\KalenderKegiatanController;
 use App\Http\Controllers\GaleriFotoController;
 use App\Http\Controllers\TambahanMenuController;
+use App\Http\Controllers\AuthController;
 use App\Models\Bidang;
 use App\Models\GaleriFoto;
+
 
 // PUBLICC
 Route::get('/', function () {
@@ -83,14 +85,14 @@ Route::get('/informasi-opt-iklim', function () {
     $profile = \App\Models\Profile::first();
     return view('public.informasi_opt_iklim', compact('profile'));
 })->name('public.informasi_opt_iklim');
-Route::get('/penyuluhan-artikel-teknis', function () {
-    $profile = \App\Models\Profile::first();
-    return view('public.penyuluhan_artikel_teknis', compact('profile'));
-})->name('public.penyuluhan_artikel_teknis');
-Route::get('/ppid', function () {
-    $profile = \App\Models\Profile::first();
-    return view('public.ppid', compact('profile'));
-})->name('public.ppid');
+// Route::get('/penyuluhan-artikel-teknis', function () {
+//     $profile = \App\Models\Profile::first();
+//     return view('public.penyuluhan_artikel_teknis', compact('profile'));
+// })->name('public.penyuluhan_artikel_teknis');
+// Route::get('/ppid', function () {
+//     $profile = \App\Models\Profile::first();
+//     return view('public.ppid', compact('profile'));
+// })->name('public.ppid');
 Route::get('/renstra_dinas', function () {
     $profile = \App\Models\Profile::first();
     return view('public.renstra_dinas', compact('profile'));
@@ -193,11 +195,23 @@ Route::get('/layanan-informasi/{id}', function ($id) {
 
 
 // ADMINNNNNN
-Route::get('/admin', function () {
-    return redirect('/admin');
-});
+// Route::get('/admin', function () {
+//     return redirect('/admin');
+// });
+// RUTE LOGIN, LOGOUT & REGISTER
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('/login', [AuthController::class, 'prosesLogin']);
 
-Route::prefix('admin')->group(function () {
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
+// Tambahkan dua baris ini:
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/register', [AuthController::class, 'prosesRegister']);
+
+Route::prefix('admin')->middleware(['auth'])->group(function () {
+
+    // Route::prefix('admin')->group(function () {
     Route::get('/', function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
@@ -261,4 +275,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/tambahan-menu', [TambahanMenuController::class, 'index'])->name('admin.tambahan_menu.index');
     Route::post('/tambahan-menu', [TambahanMenuController::class, 'store'])->name('admin.tambahan_menu.store');
     Route::delete('/tambahan-menu/{id}', [TambahanMenuController::class, 'destroy'])->name('admin.tambahan_menu.destroy');
+    // });
+
+    Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

@@ -12,18 +12,18 @@
             <div class="container mx-auto px-4 relative z-10 text-white">
                 <div class="w-full text-center">
                     <span
-                        class=" items-center gap-2   rounded-full text-xs font-bold tracking-wider uppercase mb-2 inline-flex">
+                        class="items-center gap-2 rounded-full border-amber-200 bg-amber-200 px-3 py-1 text-xs font-bold tracking-wider uppercase mb-4 inline-flex">
                         Selamat Datang di Website
                     </span>
-                    <h1 class="text-white text-4xl md:text-6xl mb-3 uppercase font-extrabold leading-tight  drop-shadow-lg">
-                        Dinas Pertanian<br />
-                        Kabupaten Grobogan
+
+                    <h1
+                        class="text-white  text-4xl md:text-6xl mb-3 uppercase font-extrabold leading-tight drop-shadow-lg min-h-[90px] md:min-h-[140px]">
+                        <span id="typing-text"></span>
                     </h1>
 
-                    <p class="text-lg md:text-xl mb-8 opacity-90">
+                    <p class="text-lg md:text-xl mb-8 opacity-90 delay-700">
                         Portal resmi Dinas Pertanian Kab.Grobogan
                     </p>
-
                 </div>
             </div>
         </section>
@@ -147,7 +147,7 @@
 
                                 <div class="p-6 flex flex-col h-full">
                                     <a href="{{ url('/berita/' . $b->id) }}">
-                                        <h3 class="font-bold text-lg mb-4 line-clamp-2 leading-snug">
+                                        <h3 class="font-semibold text-md mb-4 line-clamp-2 leading-snug">
                                             {{ $b->judul }}
                                         </h3>
                                     </a>
@@ -334,7 +334,24 @@
                 </div>
             </div>
         </section>
+
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var typed = new Typed('#typing-text', {
+                    strings: ['Dinas Pertanian<br />Kabupaten Grobogan'],
+                    typeSpeed: 60, // Kecepatan mengetik
+                    backSpeed: 40, // Kecepatan menghapus teks (biasanya lebih cepat dari mengetik)
+                    backDelay: 3000, // Jeda teks terdiam setelah selesai diketik (3 detik) sebelum dihapus
+                    showCursor: true,
+                    cursorChar: '|',
+                    loop: true, // Mengubah ini menjadi true agar mengetik terus-menerus
+                    startDelay: 300
+                });
+            });
+        </script>
     </main>
+
 
 
 

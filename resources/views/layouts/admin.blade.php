@@ -116,13 +116,22 @@
                     </button>
                     <h2 class="ml-4 text-xl font-semibold text-gray-800 uppercase tracking-tight">@yield('header')</h2>
                 </div>
-                <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-3">
                     <div class="text-right hidden sm:block">
                         <p class="text-xs text-gray-400">Selamat Datang,</p>
                         <p class="text-sm font-bold text-gray-700">Admin Dispertan</p>
                     </div>
                     <img class="h-10 w-10 rounded-full border-2 border-green-500 shadow-sm"
                         src="https://ui-avatars.com/api/?name=Admin&background=059669&color=fff" />
+                    <a href="{{ url('/logout') }}" title="Keluar dari Sistem"
+                        class="flex items-center justify-center h-10 w-10 rounded-full bg-red-500 text-red-800 border-red-800 hover:bg-red-800 hover:text-white transition-colors duration-300 shadow-sm border ">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                            stroke="currentColor" class="w-5 h-5 ml-1">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                        </svg>
+                    </a>
+
                 </div>
             </header>
 

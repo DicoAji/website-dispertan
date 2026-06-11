@@ -23,8 +23,8 @@
                             {{ $sejarahDasarHukum->uraian ?? 'Dokumen Sejarah dan Dasar Hukum' }}
                         </h2>
                         <a href="{{ asset('storage/dokumen/' . $sejarahDasarHukum->file) }}" download
-                            class="inline-flex items-center px-5 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-bold transition shadow-md rounded">
-                            <i class="fas fa-download mr-2"></i> Unduh PDF
+                            class="inline-flex rounded-full items-center px-5 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-bold transition shadow-md ">
+                            <i class="fas fa-download mr-2 "></i> Unduh PDF
                         </a>
                     </div>
                 @else

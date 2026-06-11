@@ -74,10 +74,9 @@
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">SOP Pelayanan</a>
                     <a href="{{ url('/standar-pelayanan') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Standar Pelayanan</a>
-                    <a href="{{ url('/formulir-permohonan') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Formulir Permohonan</a>
+                    {{--
                     <a href="{{ url('/konsultasi-petani') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Konsultasi Petani</a>
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Konsultasi Petani</a> --}}
 
                 </div>
             </div>
@@ -268,10 +267,8 @@
                         Pelayanan</a>
                     <a href="{{ url('/standar-pelayanan') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Standar Pelayanan</a>
-                    <a href="{{ url('/formulir-permohonan') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Formulir Permohonan</a>
-                    <a href="{{ url('/konsultasi-petani') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Konsultasi Petani</a>
+                    {{-- <a href="{{ url('/konsultasi-petani') }}"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Konsultasi Petani</a> --}}
                     <a href="{{ url('/taksi-tani') }}" class="text-sm text-gray-600 hover:text-emerald-700">Taksi
                         Tani</a>
                 </div>
@@ -334,41 +331,34 @@
                         class="text-sm text-gray-600 hover:text-emerald-700">UPTD Laboratorium</a>
                 </div>
             </div>
-            <div class="flex flex-col">
-                <div class="relative group">
-                    <button class="nav-link flex items-center gap-1 font-medium transition-colors duration-200 py-2">
-                        Lainnya
-                        <i
-                            class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
-                    </button>
+            <div class="flex flex-col mt-4">
+                <div class="text-gray-700 font-medium mb-2">Lainnya</div>
 
-                    <div
-                        class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-64 animate-in fade-in slide-in-from-top-2 z-50">
+                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
+                    @php
+                        $menu_tambahan = \App\Models\Menu::all();
+                    @endphp
+
+                    @forelse($menu_tambahan as $m)
                         @php
-                            $menu_tambahan = \App\Models\Menu::all();
+                            // Tentukan link tujuan: jika ada 'link' pakai URL luar, jika ada 'file' arahkan ke halaman detail
+                            $url_tujuan = $m->link ? $m->link : route('public.menu.show', $m->id);
+                            $target = $m->link ? '_blank' : '_self';
                         @endphp
 
-                        @forelse($menu_tambahan as $m)
-                            @php
-                                // Tentukan link tujuan: jika ada 'link' pakai URL luar, jika ada 'file' arahkan ke halaman detail
-                                $url_tujuan = $m->link ? $m->link : route('public.menu.show', $m->id);
-                                $target = $m->link ? '_blank' : '_self';
-                            @endphp
+                        <a href="{{ $url_tujuan }}" target="{{ $target }}"
+                            class="flex items-center justify-between text-sm text-gray-600 hover:text-emerald-700 pr-4">
+                            <span>{{ $m->menu }}</span>
 
-                            <a href="{{ $url_tujuan }}" target="{{ $target }}"
-                                class="flex items-center justify-between px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors border-b border-gray-50 last:border-0">
-                                <span class="font-medium">{{ $m->menu }}</span>
-                                @if ($m->link)
-                                    <i class="fas fa-external-link-alt text-[10px] opacity-50"></i>
-                                @else
-                                    <i class="fas fa-file-download text-[10px] opacity-50"></i>
-                                @endif
-                            </a>
-                        @empty
-                            <span class="block px-4 py-2 text-sm text-gray-400 italic text-center">Belum ada
-                                menu</span>
-                        @endforelse
-                    </div>
+                            @if ($m->link)
+                                <i class="fas fa-external-link-alt text-[10px] opacity-50"></i>
+                            @else
+                                <i class="fas fa-file-download text-[10px] opacity-50"></i>
+                            @endif
+                        </a>
+                    @empty
+                        <span class="text-sm text-gray-400 italic">Belum ada menu</span>
+                    @endforelse
                 </div>
             </div>
         </div>
