@@ -12,6 +12,7 @@ use App\Http\Controllers\KalenderKegiatanController;
 use App\Http\Controllers\GaleriFotoController;
 use App\Http\Controllers\TambahanMenuController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LaporanController;
 use App\Models\Bidang;
 use App\Models\GaleriFoto;
 
@@ -28,7 +29,7 @@ Route::get('/visimisi', function () {
 });
 
 Route::get('/pegawai', function () {
-    $pegawai = \App\Models\Pegawai::orderBy('nip', 'asc')->get();
+    $pegawai = \App\Models\Pegawai::orderBy('tingkat', 'asc')->get();
     $profile = \App\Models\Profile::first();
     return view('public.pegawai', compact('pegawai', 'profile'));
 });
@@ -85,14 +86,7 @@ Route::get('/informasi-opt-iklim', function () {
     $profile = \App\Models\Profile::first();
     return view('public.informasi_opt_iklim', compact('profile'));
 })->name('public.informasi_opt_iklim');
-// Route::get('/penyuluhan-artikel-teknis', function () {
-//     $profile = \App\Models\Profile::first();
-//     return view('public.penyuluhan_artikel_teknis', compact('profile'));
-// })->name('public.penyuluhan_artikel_teknis');
-// Route::get('/ppid', function () {
-//     $profile = \App\Models\Profile::first();
-//     return view('public.ppid', compact('profile'));
-// })->name('public.ppid');
+
 Route::get('/renstra_dinas', function () {
     $profile = \App\Models\Profile::first();
     return view('public.renstra_dinas', compact('profile'));
@@ -183,21 +177,19 @@ Route::get('/kalender-kegiatan', function () {
     return view('public.kalender_kegiatan', compact('profile', 'kegiatan'));
 })->name('public.kalender_kegiatan');
 
-
 Route::get('/layanan-informasi/{id}', function ($id) {
     $profile = \App\Models\Profile::first();
     $item = \App\Models\Menu::findOrFail($id);
     return view('public.menu_detail', compact('profile', 'item'));
 })->name('public.menu.show');
 
+Route::post('/laporan', [LaporanController::class, 'store'])->name('laporan.store');
 
 
 
 
 // ADMINNNNNN
-// Route::get('/admin', function () {
-//     return redirect('/admin');
-// });
+
 // RUTE LOGIN, LOGOUT & REGISTER
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('/login', [AuthController::class, 'prosesLogin']);
@@ -240,9 +232,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 
-
     // FILE DINAS
-
     Route::get('/file-dinas', [FileDinasController::class, 'index'])->name('file_dinas.index');
     Route::post('/file-dinas', [FileDinasController::class, 'store'])->name('file_dinas.store');
     Route::put('/file-dinas/{id}', [FileDinasController::class, 'update'])->name('file_dinas.update');
@@ -277,5 +267,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::delete('/tambahan-menu/{id}', [TambahanMenuController::class, 'destroy'])->name('admin.tambahan_menu.destroy');
     // });
 
+    // Laporan
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('admin.laporan.index');
+    Route::delete('/laporan/{id}', [LaporanController::class, 'destroy'])->name('admin.laporan.destroy');
+
+    // Logout
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });

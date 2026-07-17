@@ -32,6 +32,11 @@
                     <i class="fas fa-home w-6"></i> Dashboard
                 </a>
 
+                <a href="{{ route('profile.index') }}"
+                    class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('profile.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
+                    <i class="fas fa-building w-6"></i> Profil
+                </a>
+
                 <a href="{{ route('admin.berita.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/berita*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
                     <i class="fas fa-newspaper w-6"></i> Berita
@@ -40,28 +45,25 @@
 
                 <a href="{{ route('file_dinas.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/file-dinas*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fas fa-folder-open w-6"></i>File Dinas
+                    <i class="fas fa-folder-open w-6"></i>Dokumen
                 </a>
 
-                <a href="{{ route('admin.bidang.index') }}"
+                {{-- <a href="{{ route('admin.bidang.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/bidang*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
                     <i class="fa-solid fa-puzzle-piece w-6"></i> Bidang
-                </a>
+                </a> --}}
 
                 <a href="{{ route('pegawai.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('pegawai.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
                     <i class="fas fa-users w-6"></i> Pegawai
                 </a>
 
-                <a href="{{ route('profile.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('profile.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fas fa-building w-6"></i> Profil
-                </a>
 
-                <a href="{{ route('admin.kalender.index') }}"
+
+                {{-- <a href="{{ route('admin.kalender.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('admin.kalender.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-800' }} transition">
                     <i class="fas fa-calendar-alt w-6"></i> Jadwal Kegiatan
-                </a>
+                </a> --}}
 
                 <a href="{{ route('admin.galeri.index') }}"
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('admin.galeri.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-800' }} transition">
@@ -71,6 +73,11 @@
                 <a href=""
                     class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/skm*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
                     <i class="fas fa-poll w-6"></i>SKM
+                </a>
+
+                <a href="{{ route('admin.laporan.index') }}"
+                    class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/laporan*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
+                    <i class="fas fa-clipboard-list w-6"></i> Laporan
                 </a>
 
                 <a href="{{ route('admin.tambahan_menu.index') }}"

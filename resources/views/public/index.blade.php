@@ -6,13 +6,13 @@
     <main>
         <section class="relative h-[500px] flex items-center overflow-hidden bg-emerald-900">
             <div class="absolute inset-0 opacity-40">
-                <img src="{{ asset('storage/background/kegiatan-bersih-bersih-rutin.jpeg') }}" alt="Background"
+                <img src="{{ asset('storage/background/petani-tembakau.jpeg') }}" alt="Background"
                     class="w-full h-full object-cover" />
             </div>
             <div class="container mx-auto px-4 relative z-10 text-white">
                 <div class="w-full text-center">
                     <span
-                        class="items-center gap-2 rounded-full border-amber-200 bg-amber-200 px-3 py-1 text-xs font-bold tracking-wider uppercase mb-4 inline-flex">
+                        class="items-center gap-2 rounded-full border-amber-200 bg-emerald-400 px-3 py-1 text-xs font-bold tracking-wider uppercase mb-4 inline-flex">
                         Selamat Datang di Website
                     </span>
 
@@ -28,115 +28,25 @@
             </div>
         </section>
 
-        <section class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold text-gray-800">Unit Kerja</h2>
-                    <p class="text-gray-500 mt-2">
-                        Menjelajahi struktur penunjang ekosistem berkelanjutan.
-                    </p>
-                </div>
-
-                <div class="flex overflow-x-auto gap-6 pb-6 hide-scrollbar">
-                    <div
-                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-6 bg-slate-50 border border-slate-100 rounded-xl">
-                        <span
-                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-slate-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
-                        <div
-                            class="w-16 h-16 bg-slate-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
-                            <i class="fa fa-briefcase"></i>
-                        </div>
-
-                        <h3 class="font-bold text-xl mb-2 text-slate-900 text-center">
-                            Sekretariat
-                        </h3>
-
-                        <p class="text-sm text-slate-700 text-center">
-                            Pengelolaan administrasi dan tata kelola pelayanan internal.
-                        </p>
-                    </div>
-
-                    <div
-                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-6 bg-blue-50 border border-blue-100 rounded-xl">
-                        <span
-                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-blue-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
-
-                        <div
-                            class="w-16 h-16 bg-blue-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
-                            <i class="fa-solid fa-tractor"></i>
-                        </div>
-                        <h3 class="font-bold text-xl mb-2 text-blue-900 text-center">
-                            PSP
-                        </h3>
-                        <p class="text-sm text-blue-700 text-center">
-                            Penyuluhan serta penyediaan sarana dan prasarana pendukung.
-                        </p>
-                    </div>
-
-                    <div
-                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-6 bg-amber-50 border border-amber-100 rounded-xl">
-                        <span
-                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-amber-600 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
-
-                        <div
-                            class="w-16 h-16 bg-amber-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
-                            <i class="fa-solid fa-seedling"></i>
-                        </div>
-                        <h3 class="font-bold text-xl mb-2 text-amber-900 text-center">
-                            Tanaman Pangan
-                        </h3>
-                        <p class="text-sm text-amber-700 text-center">
-                            Peningkatan produksi dan ketahanan komoditas pangan pokok.
-                        </p>
-                    </div>
-
-                    <div
-                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-6 bg-emerald-50 border border-emerald-100 rounded-xl">
-                        <span
-                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-emerald-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
-
-                        <div
-                            class="w-16 h-16 bg-emerald-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
-                            <i class="fa fa-tree"></i>
-                        </div>
-                        <h3 class="font-bold text-xl mb-2 text-emerald-900 text-center">
-                            Perkebunan
-                        </h3>
-                        <p class="text-sm text-emerald-700 text-center">
-                            Pengembangan usaha dan pengelolaan hasil tanaman perkebunan.
-                        </p>
-                    </div>
-
-                    <div
-                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-6 bg-rose-50 border border-rose-100 rounded-xl">
-                        <span
-                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-rose-600 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
-
-                        <div
-                            class="w-16 h-16 bg-rose-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
-                            <i class="fa-solid fa-pepper-hot"></i>
-                        </div>
-                        <h3 class="font-bold text-xl mb-2 text-rose-900 text-center">
-                            Hortikultura
-                        </h3>
-                        <p class="text-sm text-rose-700 text-center">
-                            Budidaya sayuran, buah-buahan, serta tanaman hias dan obat.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="py-16 bg-gray-50" id="berita">
             <div class="container mx-auto px-4">
                 <div class="flex items-center justify-between mb-8">
-                    <h2 class="text-3xl font-bold text-gray-600">Berita Terkini</h2>
-                    <a href="/blogs" class="text-emerald-700 font-semibold hover:underline">Lihat Semua</a>
+                    <div class="">
+                        <h2 class="text-3xl md:text-4xl font-bold  text-emerald-900">Berita Terkini!</h2>
+                        <p class="text-gray-500 mt-1">
+                            Berikut adalah beberapa berita terbaru dari Dinas Pertanian Kab.Grobogan
+                        </p>
+                    </div>
+                    <a href="/berita"
+                        class="inline-block bg-gradient-to-r from-emerald-500 to-emerald-700 text-white font-semibold px-6 py-2.5 rounded-full border-2 border-emerald-300 shadow-[0_0_15px_rgba(52,211,153,0.6)] hover:shadow-[0_0_25px_rgba(52,211,153,0.9)] hover:from-emerald-400 hover:to-emerald-600 hover:border-emerald-200 transition-all duration-300">
+                        Lihat Semua
+                    </a>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @if (isset($berita) && $berita->count() > 0)
-                        @foreach ($berita->take(6) as $b)
+                        {{-- Mengurutkan berdasarkan tanggal terbaru lalu mengambil 3 berita --}}
+                        @foreach ($berita->sortByDesc('tanggal_berita')->take(3) as $b)
                             <article
                                 class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
                                 <a href="{{ url('/berita/' . $b->id) }}" class="block relative h-52 overflow-hidden">
@@ -158,12 +68,10 @@
                                         </span>
 
                                         <a href="{{ url('/berita/' . $b->id) }}"
-                                            class="text-emerald-700 font-bold hover:text-emerald-800 flex items-center">
+                                            class="text-emerald-700 underline hover:text-emerald-800 flex items-center">
                                             Baca <i class="fa fa-arrow-right ml-1"></i>
                                         </a>
-
                                     </div>
-
                                 </div>
                             </article>
                         @endforeach
@@ -172,84 +80,106 @@
             </div>
         </section>
 
-        <!-- PROF TANI -->
-        <section class=" text-white">
-            <div
-                class="max-w-6xl mx-auto py-8 px-10 md:py-12 md:px-16 space-y-16 rounded-[2rem]  bg-gradient-to-br from-[#0a4038] to-[#0daf94]">
-                <div class="text-center ">
-                    <h2 class="text-3xl md:text-4xl font-bold  mb-2">Profesor Tani</h2>
-                    <p class="text-md text-white leading-relaxed">
-                        “Profesor Tani” juga merupakan julukan untuk petani dan penyuluh pertanian
-                        (PPL) sebagai garda terdepan ketahanan pangan.
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold  text-emerald-900">Unit Kerja</h2>
+                    <p class="text-gray-500 mt-2">
+                        Menjelajahi struktur penunjang ekosistem berkelanjutan.
                     </p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-2 items-center mt-12 ">
-                    <div class="space-y-4 md:space-y-2">
-                        <div class="w-full " data-aos="fade-up" data-aos-delay="300">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div class="flex flex-col">
-                                    <div class="ext-white text-2xl mb-2">
-                                        <i class="fa-solid fa-chart-line"></i>
-                                    </div>
-                                    <h4 class="text-xl font-semibold ext-white mb-2">Peningkatan Usaha</h4>
-                                    <p class="ext-white text-sm">Peningkatan Produktivitas kerja dan pengetahuan
-                                        petani.
-                                    </p>
-                                </div>
 
-                                <div class="flex flex-col">
-                                    <div class="text-white text-2xl mb-2">
-                                        <i class="fa-solid fa-lightbulb"></i>
-                                    </div>
-                                    <h4 class="text-xl font-semibold text-white mb-2">Solusi Inovatif</h4>
-                                    <p class="text-white text-sm">
-                                        Menerapkan solusi yang inovatif untuk mendukung kegiatan Pertanian.
-                                    </p>
-                                </div>
+                <div class="flex overflow-x-auto gap-6 pb-6 hide-scrollbar">
+                    <div
+                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-4 bg-slate-200 border border-slate-100 rounded-xl">
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-slate-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
+                        {{-- <div
+                            class="w-16 h-16 bg-slate-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
+                            <i class="fa fa-briefcase"></i>
+                        </div> --}}
 
-                                <div class="flex flex-col">
-                                    <div class="text-white text-2xl mb-2">
-                                        <i class="fa-solid fa-users"></i>
-                                    </div>
-                                    <h4 class="text-xl font-semibold text-white mb-2">Petani Ahli (Profesor Tani)
-                                    </h4>
-                                    <p class="text-white text-sm">
-                                        Setiap petani menjadi ahli untuk bidangnya masing-masing dan saling
-                                        berbagi.
-                                    </p>
-                                </div>
+                        <h3 class="font-bold text-xl mb-2 text-slate-900 text-center">
+                            Sekretariat
+                        </h3>
 
-                                <div class="flex flex-col">
-                                    <div class="text-white text-2xl mb-2">
-                                        <i class="fa-solid fa-trophy"></i>
-                                    </div>
-                                    <h4 class="text-xl font-semibold text-white mb-2">Hasil Terbaik</h4>
-                                    <p class="text-white text-sm">Upaya mencapai hasil terbaik.</p>
-                                </div>
-                            </div>
-                        </div>
-
+                        <p class="text-sm text-slate-700 text-center">
+                            Pengelolaan administrasi dan tata kelola pelayanan internal.
+                        </p>
                     </div>
-                    <div class="w-full aspect-video p-2  shadow-sm   hover:shadow-md transition ">
-                        {{-- <img src="{{ asset('storage/logo/profesor_tani.png') }}" alt="Background"
-                            class="w-full border h-full rounded-2xl" /> --}}
-                        <iframe class="w-full border h-full rounded-2xl" src="https://www.youtube.com/embed/jJ0Q9Uq_97o"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+
+                    <div
+                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-4 bg-blue-200 border border-blue-100 rounded-xl">
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-blue-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
+
+                        {{-- <div
+                            class="w-16 h-16 bg-blue-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
+                            <i class="fa-solid fa-tractor"></i>
+                        </div> --}}
+                        <h3 class="font-bold text-xl mb-2 text-blue-900 text-center">
+                            PSP
+                        </h3>
+                        <p class="text-sm text-blue-700 text-center">
+                            Penyuluhan serta penyediaan sarana dan prasarana pendukung.
+                        </p>
                     </div>
-                </div>
-                <div class="block w-full text-center justify-center">
-                    <a href="https://profesortani.com/" target="_blank" class="btn-primary py-3 px-5 inline-block">
-                        Kunjungi Profesor Tani
-                    </a>
+
+                    <div
+                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-4 bg-amber-200 border border-amber-100 rounded-xl">
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-amber-600 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
+
+                        {{-- <div
+                            class="w-16 h-16 bg-amber-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
+                            <i class="fa-solid fa-seedling"></i>
+                        </div> --}}
+                        <h3 class="font-bold text-xl mb-2 text-amber-900 text-center">
+                            Tanaman Pangan
+                        </h3>
+                        <p class="text-sm text-amber-700 text-center">
+                            Peningkatan produksi dan ketahanan komoditas pangan pokok.
+                        </p>
+                    </div>
+
+                    <div
+                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-4 bg-emerald-200 border border-emerald-100 rounded-xl">
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-emerald-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
+
+                        {{-- <div
+                            class="w-16 h-16 bg-emerald-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
+                            <i class="fa fa-tree"></i>
+                        </div> --}}
+                        <h3 class="font-bold text-xl mb-2 text-emerald-900 text-center">
+                            Perkebunan
+                        </h3>
+                        <p class="text-sm text-emerald-700 text-center">
+                            Pengembangan usaha dan pengelolaan hasil tanaman perkebunan.
+                        </p>
+                    </div>
+
+                    <div
+                        class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-4 bg-rose-200 border border-rose-100 rounded-xl">
+                        <span
+                            class="absolute bottom-0 left-1/2 w-0 h-1 bg-rose-600 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
+
+                        {{-- <div
+                            class="w-16 h-16 bg-rose-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
+                            <i class="fa-solid fa-pepper-hot"></i>
+                        </div> --}}
+                        <h3 class="font-bold text-xl mb-2 text-rose-900 text-center">
+                            Hortikultura
+                        </h3>
+                        <p class="text-sm text-rose-700 text-center">
+                            Budidaya sayuran, buah-buahan, serta tanaman hias dan obat.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
 
-
-
-        <section class="pengaduan  bg-center py-6  mt-12">
+        <section class="pengaduan  bg-center py-6">
             <div class="relative max-w-4xl mx-auto px-4">
                 <div class="text-center mb-4">
                     <h2 class="text-3xl md:text-4xl font-bold  text-emerald-900">Unit Pengaduan / LAPOR!</h2>
@@ -257,7 +187,14 @@
                 </div>
 
                 <div class="bg-white p-6 md:p-10 shadow-2xl rounded-3xl">
-                    <form action="#" method="POST" class="space-y-4">
+                    @if (session('success'))
+                        <div
+                            class="p-4 mb-5 text-center text-sm font-semibold text-emerald-900 bg-emerald-100/80 border border-emerald-200 rounded-full shadow-lg shadow-emerald-100/50">
+                            <i class="fa-solid fa-circle-check text-emerald-600 mr-2 text-base align-middle"></i>
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    <form action="{{ route('laporan.store') }}" method="POST" class="space-y-4">
                         @csrf
                         <div class="">
                             <input type="text" name="nama" required
@@ -282,55 +219,56 @@
         </section>
 
         <section class="bg-gray-50 py-20" id="kontak">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold  text-emerald-900">Informasi Kontak</h2>
+                <p class="text-gray-500 mt-2">
+                    Hubungi kami untuk pertanyaan, saran, atau informasi lebih lanjut.
+                </p>
+            </div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                    <div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div
-                            class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
-                            <div class="bg-blue-50 p-2 rounded-2xl text-blue-600 mb-4">
-                                <i class="fas fa-map-marker-alt text-xl"></i>
-                            </div>
-                            <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Alamat Kantor</h4>
-                            <p class="text-gray-700 text-sm leading-relaxed">{{ $profile->alamat }}</p>
+                {{-- Menggunakan lg:grid-cols-5 agar 5 elemen terbagi rata dalam 1 baris --}}
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    {{-- Kotak 1: Alamat --}}
+                    <div
+                        class=" p-6 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition h-full">
+                        <div class="bg-blue-50 p-2 rounded-2xl text-blue-600 mb-4">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
                         </div>
-
-                        <div
-                            class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
-                            <div class="bg-green-50 p-2 rounded-2xl text-green-600 mb-4">
-
-                                <i class="fa-solid fa-phone text-xl"></i>
-                            </div>
-                            <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Telp</h4>
-                            <p class="text-gray-700 text-md">{{ $profile->telp }}</p>
-                        </div>
-
-                        <div
-                            class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
-                            <div class="bg-red-50 p-2 rounded-2xl text-red-600 mb-4">
-                                <i class="fas fa-envelope text-xl"></i>
-                            </div>
-                            <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Email </h4>
-                            <p class="text-gray-700 text-md">{{ $profile->email }}</p>
-                        </div>
-
-                        <div
-                            class="bg-white p-8 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition">
-                            <div class="bg-orange-50 p-2 rounded-2xl text-orange-600 mb-4">
-                                <i class="fas fa-clock text-xl"></i>
-                            </div>
-                            <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Jam Operasional</h4>
-                            <p class="text-gray-700 text-sm">Senin - Jumat: 07:15 - 15:30 WIB</p>
-                        </div>
+                        <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Alamat Kantor</h4>
+                        <small class="text-gray-700  leading-relaxed">{{ $profile->alamat }}</small>
                     </div>
 
+                    {{-- Kotak 2: Telp --}}
                     <div
-                        class="md:col-span-1 bg-white shadow-xl rounded-xl overflow-hidden minh[400px] border-4 border-white">
+                        class="p-6 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition h-full">
+                        <div class="bg-green-50 p-2 rounded-2xl text-green-600 mb-4">
+                            <i class="fa-solid fa-phone text-xl"></i>
+                        </div>
+                        <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Telp</h4>
+                        <small class="text-gray-700 text-md">{{ $profile->telp }}</small>
+                    </div>
+
+                    {{-- Kotak 3: Email --}}
+                    <div
+                        class="p-6 shadow-sm border border-gray-100 rounded-xl flex flex-col items-start hover:shadow-md transition h-full">
+                        <div class="bg-red-50 p-2 rounded-2xl text-red-600 mb-4">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </div>
+                        <h4 class="text-xs font-bold uppercase text-gray-400 tracking-widest mb-2">Email</h4>
+                        <small class="text-gray-700 text-md">{{ $profile->email }}</small>
+                    </div>
+
+
+
+                    {{-- Kotak 5: Peta --}}
+                    <div class=" shadow-xl rounded-xl overflow-hidden border-4 border-white h-full min-h-[250px]">
                         <iframe
                             src="https://maps.google.com/maps?width=600&height=400&hl=en&q=dinas%20pertanian%20grobogan&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-                            width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+                            width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy">
+                        </iframe>
                     </div>
+
                 </div>
             </div>
         </section>

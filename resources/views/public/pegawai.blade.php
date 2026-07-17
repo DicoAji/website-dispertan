@@ -19,7 +19,7 @@
                     <div class="relative w-full">
                         <input type="text" id="simple-search"
                             class="bg-white border border-gray-50 text-gray-900 text-sm rounded-full focus:ring-green-500 focus:border-green-500 block w-full pl-6 pr-12 p-3"
-                            placeholder="Cari berdasarkan nama, nip, atau jabatan..." />
+                            placeholder="Cari berdasarkan nama, atau jabatan..." />
                     </div>
                     <div class="p-3 ml-2 text-sm font-medium text-white bg-green-700 rounded-full border border-green-700">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,8 +31,10 @@
             </div>
 
             {{-- Grid Pegawai (Hanya SATU Loop Utama) --}}
-            <div id="container-pegawai" class="grid   grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
-                @forelse($pegawai as $p)
+            <div id="container-pegawai" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6">
+
+                {{-- Tambahkan sortBy('tingkat') di sini agar terurut dari 1, 2, 3, ke 4 --}}
+                @forelse($pegawai->sortBy('tingkat') as $p)
                     @php
                         // Tentukan foto default berdasarkan gender dari database
                         $foto_default =
@@ -60,18 +62,20 @@
                                 {{ $p->jabatan }}
                             </p>
                             @if ($p->nip)
-                                <p class="text-gray-400 text-[9px] md:text-[10px] mt-2 tracking-tighter">
-                                    NIP. {{ $p->nip }}
-                                </p>
+                                {{-- <p class="text-gray-400 text-[9px] md:text-[10px] mt-2 tracking-tighter">
+                        NIP. {{ $p->nip }}
+                    </p> --}}
                             @endif
                         </div>
                     </div>
+
                 @empty
                     <div class="col-span-full text-center py-20 text-gray-400">
                         <i class="fas fa-user-friends fa-3x mb-3"></i>
                         <p>Data pegawai belum tersedia.</p>
                     </div>
                 @endforelse
+
             </div>
 
             {{-- Notifikasi Jika Hasil Tidak Ditemukan --}}

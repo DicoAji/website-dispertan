@@ -5,7 +5,7 @@
 @section('content')
     <section class="pt-12">
         <div class="space-y-8">
-            <div class="max-w-5xl mx-auto px-4">
+            <div class="max-w-6xl mx-auto px-4">
                 {{-- Header Halaman --}}
                 <div class="text-center   mb-3">
                     <h2 class="text-2xl font-bold text-gray-900 mb-1">Tugas dan Fungsi</h2>
@@ -17,24 +17,15 @@
                     @if ($profile && $profile->tugas_fungsi)
                         {{-- Info Dokumen --}}
                         <div class="mb-6 flex flex-col md:flex-row md:items-center justify-between border-b pb-4 gap-4">
-                            <h2 class="text-md  text-gray-700 flex items-center">
+                            <h2 class="text-md text-gray-700 flex items-center">
                                 <i class="fas fa-file-pdf text-red-500 mr-2 text-2xl"></i>
-                                {{ $profile->tugas_fungsi }}
+                                Tugas dan Fungsi Dinas Pertanian Kab. Grobogan
                             </h2>
-                            <a href="{{ asset('storage/profil_dinas/' . $profile->tugas_fungsi) }}" download
-                                class="btn-secondary rounded-full">
+                            <a href="{{ asset('storage/profil_dinas/' . $profile->tugas_fungsi) }}"
+                                download="Tugas dan Fungsi Dinas Pertanian Kab. Grobogan.pdf"
+                                class="inline-flex items-center px-5 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-bold transition shadow-md rounded-full">
                                 <i class="fas fa-download mr-2"></i> Unduh PDF
                             </a>
-                        </div>
-
-                        {{-- Container Pratinjau PDF --}}
-                        <div class="relative w-full  overflow-hidden bg-gray-100 border border-gray-300 shadow-inner"
-                            style="height: 800px;">
-                            {{-- Menggunakan PDF.js Viewer (Mozilla) --}}
-                            <iframe
-                                src="https://mozilla.github.io/pdf.js/web/viewer.html?file={{ asset('storage/profil_dinas/' . $profile->tugas_fungsi) }}"
-                                class="w-full h-full border-none">
-                            </iframe>
                         </div>
                     @else
                         {{-- Tampilan jika data kosong --}}

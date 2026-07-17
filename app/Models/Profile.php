@@ -10,6 +10,7 @@ class Profile extends Model
 
     protected $fillable = [
         'nama_opd',
+        'sejarah',
         'visi',
         'misi',
         'struktur_organisasi',

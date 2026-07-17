@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 11 Jun 2026 pada 07.48
+-- Waktu pembuatan: 17 Jul 2026 pada 06.04
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -44,7 +44,8 @@ CREATE TABLE `berita` (
 INSERT INTO `berita` (`id`, `judul`, `tanggal_berita`, `foto_berita`, `deskripsi`, `created_at`, `updated_at`) VALUES
 (12, 'Selamat memperingati Hari Krida Pertanian 21 Juni 2025', '2026-04-16', '1776316199_berita1 (1).png', 'Hari ini, kita memperingati perjuangan dan dedikasi para petani Indonesia.\r\nMereka yang setiap hari menanam asa, memanen harapan, dan menjaga ketahanan pangan negeri.\r\nMari kita dukung sektor pertanian dengan semangat inovasi, kolaborasi, dan keberlanjutan.\r\nKarena dari benih yang bermutu, tumbuh negeri yang maju.', '2026-04-15 22:09:59', '2026-04-15 22:09:59'),
 (13, 'Grobogan Gelar Panen Raya Jagung Serentak Kuartal II, Produksi Capai 800 Ribu Ton per Tahun', '2026-04-16', '1776316379_berita2.png', 'GROBOGAN, Suaramerdeka.com - Pemerintah Kabupaten Grobogan menggelar kegiatan Panen Raya Jagung Serentak Kuartal II Tahun 2025 di Desa Tambakselo, Kecamatan Wirosari, Rabu 5 Juni 2025.\r\nKegiatan ini menjadi simbol keberhasilan Grobogan dalam mempertahankan predikat sebagai lumbung pangan Provinsi Jawa Tengah, sekaligus penghasil jagung terbesar di Indonesia.', '2026-04-15 22:12:59', '2026-04-15 22:12:59'),
-(14, 'Panen Raya, Harga Gabah di Grobogan Masih Tembus Rp 7.100 /kg', '2026-04-16', '1776316543_ilustrasi-panen-padi-di-kabupaten-grobogan-jawa-te-20260213101410.jpg', 'Murianews, Grobogan – Memasuki puncak musim panen raya pertama di tahun 2026, harga gabah di tingkat petani Kabupaten Grobogan, Jawa Tengah masih menggembirakan. Saat ini, harga Gabah Kering Panen (GKP) menyentuh angka Rp 710.000 per kwintalnya atau Rp 7.100 per kilogram.\r\n\r\nKepala Bidang Tanaman Pangan Dinas Pertanian Grobogan, Cahyo Mulyadi, menyampaikan, harga gabah petani Grobogan tersebut tergolong stabil. Dan masih tetap menguntungkan bagi para petani di tengah melimpahnya pasokan gabah.\r\n\r\nMenurutnya, di Kabupaten Grobogan luas panen pada bulan Februari ini diperkirakan mencapai sekitar 25 ribu hektare. Luasan itu tersebar di berbagai wilayah kecamatan se Kabupaten Grobogan.\r\n\r\nArtikel ini telah tayang di Murianews.com dengan judul \"Panen Raya, Harga Gabah di Grobogan Masih Tembus Rp 7.100 /kg\", Klik untuk baca: https://berita.murianews.com/saiful-anwar/460470/panen-raya-harga-gabah-di-grobogan-masih-tembus-rp-7-100-kg .', '2026-04-15 22:15:43', '2026-04-15 22:15:43');
+(14, 'Panen Raya, Harga Gabah di Grobogan Masih Tembus Rp 7.100 /kg', '2026-04-16', '1776316543_ilustrasi-panen-padi-di-kabupaten-grobogan-jawa-te-20260213101410.jpg', 'Murianews, Grobogan – Memasuki puncak musim panen raya pertama di tahun 2026, harga gabah di tingkat petani Kabupaten Grobogan, Jawa Tengah masih menggembirakan. Saat ini, harga Gabah Kering Panen (GKP) menyentuh angka Rp 710.000 per kwintalnya atau Rp 7.100 per kilogram.\r\n\r\nKepala Bidang Tanaman Pangan Dinas Pertanian Grobogan, Cahyo Mulyadi, menyampaikan, harga gabah petani Grobogan tersebut tergolong stabil. Dan masih tetap menguntungkan bagi para petani di tengah melimpahnya pasokan gabah.\r\n\r\nMenurutnya, di Kabupaten Grobogan luas panen pada bulan Februari ini diperkirakan mencapai sekitar 25 ribu hektare. Luasan itu tersebar di berbagai wilayah kecamatan se Kabupaten Grobogan.\r\n\r\nArtikel ini telah tayang di Murianews.com dengan judul \"Panen Raya, Harga Gabah di Grobogan Masih Tembus Rp 7.100 /kg\", Klik untuk baca: https://berita.murianews.com/saiful-anwar/460470/panen-raya-harga-gabah-di-grobogan-masih-tembus-rp-7-100-kg .', '2026-04-15 22:15:43', '2026-04-15 22:15:43'),
+(16, 'Berita 4', '2026-07-16', '1784188392_Petani-Grobogan.jpg', 'Petani di Sukorejo Grobogan dapat Bantuan 13.625 Kg Benih Padi', '2026-07-16 00:53:12', '2026-07-16 00:53:12');
 
 -- --------------------------------------------------------
 
@@ -145,8 +146,7 @@ INSERT INTO `file_dinas` (`id`, `uraian`, `file`, `created_at`, `updated_at`) VA
 (11, 'Renstra dinas dummy', '1777448366_Rensra Dinas.pdf', '2026-04-29 00:39:26', '2026-04-29 00:39:49'),
 (12, 'RTP/SPIP dummy', '1777448595_RTPSPIP.pdf', '2026-04-29 00:43:15', '2026-04-29 00:43:22'),
 (13, 'Rencana Aksi OPD dummy', '1777448648_Rencana Aksi OPD.pdf', '2026-04-29 00:44:08', '2026-04-29 00:44:08'),
-(14, 'SOP Bidang Dummy', '1777448678_SOP bidang.pdf', '2026-04-29 00:44:38', '2026-04-29 00:44:38'),
-(15, 'Peraturan Bupati Grobogan Nomor 27 Tahun 2018', '1778242238_perbupnomor27tahun2018perubahanatasperaturanbupatigroboganno.67tahun2016tentangkedudukansusunanorganisasitugaspokokfungsiuraiantugasjabatandantatakerjadinaspertaniankab.grob.pdf', '2026-04-29 00:49:06', '2026-05-08 05:10:38');
+(14, 'SOP Bidang Dummy', '1777448678_SOP bidang.pdf', '2026-04-29 00:44:38', '2026-04-29 00:44:38');
 
 -- --------------------------------------------------------
 
@@ -232,6 +232,28 @@ INSERT INTO `kalender_kegiatan` (`id`, `nama_kegiatan`, `kategori`, `tanggal`, `
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `laporan`
+--
+
+CREATE TABLE `laporan` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `telp` varchar(20) NOT NULL,
+  `pengaduan` text NOT NULL,
+  `created_at` timestamp NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data untuk tabel `laporan`
+--
+
+INSERT INTO `laporan` (`id`, `nama`, `telp`, `pengaduan`, `created_at`, `updated_at`) VALUES
+(1, 'DICO AJI PRASETYO', '8098809808', 'hallo admin', '2026-07-12 20:48:55', '2026-07-12 20:48:55');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `menu`
 --
 
@@ -249,8 +271,8 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `menu`, `link`, `file`, `created_at`, `updated_at`) VALUES
-(1, 'Taksi Tani', 'https://psp.pertanian.go.id/berita/program-taksi-alsintan-kementan-untuk-kemandirian-petani', NULL, '2026-05-10 20:18:43', '2026-05-10 20:18:43'),
-(2, 'tambahan 2 dummy', NULL, '1778470379_Telkom.pdf', '2026-05-10 20:32:59', '2026-05-10 20:32:59');
+(3, 'Profesor Tani', 'https://profesortani.com/', NULL, '2026-07-12 21:19:22', '2026-07-12 21:19:22'),
+(4, 'Taksi Tani', 'https://taksi-alsintan-grobogan.lovable.app/', NULL, '2026-07-16 00:47:22', '2026-07-16 00:47:22');
 
 -- --------------------------------------------------------
 
@@ -295,6 +317,7 @@ CREATE TABLE `pegawai` (
   `nip` char(18) NOT NULL,
   `nama_lengkap` varchar(150) NOT NULL,
   `jabatan` varchar(100) NOT NULL,
+  `tingkat` tinyint(4) DEFAULT NULL,
   `foto` varchar(255) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
@@ -305,32 +328,31 @@ CREATE TABLE `pegawai` (
 -- Dumping data untuk tabel `pegawai`
 --
 
-INSERT INTO `pegawai` (`nip`, `nama_lengkap`, `jabatan`, `foto`, `created_at`, `updated_at`, `gender`) VALUES
-('196902161990032003', 'NUR AFIFAH', 'Analis Tata Usaha', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:08', 'p'),
-('197106251994032005', 'SITI SUYANTI, S.P, M.M', 'Penelaah Teknis Kebijakan', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:10', 'p'),
-('197502062025212007', 'WAHYU SULISTIOWATI, S.Sos.', 'Penata Layanan Operasional', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:14', 'p'),
-('197503192008012003', 'MARYATI, S.E., M.M.', 'Penelaah Teknis Kebijakan', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:17', 'p'),
-('197510252009021003', 'TAUFIQ BUDI PRASETYO, S.P, M.E', 'Kepala Bidang Perkebunan', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:19', 'l'),
-('197511142010012008', 'PROBO WINDASTUTI, S.E., Akt. M.M.', 'Kepala Sub Bagian Umum', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:25', 'p'),
-('197605122006041018', 'SETYO WICAKSONO, S.E., M.M', 'Kepala Sub Bagian Keuangan', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:12:29', 'l'),
-('197707142005011005', 'CAHYO MULYADI, S.P.', 'Kepala Bidang Tanaman Pangan', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:02', 'l'),
-('198204052010012017', 'WIWIT RAHMAWATI, STP', 'Kepala Sub Bagian Perencanaan', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:05', 'p'),
-('198204232010011016', 'PUJIYONO, STP', 'Kepala Bidang Holtikultura', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:08', 'l'),
-('198410012011011003', 'SURONO, STP', 'Kepala UPTD Balai Benih Pertanian Kelas', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:11', 'l'),
-('198510282023212028', 'MUYA CANDRANIA, S.TP', 'Analis Pasar Hasil Pertanian Ahli Pertama', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:15', 'p'),
-('198606132010011012', 'KUKUH PRASETYO RUSADY, S.H., M.M', 'Sekretaris', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:17', 'l'),
-('198612102009021004', 'WAKID MUTOWAL, S.TP, M.Sc.', 'Kepala Bidang Penyuluhan, Sarana dan Prasarana', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:19', 'l'),
-('198905272020121003', 'MUCHAMAD GHOFURUDIN, S.Kom', 'Pranata Komputer Ahli Pertama', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:22', 'l'),
-('199007152020122014', 'MUSHON NIFAH, A.Md', 'Pengelola Data dan Informasi', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:25', 'p'),
-('199103212023211017', 'FIRDAUS TRI LUTFI, S.TP.', 'Analis Pasar Hasil Pertanian Ahli Pertama', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:28', 'l'),
-('199109262020121016', 'HASAN RANJANI, A.Md', 'Pengelola Data dan Informasi', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:32', 'l'),
-('199111092023211011', 'NGUDI AJI JAKA YUWANA, S.T.P.', 'Analis Pasar Hasil Pertanian Ahli Pertama', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:36', 'l'),
-('199501092025051001', 'HIMAWAN KUNCORO, S.Kom.', 'Analis Sumber Daya Manusia Aparatur Ahli Pertama', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:43', 'l'),
-('199509022024212010', 'SEPT ANGGRAENI, A.Md.A.B', 'Arsiparis Terampil', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:46', 'p'),
-('199612132020122002', 'PUSPITASARI, S.P', 'Pengawas Benih Tanaman Ahli Pertama', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:49', 'l'),
-('199709172020122016', 'LIYA ASTUTI, S.Ak', 'Penelaah Teknis Kebijakan', 'default.jpg', '2026-02-21 09:42:53', '2026-02-23 06:13:51', 'p'),
-('199904242024211003', 'LUTFI PRASETYO AJI, S.TP.', 'Pengawas Mutu Hasil Pertanian Ahli Pertama', 'default.jpg', '2026-02-21 09:42:53', '2026-02-21 09:42:53', NULL),
-('200112122025051002', 'DICO AJI PRASETYO, S.Kom.', 'Pranata Komputer Ahli Pertama', 'default.jpg', '2026-02-21 09:42:53', '2026-02-21 09:42:53', NULL);
+INSERT INTO `pegawai` (`nip`, `nama_lengkap`, `jabatan`, `tingkat`, `foto`, `created_at`, `updated_at`, `gender`) VALUES
+('196902161990032003', 'NUR AFIFAH', 'Analis Tata Usaha', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:13:59', 'p'),
+('197106251994032005', 'SITI SUYANTI, S.P, M.M', 'Penelaah Teknis Kebijakan', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:27', 'p'),
+('197502062025212007', 'WAHYU SULISTIOWATI, S.Sos.', 'Penata Layanan Operasional', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:24', 'p'),
+('197503192008012003', 'MARYATI, S.E., M.M.', 'Penelaah Teknis Kebijakan', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:13:54', 'p'),
+('197510252009021003', 'TAUFIQ BUDI PRASETYO, S.P, M.E', 'Kepala Bidang Perkebunan & Plt Sekretaris', 2, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:12:29', 'l'),
+('197511142010012008', 'PROBO WINDASTUTI, S.E., Akt. M.M.', 'Kepala Sub Bagian Umum', 3, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:13:23', 'p'),
+('197605122006041018', 'SETYO WICAKSONO, S.E., M.M', 'Kepala Sub Bagian Keuangan', 3, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:13:28', 'l'),
+('197707142005011005', 'CAHYO MULYADI, S.P.', 'Kepala Bidang Tanaman Pangan', 2, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:13:11', 'l'),
+('198204052010012017', 'WIWIT RAHMAWATI, STP', 'Kepala Sub Bagian Perencanaan', 3, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:13:42', 'p'),
+('198204232010011016', 'PUJIYONO, STP', 'Kepala Bidang Holtikultura & Plt Kepala Bidang PSP', 2, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:12:54', 'l'),
+('198410012011011003', 'SURONO, STP', 'Kepala UPTD Balai Benih Pertanian Kelas', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:06', 'l'),
+('198510282023212028', 'MUYA CANDRANIA, S.TP', 'Analis Pasar Hasil Pertanian Ahli Pertama', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:32', 'p'),
+('198612102009021004', 'WAKID MUTOWAL, S.TP, M.Sc.', 'Kepala Dinas', 1, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:12:03', 'l'),
+('198905272020121003', 'MUCHAMAD GHOFURUDIN, S.Kom', 'Pranata Komputer Ahli Pertama', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:09', 'l'),
+('199007152020122014', 'MUSHON NIFAH, A.Md', 'Pengelola Data dan Informasi', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:36', 'p'),
+('199103212023211017', 'FIRDAUS TRI LUTFI, S.TP.', 'Analis Pasar Hasil Pertanian Ahli Pertama', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:39', 'l'),
+('199109262020121016', 'HASAN RANJANI, A.Md', 'Pengelola Data dan Informasi', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:41', 'l'),
+('199111092023211011', 'NGUDI AJI JAKA YUWANA, S.T.P.', 'Analis Pasar Hasil Pertanian Ahli Pertama', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:44', 'l'),
+('199501092025051001', 'HIMAWAN KUNCORO, S.Kom.', 'Analis Sumber Daya Manusia Aparatur Ahli Pertama', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:47', 'l'),
+('199509022024212010', 'SEPT ANGGRAENI, A.Md.A.B', 'Arsiparis Terampil', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:49', 'p'),
+('199612132020122002', 'PUSPITASARI, S.P', 'Pengawas Benih Tanaman Ahli Pertama', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:52', 'l'),
+('199709172020122016', 'LIYA ASTUTI, S.Ak', 'Penelaah Teknis Kebijakan', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:55', 'p'),
+('199904242024211003', 'LUTFI PRASETYO AJI, S.TP.', 'Pengawas Mutu Hasil Pertanian Ahli Pertama', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:57', NULL),
+('200112122025051002', 'DICO AJI PRASETYO, S.Kom.', 'Pranata Komputer Ahli Pertama', 4, 'default.jpg', '2026-02-21 09:42:53', '2026-07-17 03:14:59', NULL);
 
 -- --------------------------------------------------------
 
@@ -343,6 +365,7 @@ CREATE TABLE `profile` (
   `nama_opd` varchar(255) NOT NULL,
   `visi` text DEFAULT NULL,
   `misi` text DEFAULT NULL,
+  `sejarah` text DEFAULT NULL,
   `alamat` text NOT NULL,
   `email` varchar(100) DEFAULT NULL,
   `telp` varchar(20) DEFAULT NULL,
@@ -360,8 +383,8 @@ CREATE TABLE `profile` (
 -- Dumping data untuk tabel `profile`
 --
 
-INSERT INTO `profile` (`id`, `nama_opd`, `visi`, `misi`, `alamat`, `email`, `telp`, `facebook`, `instagram`, `youtube`, `struktur_organisasi`, `created_at`, `updated_at`, `maklumat_layanan`, `tugas_fungsi`) VALUES
-(1, 'Dinas Pertanian Kabupaten Grobogan', 'Menuju Grobogan Maju, Sejahtera dan Berkelanjutan', 'Menguatkan pertumbuhan dan daya saing ekonomi masyarakat berbasis sektor unggulan <br> \r\nMengurangi kemiskinan dan pengangguran <br>\r\nMeningkatkan kualitas sumber daya manusia yang sehat, cerdas, dan berbudaya <br> \r\nMembangun infrastruktur yang handal dan merata, serta meningkatkan ketangguhan wilayah dan lingkungan hidup yang berkualitas <br>\r\nMeningkatkan kualitas tata kelola pemerintahan dan pelayanan publik dengan penguatan reformasi birokrasi', 'Jl. Pangeran Diponegoro No.20, 58114, Area Sawah, Kalongan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 5811', '@dispertan_grobogan', '(0292) 421478', 'https://www.facebook.com/dinaspertaniankabupatengrobogan', 'https://www.instagram.com/dispertan_grobogan/', 'https://www.youtube.com/channel/UCsrzepHBJH06Dxbtr3E2zeA', 'struktur-1771744736.png', '2026-02-22 04:44:47', '2026-05-08 05:15:29', 'maklumat-1776052028.jpg', 'tugas-fungsi-1778242529.pdf');
+INSERT INTO `profile` (`id`, `nama_opd`, `visi`, `misi`, `sejarah`, `alamat`, `email`, `telp`, `facebook`, `instagram`, `youtube`, `struktur_organisasi`, `created_at`, `updated_at`, `maklumat_layanan`, `tugas_fungsi`) VALUES
+(1, 'Dinas Pertanian Kabupaten Grobogan', 'Menuju Grobogan Maju, Sejahtera dan Berkelanjutan', 'Menguatkan pertumbuhan dan daya saing ekonomi masyarakat berbasis sektor unggulan <br> \r\nMengurangi kemiskinan dan pengangguran <br>\r\nMeningkatkan kualitas sumber daya manusia yang sehat, cerdas, dan berbudaya <br> \r\nMembangun infrastruktur yang handal dan merata, serta meningkatkan ketangguhan wilayah dan lingkungan hidup yang berkualitas <br>\r\nMeningkatkan kualitas tata kelola pemerintahan dan pelayanan publik dengan penguatan reformasi birokrasi', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Jl. Pangeran Diponegoro No.20, 58114, Area Sawah, Kalongan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 5811', '@dispertan_grobogan', '(0292) 421478', 'https://www.facebook.com/dinaspertaniankabupatengrobogan', 'https://www.instagram.com/dispertan_grobogan/', 'https://www.youtube.com/channel/UCsrzepHBJH06Dxbtr3E2zeA', 'struktur-1771744736.png', '2026-02-22 04:44:47', '2026-07-13 00:29:30', 'maklumat-1776052028.jpg', 'tugas-fungsi-1778242529.pdf');
 
 -- --------------------------------------------------------
 
@@ -493,6 +516,12 @@ ALTER TABLE `kalender_kegiatan`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `laporan`
+--
+ALTER TABLE `laporan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `menu`
 --
 ALTER TABLE `menu`
@@ -551,7 +580,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `bidang`
@@ -590,10 +619,16 @@ ALTER TABLE `kalender_kegiatan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT untuk tabel `laporan`
+--
+ALTER TABLE `laporan`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT untuk tabel `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`

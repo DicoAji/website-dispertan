@@ -5,7 +5,6 @@
 
 @section('content')
     <div class="max-w-5xl mx-auto space-y-6 pb-10">
-
         @if (session('success'))
             <div id="notif-success"
                 class="flex items-center p-4 mb-6 bg-green-50 border-l-4 border-green-500 rounded-r-xl shadow-sm animate-fade-in">
@@ -23,22 +22,6 @@
         @endif
 
         <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-            <div class="bg-green-700 p-8 text-white">
-                <div class="flex items-center space-x-4">
-                    <div class="bg-white p-3 rounded-xl shadow-inner flex items-center justify-center">
-                        <img src="{{ asset('storage/logo/lambang_grobogan.png') }}" alt="Logo Grobogan"
-                            class="h-12 w-auto object-contain">
-                    </div>
-
-                    <div>
-                        <h2 class="text-2xl font-bold">{{ $profile->nama_opd }}</h2>
-                        <p class="text-green-100 flex items-center italic">
-                            <i class="fas fa-map-marker-alt mr-2"></i> Kabupaten Grobogan
-                        </p>
-                    </div>
-                </div>
-            </div>
-
             <div class="p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="md:col-span-2 space-y-4">
                     <h3 class="text-lg font-bold text-gray-800 border-b pb-2">Informasi Umum</h3>
@@ -53,7 +36,7 @@
                         </div>
                         <div class="md:col-span-2">
                             <p class="text-xs text-gray-400 font-bold uppercase">Alamat Kantor</p>
-                            <p class="text-gray-700 leading-relaxed">{{ $profile->alamat }}</p>
+                            <p class="text-gray-700 ">{{ $profile->alamat }}</p>
                         </div>
                     </div>
                 </div>
@@ -78,15 +61,30 @@
             </div>
         </div>
 
-
         <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
-            <div class="flex items-center space-x-3 mb-2">
+            <div class="flex items-center space-x-3 mb-4">
+                <div class="bg-yellow-100 p-2 rounded-lg">
+                    <i class="fas fa-book-open text-yellow-600"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800">Sejarah</h3>
+            </div>
+            <div class="text-gray-600 leading-relaxed text-sm">
+                @if ($profile->sejarah)
+                    {!! nl2br($profile->sejarah) !!}
+                @else
+                    <p class="text-gray-400 italic">Uraian sejarah belum diisi</p>
+                @endif
+            </div>
+        </div>
+
+        <div class="bg-white px-8 py-4 rounded-2xl shadow-sm border border-gray-200">
+            <div class="flex items-center space-x-3">
                 <div class="bg-orange-100 p-2 rounded-lg">
                     <i class="fas fa-lightbulb text-orange-600"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-800">Visi</h3>
             </div>
-            <p class="text-gray-600 italic leading-relaxed text-center py-2 text-lg">
+            <p class="text-gray-600 italic leading-relaxed text-center text-md">
                 "{{ $profile->visi }}"
             </p>
         </div>
@@ -102,7 +100,6 @@
                 {!! nl2br($profile->misi) !!}
             </div>
         </div>
-
 
         <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200">
             <div class="flex items-center space-x-3 mb-6">
@@ -178,7 +175,6 @@
             </div>
         </div>
 
-
         <div class="flex justify-end pt-4">
             <button onclick="toggleModal('modalEditProfile')"
                 class="bg-green-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-green-700 transition shadow-lg shadow-green-200 flex items-center">
@@ -205,6 +201,10 @@
                             <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Nama OPD</label>
                             <input type="text" name="nama_opd" value="{{ $profile->nama_opd }}" required
                                 class="w-full rounded-lg border-gray-300 p-2.5 border focus:ring-green-500">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Sejarah</label>
+                            <textarea name="sejarah" rows="6" class="w-full rounded-lg border-gray-300 p-2.5 border focus:ring-green-500">{{ $profile->sejarah }}</textarea>
                         </div>
                         <div class="md:col-span-2">
                             <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Visi</label>

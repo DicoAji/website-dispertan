@@ -18,6 +18,7 @@ class ProfileController extends Controller
         // 1. Validasi Input
         $request->validate([
             'nama_opd' => 'required|string|max:255',
+            'sejarah'  => 'nullable|string',
             'visi'     => 'required|string',
             'misi'     => 'required|string',
             'email'    => 'required|string|max:100',

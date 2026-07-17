@@ -12,5 +12,6 @@ class Pegawai extends Model
     public $incrementing = false;  // Karena NIP bukan angka auto-increment
     protected $keyType = 'string';
 
-    protected $fillable = ['nip', 'nama_lengkap', 'jabatan', 'foto', 'gender'];
+    // Tambahkan 'tingkat' di dalam array fillable
+    protected $fillable = ['nip', 'nama_lengkap', 'jabatan', 'tingkat', 'foto', 'gender'];
 }
