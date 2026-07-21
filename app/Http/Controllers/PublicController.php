@@ -5,20 +5,21 @@ namespace App\Http\Controllers;
 use App\Models\Profile;
 use App\Models\Berita;
 use Illuminate\Http\Request;
+use App\Models\PopupAd;
 
 class PublicController extends Controller
 {
 
     public function index()
     {
-        // Mengambil data profil untuk header/footer
+        // Pastikan variabel $popup dikirim ke view
+        $popup = \App\Models\PopupAd::first();
+
+        // Pastikan $berita juga dikirim agar tidak error
+        $berita = \App\Models\Berita::all();
         $profile = \App\Models\Profile::first();
 
-        // MENGAMBIL DATA BERITA (Terbaru berdasarkan tanggal)
-        $berita = \App\Models\Berita::latest('tanggal_berita')->get();
-
-        // Pastikan variabel 'berita' dikirim ke view
-        return view('landing.index', compact('profile', 'berita'));
+        return view('index', compact('popup', 'berita', 'profile'));
     }
     public function visimisi()
     {

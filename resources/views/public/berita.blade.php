@@ -19,42 +19,43 @@
             {{-- Grid Konten Berita --}}
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @if (isset($berita) && $berita->count() > 0)
-                    {{-- Saya menghapus take(6) agar di halaman ini semua berita muncul.
-                         Jika ingin dibatasi, Anda bisa tambahkan kembali menjadi $berita->take(6) --}}
                     @foreach ($berita as $b)
                         <article
-                            class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group flex flex-col h-full">
+                            class="relative h-80 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
 
-                            {{-- Gambar Berita --}}
-                            <a href="{{ url('/berita/' . $b->id) }}"
-                                class="block relative h-52 overflow-hidden flex-shrink-0">
+                            {{-- Gambar Berita (Background) --}}
+                            <a href="{{ url('/berita/' . $b->id) }}" class="absolute inset-0 block">
                                 <img src="{{ asset('storage/berita/' . $b->foto_berita) }}" alt="{{ $b->judul }}"
                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                     onerror="this.onerror=null;this.src='{{ asset('img/no-image.png') }}'" />
+
+                                {{-- Efek Gradasi Hitam agar teks terbaca --}}
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                                </div>
                             </a>
 
-                            {{-- Isi Konten --}}
-                            <div class="p-6 flex flex-col flex-grow">
-                                <a href="{{ url('/berita/' . $b->id) }}" class="flex-grow">
+                            {{-- Isi Konten (Overlay di atas gambar) --}}
+                            <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end pointer-events-none">
+
+                                {{-- Tanggal --}}
+                                <span class="text-xs md:text-sm text-gray-300 mb-2 font-medium">
+                                    <i class="fa fa-calendar-o mr-1"></i>
+                                    {{ \Carbon\Carbon::parse($b->tanggal_berita)->translatedFormat('d F Y') }}
+                                </span>
+
+                                {{-- Judul --}}
+                                <a href="{{ url('/berita/' . $b->id) }}" class="pointer-events-auto">
                                     <h3
-                                        class="font-bold text-lg mb-4 line-clamp-2 leading-snug group-hover:text-emerald-700 transition-colors">
+                                        class="font-bold text-lg text-white mb-3 line-clamp-2 leading-snug group-hover:text-emerald-400 transition-colors">
                                         {{ $b->judul }}
                                     </h3>
                                 </a>
 
-                                {{-- Meta (Tanggal & Tombol Baca) --}}
-                                <div
-                                    class="flex items-center justify-between text-sm mt-auto pt-4 border-t border-gray-100">
-                                    <span class="text-xs md:text-sm text-gray-500 pointer-events-none">
-                                        <i class="fa fa-calendar-o mr-1"></i>
-                                        {{ \Carbon\Carbon::parse($b->tanggal_berita)->translatedFormat('d F Y') }}
-                                    </span>
-
-                                    <a href="{{ url('/berita/' . $b->id) }}"
-                                        class="text-emerald-700 font-bold hover:text-emerald-800 flex items-center">
-                                        Baca <i class="fa fa-arrow-right ml-1"></i>
-                                    </a>
-                                </div>
+                                {{-- Tombol Baca --}}
+                                <a href="{{ url('/berita/' . $b->id) }}"
+                                    class="text-emerald-400 font-bold hover:text-emerald-300 flex items-center text-sm pointer-events-auto w-max">
+                                    Baca <i class="fa fa-arrow-right ml-2"></i>
+                                </a>
                             </div>
 
                         </article>

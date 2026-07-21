@@ -26,72 +26,66 @@
                     class="h-8 w-auto mr-3 object-contain">
                 <span class="text-xl font-bold tracking-wider">DISPERTAN</span>
             </div>
-            <nav class="pt-6 px-4 pb-6 space-y-2 flex-1 overflow-y-auto custom-scrollbar">
+            <nav class="pt-6 px-4 pb-6 space-y-1 flex-1 overflow-y-auto custom-scrollbar text-sm font-medium">
+
                 <a href="{{ url('/admin') }}"
-                    class="flex items-center py-3 px-4 rounded-lg transition {{ request()->is('admin') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }}">
-                    <i class="fas fa-home w-6"></i> Dashboard
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->is('admin') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-home w-6 text-center"></i>
+                    <span class="ml-2">Dashboard</span>
                 </a>
 
                 <a href="{{ route('profile.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('profile.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fas fa-building w-6"></i> Profil
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('profile.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-building w-6 text-center"></i>
+                    <span class="ml-2">Profil</span>
                 </a>
 
                 <a href="{{ route('admin.berita.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/berita*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fas fa-newspaper w-6"></i> Berita
-
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->is('admin/berita*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-newspaper w-6 text-center"></i>
+                    <span class="ml-2">Berita</span>
                 </a>
 
                 <a href="{{ route('file_dinas.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/file-dinas*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fas fa-folder-open w-6"></i>Dokumen
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->is('admin/file-dinas*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-folder-open w-6 text-center"></i>
+                    <span class="ml-2">Dokumen</span>
                 </a>
-
-                {{-- <a href="{{ route('admin.bidang.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/bidang*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fa-solid fa-puzzle-piece w-6"></i> Bidang
-                </a> --}}
 
                 <a href="{{ route('pegawai.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('pegawai.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fas fa-users w-6"></i> Pegawai
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('pegawai.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-users w-6 text-center"></i>
+                    <span class="ml-2">Pegawai</span>
                 </a>
-
-
-
-                {{-- <a href="{{ route('admin.kalender.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('admin.kalender.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-800' }} transition">
-                    <i class="fas fa-calendar-alt w-6"></i> Jadwal Kegiatan
-                </a> --}}
 
                 <a href="{{ route('admin.galeri.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('admin.galeri.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-800' }} transition">
-                    <i class="fas fa-images w-6"></i> Galeri/Foto
-                </a>
-
-                <a href=""
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/skm*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fas fa-poll w-6"></i>SKM
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('admin.galeri.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-images w-6 text-center"></i>
+                    <span class="ml-2">Galeri</span>
                 </a>
 
                 <a href="{{ route('admin.laporan.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->is('admin/laporan*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fas fa-clipboard-list w-6"></i> Laporan
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->is('admin/laporan*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-clipboard-list w-6 text-center"></i>
+                    <span class="ml-2">Laporan</span>
+                </a>
+                <a href="{{ route('admin.informasi.index') }}"
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('admin.informasi.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-info-circle w-6 text-center"></i>
+                    <span class="ml-2">Informasi</span>
                 </a>
 
                 <a href="{{ route('admin.tambahan_menu.index') }}"
-                    class="flex items-center py-3 px-4 rounded-lg {{ request()->routeIs('admin.tambahan_menu.*') ? 'bg-green-900 shadow-inner' : 'hover:bg-green-700' }} transition">
-                    <i class="fas fa-folder-plus w-6"></i> Tambahan Menu
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('admin.tambahan_menu.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-folder-plus w-6 text-center"></i>
+                    <span class="ml-2">Tambahan Menu</span>
                 </a>
 
                 <style>
-                    /* Menghilangkan panah bawaan browser pada elemen summary */
                     summary::-webkit-details-marker {
                         display: none;
                     }
 
-                    /* Modifikasi tampilan Scrollbar khusus untuk Sidebar */
                     .custom-scrollbar::-webkit-scrollbar {
                         width: 6px;
                     }
@@ -102,13 +96,11 @@
 
                     .custom-scrollbar::-webkit-scrollbar-thumb {
                         background-color: #14532d;
-                        /* Warna green-900 Tailwind */
                         border-radius: 10px;
                     }
 
                     .custom-scrollbar::-webkit-scrollbar-thumb:hover {
                         background-color: #064e3b;
-                        /* Warna yang lebih gelap saat di-hover */
                     }
                 </style>
             </nav>

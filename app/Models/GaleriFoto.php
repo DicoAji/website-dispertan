@@ -16,5 +16,7 @@ class GaleriFoto extends Model
     protected $fillable = [
         'kegiatan',
         'file',
+        'kategori',
+        'deskripsi'
     ];
 }

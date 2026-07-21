@@ -21,6 +21,8 @@ class Profile extends Model
         'instagram',
         'youtube',
         'maklumat_layanan',
+        'sop_pelayanan',
         'tugas_fungsi',
+        'narasi_tugas_fungsi'
     ];
 }

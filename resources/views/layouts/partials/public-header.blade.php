@@ -88,13 +88,12 @@
                 </button>
                 <div
                     class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-60 animate-in fade-in slide-in-from-top-2 z-50">
-                    <a href="{{ url('/rencana-kerja') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Rencana Kerja</a>
+
                     <a href="{{ url('/inovasi-daerah') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Inovasi Daerah</a>
-                    <a href="{{ url('/informasi-opt-iklim') }}"
+                    {{-- <a href="{{ url('/informasi-opt-iklim') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Informasi OPT & Perkiraan
-                        Iklim</a>
+                        Iklim</a> --}}
                     <a href="{{ url('/penyuluhan-artikel-teknis') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Penyuluhan & Artikel
                         Teknis</a>
@@ -102,7 +101,7 @@
                 </div>
             </div>
 
-            <div class="relative group">
+            {{-- <div class="relative group">
                 <button
                     class="nav-link flex items-center gap-1 font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
                     Dokumen
@@ -113,6 +112,8 @@
                     class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
                     <a href="{{ url('/renstra-dinas') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Renstra Dinas</a>
+                    <a href="{{ url('/rencana-kerja') }}"
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Rencana Kerja</a>
                     <a href="{{ url('/rka-dpa') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">RKA/DPA</a>
                     <a href="{{ url('/lkjip') }}"
@@ -126,13 +127,17 @@
                     <a href="{{ url('/peraturan-regulasi') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Peraturan & Regulasi</a>
                 </div>
-            </div>
+            </div> --}}
+
+            <a href="{{ url('/dokumen') }}"
+                class="nav-link flex items-center font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
+                Dokumen
+            </a>
             <div class="relative group">
                 <a href="{{ url('/ppid') }}">
                     <button
                         class="nav-link flex items-center gap-1 font-medium hover:text-emerald-700 px-3 py-2 transition-colors ">
                         PPID
-
                     </button>
                 </a>
                 </a>
@@ -149,12 +154,12 @@
                     class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-64 animate-in fade-in slide-in-from-top-2 z-50">
                     <a href="{{ url('/berita') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Berita</a>
-                    <a href="{{ url('/artikel-wawasan-pertanian') }}"
+                    <a href="{{ route('koleksi.artikel') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Artikel & Wawasan
                         Pertanian</a>
-                    <a href="{{ url('/galeri-foto') }}"
+                    <a href="{{ route('koleksi.foto') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Galeri Foto</a>
-                    <a href="{{ url('/video') }}"
+                    <a href="{{ route('koleksi.video') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Video</a>
                 </div>
             </div>
@@ -277,20 +282,19 @@
                         class="text-sm text-gray-600 hover:text-emerald-700">Standar Pelayanan</a> --}}
                     {{-- <a href="{{ url('/konsultasi-petani') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Konsultasi Petani</a> --}}
-                    <a href="{{ url('/taksi-tani') }}" class="text-sm text-gray-600 hover:text-emerald-700">Taksi
-                        Tani</a>
+                    {{-- <a href="{{ url('/taksi-tani') }}" class="text-sm text-gray-600 hover:text-emerald-700">Taksi
+                        Tani</a> --}}
                 </div>
             </div>
 
             <div class="flex flex-col">
                 <div class="text-gray-700 font-medium mb-2">Informasi</div>
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
-                    <a href="{{ url('/rencana-kerja') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Rencana Kerja</a>
+
                     <a href="{{ url('/inovasi-daerah') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Inovasi Daerah</a>
-                    <a href="{{ url('/informasi-opt-iklim') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Informasi OPT & Perkiraan Iklim</a>
+                    {{-- <a href="{{ url('/informasi-opt-iklim') }}"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Informasi OPT & Perkiraan Iklim</a> --}}
                     <a href="{{ url('/penyuluhan-artikel-teknis') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Penyuluhan & Artikel Teknis</a>
 
@@ -298,21 +302,9 @@
             </div>
 
             <div class="flex flex-col">
-                <div class="text-gray-700 font-medium mb-2">Dokumen</div>
-                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
-                    <a href="dokumen/renstra_dinas.html" class="text-sm text-gray-600 hover:text-emerald-700">Renstra
-                        Dinas</a>
-                    <a href="dokumen/rka_dpa.html" class="text-sm text-gray-600 hover:text-emerald-700">RKA/DPA</a>
-                    <a href="{{ url('/lkjip') }}" class="text-sm text-gray-600 hover:text-emerald-700">LKJIP</a>
-                    <a href="{{ url('/rtp-spip') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">RTP/SPIP</a>
-                    <a href="{{ url('/rencana-aksi-opd') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Rencana Aksi OPD</a>
-                    <a href="{{ url('/sop-bidang') }}" class="text-sm text-gray-600 hover:text-emerald-700">SOP
-                        Bidang</a>
-                    <a href="{{ url('/peraturan-regulasi') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Peraturan & Regulasi</a>
-                </div>
+                <a href="{{ url('/dokumen') }}">
+                    <div class="text-gray-700 font-medium mb-2">Dokumen</div>
+                </a>
             </div>
             <div class="flex flex-col">
                 <a href="{{ url('/ppid') }}">
@@ -324,11 +316,12 @@
                 <div class="text-gray-700 font-medium mb-2">Berita</div>
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
                     <a href="{{ url('/berita') }}" class="text-sm text-gray-600 hover:text-emerald-700">Berita</a>
-                    <a href="{{ url('/artikel-wawasan-pertanian') }}"
+                    <a href="{{ route('koleksi.artikel') }}"
                         class="text-sm text-gray-600 hover:text-emerald-700">Artikel & Wawasan Pertanian</a>
-                    <a href="{{ url('/galeri-foto') }}" class="text-sm text-gray-600 hover:text-emerald-700">Galeri
+                    <a href="{{ route('koleksi.foto') }}" class="text-sm text-gray-600 hover:text-emerald-700">Galeri
                         Foto</a>
-                    <a href="{{ url('/video') }}" class="text-sm text-gray-600 hover:text-emerald-700">Video</a>
+                    <a href="{{ route('koleksi.video') }}"
+                        class="text-sm text-gray-600 hover:text-emerald-700">Video</a>
                 </div>
             </div>
 

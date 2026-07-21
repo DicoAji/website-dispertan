@@ -4,6 +4,52 @@
 
 @section('content')
     <main>
+
+        {{-- ========================================== --}}
+        {{-- POPUP INFORMASI (Muncul otomatis saat halaman dibuka) --}}
+        {{-- ========================================== --}}
+        @if (isset($popup) && $popup->gambar)
+            <div id="homePopup"
+                class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/70 backdrop-blur-sm p-4 transition-opacity duration-300 opacity-0">
+                <div id="homePopupContent"
+                    class="relative w-full max-w-md transform scale-95 transition-transform duration-300">
+
+                    {{-- Glow aksen di belakang kartu --}}
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-br from-emerald-400 via-emerald-500 to-amber-400 rounded-[2rem] blur-lg opacity-40">
+                    </div>
+
+                    <div class="relative bg-white rounded-3xl shadow-2xl overflow-hidden ring-1 ring-white/50">
+
+                        {{-- Label mengambang --}}
+                        <div class="absolute top-4 left-4 z-10">
+                            <span
+                                class="inline-flex items-center gap-1.5 bg-white/90 backdrop-blur-sm text-emerald-800 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm">
+                                <i class="fa-solid fa-bullhorn text-emerald-600"></i> Informasi
+                            </span>
+                        </div>
+
+                        {{-- Tombol tutup --}}
+                        <button type="button" onclick="closeHomePopup()"
+                            class="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full bg-black/50 text-white hover:bg-black/70 hover:rotate-90 transition-all duration-300">
+                            <i class="fas fa-times"></i>
+                        </button>
+
+                        {{-- Gambar --}}
+                        <div class="relative bg-gray-50">
+                            <img src="{{ asset('storage/popup/' . $popup->gambar) }}"
+                                alt="{{ $popup->kegiatan ?? 'Informasi' }}" class="w-full max-h-[65vh] object-contain">
+                            <div
+                                class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/30 to-transparent pointer-events-none">
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        @endif
+
         <section class="relative h-[500px] flex items-center overflow-hidden bg-emerald-900">
             <div class="absolute inset-0 opacity-40">
                 <img src="{{ asset('storage/background/petani-tembakau.jpeg') }}" alt="Background"
@@ -42,39 +88,61 @@
                         Lihat Semua
                     </a>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
                     @if (isset($berita) && $berita->count() > 0)
-                        {{-- Mengurutkan berdasarkan tanggal terbaru lalu mengambil 3 berita --}}
-                        @foreach ($berita->sortByDesc('tanggal_berita')->take(3) as $b)
+                        @php
+                            $sortedBerita = $berita->sortByDesc('tanggal_berita');
+                            $beritaTerbaru = $sortedBerita->first();
+                            $beritaSelanjutnya = $sortedBerita->skip(1)->take(3);
+                        @endphp
+
+                        {{-- BAGIAN KIRI: 1 Berita Utama (Overlay Text) --}}
+                        @if ($beritaTerbaru)
                             <article
-                                class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all group">
-                                <a href="{{ url('/berita/' . $b->id) }}" class="block relative h-52 overflow-hidden">
-                                    <img src="{{ asset('storage/berita/' . $b->foto_berita) }}" alt="{{ $b->judul }}"
+                                class="lg:col-span-7 relative rounded-xl overflow-hidden shadow-sm hover:shadow-md transition group">
+                                <a href="{{ url('/berita/' . $beritaTerbaru->id) }}" class="block relative h-80">
+                                    <img src="{{ asset('storage/berita/' . $beritaTerbaru->foto_berita) }}"
+                                        alt="{{ $beritaTerbaru->judul }}"
                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                         onerror="this.onerror=null;this.src='{{ asset('img/no-image.png') }}'" />
+
+                                    {{-- Overlay Gradient & Teks --}}
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 text-white">
+                                        <span class="text-xs text-gray-300 mb-1">
+                                            {{ \Carbon\Carbon::parse($beritaTerbaru->tanggal_berita)->translatedFormat('d F Y') }}
+                                        </span>
+                                        <h2 class="font-bold text-xl mb-2 leading-tight  transition-colors">
+                                            {{ $beritaTerbaru->judul }}</h2>
+
+                                    </div>
                                 </a>
+                            </article>
+                        @endif
 
-                                <div class="p-6 flex flex-col h-full">
-                                    <a href="{{ url('/berita/' . $b->id) }}">
-                                        <h3 class="font-semibold text-md mb-4 line-clamp-2 leading-snug">
-                                            {{ $b->judul }}
-                                        </h3>
+                        {{-- BAGIAN KANAN: 3 Berita Selanjutnya (Tanpa Padding Kotak) --}}
+                        <div class="lg:col-span-5 flex flex-col justify-between gap-4 py-1">
+                            @foreach ($beritaSelanjutnya as $b)
+                                <article class="flex gap-4 items-center group">
+                                    <a href="{{ url('/berita/' . $b->id) }}"
+                                        class="w-32 h-24 flex-shrink-0 overflow-hidden rounded-lg shadow-sm">
+                                        <img src="{{ asset('storage/berita/' . $b->foto_berita) }}"
+                                            alt="{{ $b->judul }}"
+                                            class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                                            onerror="this.onerror=null;this.src='{{ asset('img/no-image.png') }}'" />
                                     </a>
-
-                                    <div class="flex items-center justify-between text-sm text-gray-500">
-                                        <span class="text-xs md:text-sm text-gray-500  pointer-events-none">
+                                    <div class="min-w-0">
+                                        <span class="text-[11px] text-gray-500">
                                             {{ \Carbon\Carbon::parse($b->tanggal_berita)->translatedFormat('d F Y') }}
                                         </span>
-
-                                        <a href="{{ url('/berita/' . $b->id) }}"
-                                            class="text-emerald-700 underline hover:text-emerald-800 flex items-center">
-                                            Baca <i class="fa fa-arrow-right ml-1"></i>
-                                        </a>
+                                        <h3
+                                            class="font-semibold text-sm leading-snug line-clamp-2 mt-1 text-gray-800 group-hover:text-emerald-700 transition-colors">
+                                            <a href="{{ url('/berita/' . $b->id) }}">{{ $b->judul }}</a>
+                                        </h3>
                                     </div>
-                                </div>
-                            </article>
-                        @endforeach
+                                </article>
+                            @endforeach
+                        </div>
                     @endif
                 </div>
             </div>
@@ -288,6 +356,46 @@
                 });
             });
         </script>
+
+        {{-- ========================================== --}}
+        {{-- SCRIPT POPUP: Tampil otomatis sekali per sesi browser --}}
+        {{-- ========================================== --}}
+        @if (isset($popup) && $popup->gambar)
+            <script>
+                // Gunakan fungsi langsung agar lebih stabil
+                function closeHomePopup() {
+                    var popup = document.getElementById('homePopup');
+                    var popupContent = document.getElementById('homePopupContent');
+                    if (popup) {
+                        popup.classList.add('opacity-0');
+                        popupContent.classList.add('scale-95');
+                        setTimeout(function() {
+                            popup.classList.add('hidden');
+                        }, 300);
+                    }
+                }
+
+                document.addEventListener('DOMContentLoaded', function() {
+                    var popup = document.getElementById('homePopup');
+
+                    // TEST: Hapus baris 'sessionStorage' di bawah ini untuk
+                    // memastikan apakah masalahnya ada di session atau di kode lain
+                    // var alreadyShown = sessionStorage.getItem('homePopupShown');
+
+                    // Langsung tampilkan tanpa kondisi session untuk test:
+                    if (popup) {
+                        popup.classList.remove('hidden');
+                        popup.classList.add('flex');
+
+                        // Animasi masuk
+                        setTimeout(function() {
+                            popup.classList.remove('opacity-0');
+                            document.getElementById('homePopupContent').classList.remove('scale-95');
+                        }, 100);
+                    }
+                });
+            </script>
+        @endif
     </main>
 
 

@@ -9,22 +9,34 @@ use Illuminate\Support\Facades\File;
 
 class FileDinasController extends Controller
 {
+    public function dokumen()
+    {
+        // Mengambil semua dokumen
+        $dokumen = FileDinas::latest()->get();
+
+        // Mengambil daftar kategori unik saja
+        $kategoriList = FileDinas::select('kategori')->distinct()->pluck('kategori');
+
+        $profile = Profile::first();
+        return view('public.dokumen', compact('dokumen', 'profile', 'kategoriList'));
+    }
+
     public function index()
     {
-        // Mengambil data terbaru agar yang baru diupload ada di posisi paling atas
         $files = FileDinas::latest()->get();
         return view('admin.file_dinas.index', compact('files'));
     }
 
     public function store(Request $request)
     {
+        // 1. Tambahkan validasi untuk tahun dan kategori
         $request->validate([
-            'uraian' => 'required',
-            'file' => 'required|mimes:pdf|',
-
+            'uraian'   => 'required',
+            'tahun'    => 'required|digits:4',
+            'kategori' => 'required|string|max:100',
+            'file'     => 'required|mimes:pdf|max:5120',
         ], [
             'file.mimes' => 'File harus berformat PDF.',
-
         ]);
 
         $nama_file = null;
@@ -34,9 +46,12 @@ class FileDinasController extends Controller
             $file->move(public_path('storage/dokumen'), $nama_file);
         }
 
+        // 2. Simpan tahun dan kategori ke database
         FileDinas::create([
-            'uraian' => $request->uraian,
-            'file' => $nama_file
+            'uraian'   => $request->uraian,
+            'tahun'    => $request->tahun,
+            'kategori' => $request->kategori,
+            'file'     => $nama_file
         ]);
 
         return redirect()->back()->with('success', 'File berhasil diunggah!');
@@ -44,43 +59,40 @@ class FileDinasController extends Controller
 
     public function update(Request $request, $id)
     {
-        // 1. Validasi Input
+        // 1. Tambahkan validasi untuk tahun dan kategori
         $request->validate([
-            'uraian' => 'required|string',
-            'file'   => 'nullable|mimes:pdf',
+            'uraian'   => 'required|string',
+            'tahun'    => 'required|digits:4',
+            'kategori' => 'required|string|max:100',
+            'file'     => 'nullable|mimes:pdf|max:5120',
         ], [
             'uraian.required' => 'Uraian dokumen tidak boleh kosong.',
             'file.mimes'      => 'Dokumen harus berformat PDF.',
-
         ]);
 
         try {
-            // 2. Cari data berdasarkan ID
-            $fileDinas = \App\Models\FileDinas::findOrFail($id);
+            $fileDinas = FileDinas::findOrFail($id);
 
             if ($request->hasFile('file')) {
-                // Hapus file fisik yang lama dari storage agar tidak menumpuk
                 if ($fileDinas->file && file_exists(public_path('storage/dokumen/' . $fileDinas->file))) {
                     unlink(public_path('storage/dokumen/' . $fileDinas->file));
                 }
 
-                // Proses upload file baru
                 $file = $request->file('file');
                 $nama_file = time() . "_" . $file->getClientOriginalName();
                 $file->move(public_path('storage/dokumen'), $nama_file);
 
-                // Update nama file di database
                 $fileDinas->file = $nama_file;
             }
 
-            // 4. Update data uraian
-            $fileDinas->uraian = $request->uraian;
+            // 2. Update data uraian, tahun, dan kategori
+            $fileDinas->uraian   = $request->uraian;
+            $fileDinas->tahun    = $request->tahun;
+            $fileDinas->kategori = $request->kategori;
             $fileDinas->save();
 
-            // 5. Notifikasi Sukses
             return redirect()->route('file_dinas.index')->with('success', 'Data File Dinas berhasil diperbarui!');
         } catch (\Exception $e) {
-            // 6. Notifikasi Gagal jika terjadi error sistem
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }
