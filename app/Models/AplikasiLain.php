@@ -15,7 +15,7 @@ class AplikasiLain extends Model
     // Kolom yang diizinkan untuk diisi secara massal (mass assignment)
     protected $fillable = [
         'nama_aplikasi',
-        'icon',
+        'logo',
         'link'
     ];
 }

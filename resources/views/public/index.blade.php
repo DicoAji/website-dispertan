@@ -265,6 +265,45 @@
             </div>
         </section>
 
+        {{-- SECTION APLIKASI LAIN (HORIZONTAL SCROLL & HOVER EFFECT) --}}
+        <section class="py-16 bg-gradient-to-b from-gray-50/50 to-white border-y border-gray-100 overflow-hidden mt-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold  text-emerald-900">Aplikasi Lain</h2>
+                <p class="text-gray-500 mt-2">
+                    Jelajahi berbagai aplikasi terkait yang mendukung ekosistem pertanian di Kabupaten Grobogan.
+                </p>
+            </div>
+
+            {{-- Container Geser Kanan-Kiri --}}
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center gap-5 overflow-x-auto pb-6 pt-2 no-scrollbar scroll-smooth">
+                    @forelse($aplikasiLain ?? [] as $app)
+                        <a href="{{ $app->link }}" target="_blank"
+                            class="flex flex-col items-center justify-between bg-white hover:bg-emerald-50/30 border border-gray-200/80 hover:border-emerald-300 rounded-2xl min-w-[170px] md:min-w-[190px] h-[140px] flex-shrink-0 transition-all duration-300 transform hover:-translate-y-1.5 group shadow-sm hover:shadow-xl">
+
+                            {{-- Logo / Gambar (Hitam Putih ke Berwarna) --}}
+                            <div class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center my-auto">
+                                <img src="{{ asset('storage/aplikasi/' . $app->logo) }}" alt="{{ $app->nama_aplikasi }}"
+                                    class="w-full h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
+                            </div>
+
+                            {{-- Nama Aplikasi --}}
+                            <span
+                                class="text-xs md:text-sm  text-gray-700 group-hover:text-emerald-800 text-center tracking-tight transition-colors line-clamp-1 w-full mt-2">
+                                {{ $app->nama_aplikasi }}
+                            </span>
+                        </a>
+                    @empty
+                        <div
+                            class="w-full text-center py-8 text-gray-400 text-sm italic bg-white border border-dashed border-gray-200 rounded-2xl">
+                            Belum ada tautan aplikasi lain yang ditambahkan.
+                        </div>
+                    @endforelse
+                </div>
+            </div>
+        </section>
+        {{-- END SECTION APLIKASI LAIN --}}
+
         <section class="bg-gray-50 py-20" id="kontak">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold  text-emerald-900">Informasi Kontak</h2>

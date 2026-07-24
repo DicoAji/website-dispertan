@@ -40,7 +40,7 @@
                         <tr>
                             <th class="px-6 py-3">No</th>
                             <th class="px-6 py-3">Nama Aplikasi</th>
-                            <th class="px-6 py-3">Icon</th>
+                            <th class="px-6 py-3">Logo / SVG</th>
                             <th class="px-6 py-3">Link / Tautan</th>
                             <th class="px-6 py-3 text-center">Aksi</th>
                         </tr>
@@ -51,12 +51,14 @@
                                 <td class="px-6 py-4 text-gray-500">{{ $loop->iteration }}</td>
                                 <td class="px-6 py-4 font-bold text-gray-800">{{ $item->nama_aplikasi }}</td>
                                 <td class="px-6 py-4">
-                                    <div class="flex items-center gap-2">
-                                        <div
-                                            class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
-                                            <i class="{{ $item->icon }} text-lg"></i>
-                                        </div>
-                                        <span class="text-xs text-gray-500 font-mono">{{ $item->icon }}</span>
+                                    <div
+                                        class="w-10 h-10 rounded-lg bg-gray-50 border border-gray-200 flex items-center justify-center p-1 overflow-hidden">
+                                        @if ($item->logo)
+                                            <img src="{{ asset('storage/aplikasi/' . $item->logo) }}" alt="Logo"
+                                                class="w-full h-full object-contain">
+                                        @else
+                                            <span class="text-[10px] text-gray-400">No Image</span>
+                                        @endif
                                     </div>
                                 </td>
                                 <td class="px-6 py-4">
@@ -103,7 +105,8 @@
                 </button>
             </div>
 
-            <form action="{{ route('admin.aplikasi_lain.store') }}" method="POST" class="p-6">
+            <form action="{{ route('admin.aplikasi_lain.store') }}" method="POST" enctype="multipart/form-data"
+                class="p-6">
                 @csrf
                 <div class="space-y-4">
                     <div>
@@ -113,13 +116,11 @@
                             class="w-full p-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none transition">
                     </div>
                     <div>
-                        <label class="text-xs font-bold text-gray-500 uppercase mb-1 block">Class Icon (FontAwesome) <span
+                        <label class="text-xs font-bold text-gray-500 uppercase mb-1 block">Upload Logo / SVG <span
                                 class="text-red-500">*</span></label>
-                        <input type="text" name="icon" required placeholder="Contoh: fas fa-globe"
-                            class="w-full p-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 outline-none transition font-mono">
-                        <p class="text-[10px] text-gray-400 mt-1">Cari referensi class icon di <a
-                                href="https://fontawesome.com/v5/search?m=free" target="_blank"
-                                class="text-emerald-600 hover:underline">FontAwesome Free</a>.</p>
+                        <input type="file" name="logo" accept=".jpg,.jpeg,.png,.svg" required
+                            class="w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-emerald-50 file:text-emerald-700 file:font-semibold border border-gray-300 rounded-lg p-1">
+                        <p class="text-[10px] text-gray-400 mt-1">Format: JPG, PNG, atau SVG (Maksimal 2MB).</p>
                     </div>
                     <div>
                         <label class="text-xs font-bold text-gray-500 uppercase mb-1 block">Link / URL <span
@@ -149,7 +150,7 @@
                 </button>
             </div>
 
-            <form id="formEditAplikasi" method="POST" class="p-6">
+            <form id="formEditAplikasi" method="POST" enctype="multipart/form-data" class="p-6">
                 @csrf
                 @method('PUT')
                 <div class="space-y-4">
@@ -160,10 +161,11 @@
                             class="w-full p-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none transition">
                     </div>
                     <div>
-                        <label class="text-xs font-bold text-gray-500 uppercase mb-1 block">Class Icon (FontAwesome) <span
-                                class="text-red-500">*</span></label>
-                        <input type="text" name="icon" id="edit_icon" required
-                            class="w-full p-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 outline-none transition font-mono">
+                        <label class="text-xs font-bold text-gray-500 uppercase mb-1 block">Ganti Logo / SVG
+                            (Opsional)</label>
+                        <input type="file" name="logo" accept=".jpg,.jpeg,.png,.svg"
+                            class="w-full text-sm file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-blue-50 file:text-blue-700 file:font-semibold border border-gray-300 rounded-lg p-1">
+                        <p class="text-[10px] text-gray-400 mt-1">Kosongkan jika tidak ingin mengubah logo.</p>
                     </div>
                     <div>
                         <label class="text-xs font-bold text-gray-500 uppercase mb-1 block">Link / URL <span
@@ -189,12 +191,9 @@
         }
 
         function editAplikasi(data) {
-            // Arahkan aksi form ke route update dengan id yang sesuai
             document.getElementById('formEditAplikasi').action = "/admin/aplikasi-lain/" + data.id;
 
-            // Isi nilai form edit
             document.getElementById('edit_nama').value = data.nama_aplikasi;
-            document.getElementById('edit_icon').value = data.icon;
             document.getElementById('edit_link').value = data.link;
 
             toggleModal('modalEdit');

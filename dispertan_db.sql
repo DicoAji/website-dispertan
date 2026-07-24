@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Jul 2026 pada 07.56
+-- Waktu pembuatan: 24 Jul 2026 pada 08.48
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -30,11 +30,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `aplikasi_lain` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `nama_aplikasi` varchar(255) NOT NULL,
-  `icon` varchar(100) NOT NULL COMMENT 'Contoh: fas fa-globe atau fas fa-desktop',
+  `logo` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `aplikasi_lain`
+--
+
+INSERT INTO `aplikasi_lain` (`id`, `nama_aplikasi`, `logo`, `link`, `created_at`, `updated_at`) VALUES
+(1, 'PPID Grobogan', '1784875155_logo_ySbUY4vQw4JzrkbXPTxAhFAGcBeb8O6lIP46kKq0.svg', 'https://ppid.grobogan.go.id', '2026-07-23 23:05:00', '2026-07-23 23:39:15'),
+(2, 'Lapor', '1784875140_logo_L5jHdSCrXtETQEva5L4bqBO9IXyzdzwWorQPsZZY.svg', 'https://www.lapor.go.id', '2026-07-23 23:05:33', '2026-07-23 23:39:00'),
+(3, 'Sidamba', '1784875127_logo_bS0v3CxPG6A6w2mMgINpTRPUUObIi9nMck9sFPgk.svg', 'http://sidamba.dpupr.grobogan.go.id', '2026-07-23 23:05:54', '2026-07-23 23:38:47'),
+(4, 'Silakip Grobogan', '1784875110_logo_gdkL1ObIGSkAu7zpUj61cmZZW42bXrEOPANhWFwH.svg', 'http://www.silakip.grobogan.go.id', '2026-07-23 23:06:20', '2026-07-23 23:38:30');
 
 -- --------------------------------------------------------
 
@@ -775,7 +785,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `aplikasi_lain`
 --
 ALTER TABLE `aplikasi_lain`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `berita`

@@ -24,8 +24,11 @@ class PublicController extends Controller
         // 4. Ambil Profile
         $profile = Profile::first();
 
-        // 5. Kirim semuanya ke view 'public.index' (BUKAN 'index' saja)
-        return view('public.index', compact('popup', 'header', 'berita', 'profile'));
+        // 5. Ambil Data Aplikasi Lain untuk ditampilkan di atas Kontak
+        $aplikasiLain = \App\Models\AplikasiLain::orderBy('id', 'desc')->get();
+
+        // 6. Kirim semuanya ke view 'public.index'
+        return view('public.index', compact('popup', 'header', 'berita', 'profile', 'aplikasiLain'));
     }
     public function visimisi()
     {
