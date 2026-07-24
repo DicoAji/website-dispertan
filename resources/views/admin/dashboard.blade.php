@@ -71,34 +71,129 @@
             @endforeach
         </div>
 
-        {{-- KARTU PENGATURAN POPUP --}}
-        <div
-            class="bg-white rounded-2xl border border-[#E7E1D2] p-5 flex flex-col md:flex-row items-center justify-between gap-3">
 
-            <div class="flex items-center gap-4">
-                <div
-                    class="bg-[#F6F2E6] text-[#234D2C] w-10 h-10 flex items-center justify-center rounded-lg flex-shrink-0">
-                    <i class="fas fa-bullhorn text-sm"></i>
-                </div>
+        {{-- KARTU PENGATURAN POPUP & HEADER --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                <div>
-                    <h4 class="text-sm font-semibold text-[#4A3728]">Pengaturan Pop-up Beranda</h4>
-                    <p class="text-[11px] text-gray-400 font-medium mt-0.5">
-                        Status:
-                        @if (isset($popup) && $popup->gambar)
-                            <span class="text-[#3C7245] font-bold">{{ $popup->kegiatan ?? 'Tersedia' }}</span>
-                        @else
-                            <span class="text-red-500 font-bold">Belum ada gambar</span>
-                        @endif
-                    </p>
+            {{-- Kartu Popup (Sama Seperti Sebelumnya) --}}
+            <div
+                class="bg-white rounded-2xl border border-[#E7E1D2] p-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="bg-[#F6F2E6] text-[#234D2C] w-10 h-10 flex items-center justify-center rounded-lg flex-shrink-0">
+                        <i class="fas fa-bullhorn text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-[#4A3728]">Pengaturan Pop-up</h4>
+                        <p class="text-[11px] text-gray-400 font-medium mt-0.5">
+                            Status:
+                            @if (isset($popup) && $popup->gambar)
+                                <span class="text-[#3C7245] font-bold">Tersedia</span>
+                            @else
+                                <span class="text-red-500 font-bold">Belum ada gambar</span>
+                            @endif
+                        </p>
+                    </div>
                 </div>
+                <button type="button" onclick="openPopupModal()"
+                    class="bg-[#F6F2E6] hover:bg-[#234D2C] hover:text-white text-[#234D2C] text-xs font-bold py-2 px-4 rounded-lg transition-all flex items-center gap-2 flex-shrink-0">
+                    <i class="fas fa-edit"></i> Update
+                </button>
             </div>
 
-            <button type="button" onclick="openPopupModal()"
-                class="bg-[#F6F2E6] hover:bg-[#234D2C] hover:text-white text-[#234D2C] text-xs font-bold py-2 px-4 rounded-lg transition-all flex items-center gap-2 flex-shrink-0">
-                <i class="fas fa-edit"></i> Update
-            </button>
+            {{-- Kartu Header --}}
+            <div
+                class="bg-white rounded-2xl border border-[#E7E1D2] p-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div class="flex items-center gap-4">
+                    <div
+                        class="bg-[#F6F2E6] text-[#234D2C] w-10 h-10 flex items-center justify-center rounded-lg flex-shrink-0">
+                        <i class="fas fa-image text-sm"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold text-[#4A3728]">Pengaturan Header</h4>
+                        <p class="text-[11px] text-gray-400 font-medium mt-0.5">
+                            Status:
+                            @if (isset($header) && $header->gambar)
+                                <span class="text-[#3C7245] font-bold">Terpasang</span>
+                            @else
+                                <span class="text-red-500 font-bold">Gambar Default</span>
+                            @endif
+                        </p>
+                    </div>
+                </div>
+                <button type="button" onclick="openHeaderModal()"
+                    class="bg-[#F6F2E6] hover:bg-[#234D2C] hover:text-white text-[#234D2C] text-xs font-bold py-2 px-4 rounded-lg transition-all flex items-center gap-2 flex-shrink-0">
+                    <i class="fas fa-edit"></i> Update
+                </button>
+            </div>
         </div>
+
+        {{-- (Biarkan Modal Pop-up Anda yang lama di sini) --}}
+
+        {{-- MODAL FORM UPDATE HEADER --}}
+        <div id="headerModal"
+            class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity opacity-0 duration-300">
+            <div class="bg-white rounded-2xl shadow-xl w-full max-w-lg mx-4 overflow-hidden transform scale-95 transition-transform duration-300"
+                id="headerModalContent">
+                <div class="bg-[#234D2C] px-5 py-3 flex justify-between items-center text-white">
+                    <div>
+                        <h3 class="text-sm font-semibold"><i class="fas fa-image mr-2"></i>Update Background Header</h3>
+                    </div>
+                    <button type="button" onclick="closeHeaderModal()" class="text-white/70 hover:text-white"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                <form action="{{ route('admin.header.update') }}" method="POST" enctype="multipart/form-data"
+                    class="p-5">
+                    @csrf
+                    <div class="flex flex-col gap-4">
+                        <div
+                            class="w-full h-32 border-2 border-dashed border-[#E7E1D2] rounded-lg overflow-hidden flex items-center justify-center bg-[#F6F2E6] relative">
+                            @if (isset($header) && $header->gambar)
+                                <img src="{{ asset('storage/background/' . $header->gambar) }}"
+                                    class="w-full h-full object-cover">
+                            @else
+                                <p class="text-[10px] text-gray-400">Belum ada gambar</p>
+                            @endif
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Upload Gambar Baru</label>
+                            {{-- Input tetap bernama 'gambar' --}}
+                            <input type="file" name="gambar" accept=".jpg,.jpeg,.png" required
+                                class="w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:bg-[#F6F2E6] file:text-[#234D2C] border rounded-lg p-1">
+                        </div>
+                    </div>
+                    <div class="mt-5 flex justify-end gap-2 border-t pt-4">
+                        <button type="button" onclick="closeHeaderModal()"
+                            class="px-4 py-1.5 text-xs font-bold text-gray-600 hover:bg-gray-100 rounded-lg">Batal</button>
+                        <button type="submit"
+                            class="px-4 py-1.5 text-xs font-bold bg-[#234D2C] text-white rounded-lg hover:bg-[#17331D]">Simpan</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+        <script>
+            // Modal Header Javascript
+            const hModal = document.getElementById('headerModal');
+            const hContent = document.getElementById('headerModalContent');
+
+            function openHeaderModal() {
+                hModal.classList.remove('hidden');
+                setTimeout(() => {
+                    hModal.classList.remove('opacity-0');
+                    hContent.classList.remove('scale-95');
+                }, 10);
+            }
+
+            function closeHeaderModal() {
+                hModal.classList.add('opacity-0');
+                hContent.classList.add('scale-95');
+                setTimeout(() => {
+                    hModal.classList.add('hidden');
+                }, 300);
+            }
+        </script>
 
         {{-- ========================================== --}}
         {{-- MODAL FORM UPDATE POPUP --}}

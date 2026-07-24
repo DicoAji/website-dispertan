@@ -4,6 +4,15 @@
 @section('header', 'Dokumen Dinas Pertanian')
 
 @section('content')
+    @if ($errors->any())
+        <div class="mb-4 p-4 bg-red-50 text-red-700 rounded-lg border border-red-200">
+            <ul class="list-disc pl-5 text-sm">
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="max-w-5xl mx-auto space-y-6 pb-10">
 
         {{-- HEADER --}}
@@ -46,11 +55,23 @@
                         <i class="fas fa-eye mr-1.5"></i> Lihat PDF
                     </a>
 
+                    {{-- Tombol Edit --}}
                     <button
                         onclick="editFileDinas({{ $f->id }}, '{{ $f->uraian }}', '{{ $f->file }}', '{{ $f->tahun }}', '{{ $f->kategori }}')"
                         class="w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 hover:bg-[#F6F2E6] hover:text-[#234D2C] transition-colors flex-shrink-0">
                         <i class="fas fa-edit text-sm"></i>
                     </button>
+
+                    {{-- Tombol Hapus (Tambahkan ini) --}}
+                    <form action="{{ route('file_dinas.destroy', $f->id) }}" method="POST"
+                        onsubmit="return confirm('Yakin ingin menghapus dokumen ini?')" class="flex-shrink-0">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                            class="w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 hover:bg-red-50 hover:text-red-600 transition-colors">
+                            <i class="fas fa-trash text-sm"></i>
+                        </button>
+                    </form>
                 </div>
             @empty
                 <div class="text-center py-14 text-gray-400">

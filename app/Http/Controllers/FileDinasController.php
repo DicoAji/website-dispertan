@@ -96,4 +96,22 @@ class FileDinasController extends Controller
             return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }
+    public function destroy($id)
+    {
+        try {
+            $fileDinas = FileDinas::findOrFail($id);
+
+            // Hapus file fisik dari storage jika ada
+            if ($fileDinas->file && file_exists(public_path('storage/dokumen/' . $fileDinas->file))) {
+                unlink(public_path('storage/dokumen/' . $fileDinas->file));
+            }
+
+            // Hapus data dari database
+            $fileDinas->delete();
+
+            return redirect()->route('file_dinas.index')->with('success', 'File Dinas berhasil dihapus!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan saat menghapus: ' . $e->getMessage());
+        }
+    }
 }

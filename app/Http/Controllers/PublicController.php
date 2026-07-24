@@ -12,14 +12,20 @@ class PublicController extends Controller
 
     public function index()
     {
-        // Pastikan variabel $popup dikirim ke view
-        $popup = \App\Models\PopupAd::first();
+        // 1. Ambil Popup
+        $popup = PopupAd::find(1);
 
-        // Pastikan $berita juga dikirim agar tidak error
-        $berita = \App\Models\Berita::all();
-        $profile = \App\Models\Profile::first();
+        // 2. Ambil Header
+        $header = PopupAd::find(2);
 
-        return view('index', compact('popup', 'berita', 'profile'));
+        // 3. Ambil Berita (disamakan dengan logika di route lama agar tidak rusak)
+        $berita = Berita::latest()->take(6)->get();
+
+        // 4. Ambil Profile
+        $profile = Profile::first();
+
+        // 5. Kirim semuanya ke view 'public.index' (BUKAN 'index' saja)
+        return view('public.index', compact('popup', 'header', 'berita', 'profile'));
     }
     public function visimisi()
     {

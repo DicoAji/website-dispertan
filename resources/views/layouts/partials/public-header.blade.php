@@ -68,66 +68,37 @@
                 </button>
                 <div
                     class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
-                    <a href="{{ url('/sop-pelayanan') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">SOP Pelayanan</a>
-                    {{-- <a href="{{ url('/standar-pelayanan') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Standar Pelayanan</a> --}}
-                    {{--
-                    <a href="{{ url('/konsultasi-petani') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Konsultasi Petani</a> --}}
+
+                    @php
+
+                        $layananMenu = \App\Models\Layanan::all();
+                    @endphp
+
+                    @forelse($layananMenu as $item)
+                        @php
+                            if (!empty($item->link)) {
+                                $url = $item->link;
+                                $target = '_blank';
+                            } elseif (!empty($item->file)) {
+                                $url = asset('storage/layanan/' . $item->file);
+                                $target = '_blank';
+                            } else {
+                                $url = '#';
+                                $target = '_self';
+                            }
+                        @endphp
+
+                        <a href="{{ $url }}" target="{{ $target }}"
+                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+                            {{ $item->nama }}
+                        </a>
+                    @empty
+                        <span class="block px-4 py-2 text-sm text-gray-400 italic">Belum ada layanan</span>
+                    @endforelse
 
                 </div>
             </div>
 
-            <div class="relative group">
-                <button
-                    class="nav-link flex items-center gap-1 font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
-                    Informasi
-                    <i
-                        class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
-                </button>
-                <div
-                    class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-60 animate-in fade-in slide-in-from-top-2 z-50">
-
-                    <a href="{{ url('/inovasi-daerah') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Inovasi Daerah</a>
-                    {{-- <a href="{{ url('/informasi-opt-iklim') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Informasi OPT & Perkiraan
-                        Iklim</a> --}}
-                    <a href="{{ url('/penyuluhan-artikel-teknis') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Penyuluhan & Artikel
-                        Teknis</a>
-
-                </div>
-            </div>
-
-            {{-- <div class="relative group">
-                <button
-                    class="nav-link flex items-center gap-1 font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
-                    Dokumen
-                    <i
-                        class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
-                </button>
-                <div
-                    class="absolute hidden group-hover:block top-full right-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
-                    <a href="{{ url('/renstra-dinas') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Renstra Dinas</a>
-                    <a href="{{ url('/rencana-kerja') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Rencana Kerja</a>
-                    <a href="{{ url('/rka-dpa') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">RKA/DPA</a>
-                    <a href="{{ url('/lkjip') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">LKJIP</a>
-                    <a href="{{ url('/rtp-spip') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">RTP/SPIP</a>
-                    <a href="{{ url('/rencana-aksi-opd') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Rencana Aksi OPD</a>
-                    <a href="{{ url('/sop-bidang') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">SOP Bidang</a>
-                    <a href="{{ url('/peraturan-regulasi') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Peraturan & Regulasi</a>
-                </div>
-            </div> --}}
 
             <a href="{{ url('/dokumen') }}"
                 class="nav-link flex items-center font-medium hover:text-emerald-700 px-3 py-2 transition-colors duration-200">
@@ -189,7 +160,7 @@
             </div> --}}
             <div class="relative group">
                 <button class="nav-link flex items-center gap-1 font-medium transition-colors duration-200 py-2">
-                    Lainnya
+                    Inovasi
                     <i
                         class="fa fa-chevron-down text-[10px] transition-transform duration-200 group-hover:rotate-180"></i>
                 </button>
@@ -258,45 +229,35 @@
                 </div>
             </div>
 
-            {{-- <div class="flex flex-col">
-                <div class="text-gray-700 font-medium mb-2">Program</div>
-                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
-
-                    <a href="{{ url('/program-kegiatan') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Program & Kegiatan</a>
-                    <a href="{{ url('/target-capaian') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Target
-                        & Capaian</a>
-
-                    <a href="{{ route('public.kalender_kegiatan') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Kalender Kegiatan</a>
-                </div>
-            </div> --}}
-
             <div class="flex flex-col">
-                <div class="text-gray-700 font-medium mb-2">Layanan </div>
-                <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
-                    <a href="{{ url('/sop-pelayanan') }}" class="text-sm text-gray-600 hover:text-emerald-700">SOP
-                        Pelayanan</a>
-                    {{-- <a href="{{ url('/standar-pelayanan') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Standar Pelayanan</a> --}}
-                    {{-- <a href="{{ url('/konsultasi-petani') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Konsultasi Petani</a> --}}
-                    {{-- <a href="{{ url('/taksi-tani') }}" class="text-sm text-gray-600 hover:text-emerald-700">Taksi
-                        Tani</a> --}}
-                </div>
-            </div>
-
-            <div class="flex flex-col">
-                <div class="text-gray-700 font-medium mb-2">Informasi</div>
+                <div class="text-gray-700 font-medium mb-2">Layanan</div>
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
 
-                    <a href="{{ url('/inovasi-daerah') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Inovasi Daerah</a>
-                    {{-- <a href="{{ url('/informasi-opt-iklim') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Informasi OPT & Perkiraan Iklim</a> --}}
-                    <a href="{{ url('/penyuluhan-artikel-teknis') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Penyuluhan & Artikel Teknis</a>
+                    @php
+                        $layananMenu = \App\Models\Layanan::all();
+                    @endphp
+
+                    @forelse($layananMenu as $item)
+                        @php
+                            if (!empty($item->link)) {
+                                $url = $item->link;
+                                $target = '_blank';
+                            } elseif (!empty($item->file)) {
+                                $url = asset('storage/layanan/' . $item->file);
+                                $target = '_blank';
+                            } else {
+                                $url = '#';
+                                $target = '_self';
+                            }
+                        @endphp
+
+                        <a href="{{ $url }}" target="{{ $target }}"
+                            class="text-sm text-gray-600 hover:text-emerald-700 transition-colors">
+                            {{ $item->nama }}
+                        </a>
+                    @empty
+                        <span class="text-sm text-gray-400 italic">Belum ada layanan</span>
+                    @endforelse
 
                 </div>
             </div>
@@ -342,7 +303,7 @@
                 </div>
             </div> --}}
             <div class="flex flex-col mt-4">
-                <div class="text-gray-700 font-medium mb-2">Lainnya</div>
+                <div class="text-gray-700 font-medium mb-2">Inovasi</div>
 
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
                     @php

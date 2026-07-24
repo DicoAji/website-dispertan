@@ -4,24 +4,28 @@
 @section('content')
     <section class="pt-12 pb-20 bg-gray-50 min-h-screen">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mb-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-1">Inovasi Daerah</h2>
-                <p class="text-gray-500">Pusat unduhan dokumen resmi Dinas Pertanian Kabupaten Grobogan.</p>
+
+            {{-- HEADER --}}
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Dokumen Publik</h2>
+                <p class="text-emerald-600 italic text-sm">Pusat unduhan dokumen resmi Dinas Pertanian Kabupaten Grobogan</p>
+                {{-- <div class="w-12 h-1 bg-emerald-500 rounded-full mx-auto mt-3"></div> --}}
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 {{-- SIDEBAR --}}
                 <div class="md:col-span-1">
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden sticky top-24">
-                        <div class="bg-emerald-700 px-4 py-2">
-                            <h3 class="text-white font-semibold text-md"><i class="fas fa-list-ul mr-2"></i> Kategori</h3>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden sticky top-24">
+                        <div class="bg-gradient-to-r from-emerald-800 to-emerald-700 px-4 py-3">
+                            <h3 class="text-white font-semibold text-sm"><i class="fas fa-folder-tree mr-2"></i> Kategori
+                            </h3>
                         </div>
                         <ul class="flex flex-col divide-y divide-gray-100" id="sidebar-menu">
                             {{-- Tombol "Semua" --}}
                             <li>
                                 <button onclick="filterDokumen('semua', this)"
-                                    class="w-full text-left px-5 py-2.5 text-sm font-semibold text-emerald-700 bg-emerald-50 border-l-4 border-emerald-600 menu-btn">
-                                    Semua Dokumen
+                                    class="w-full text-left px-5 py-3 text-sm font-semibold text-emerald-700 bg-emerald-50 border-l-4 border-emerald-600 menu-btn transition-colors">
+                                    <i class="fas fa-layer-group mr-2 text-xs"></i>Semua Dokumen
                                 </button>
                             </li>
 
@@ -29,8 +33,8 @@
                             @foreach ($kategoriList as $kategori)
                                 <li>
                                     <button onclick="filterDokumen('{{ strtoupper($kategori) }}', this)"
-                                        class="w-full text-left px-5 py-2.5 text-sm font-semibold text-gray-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors menu-btn">
-                                        {{ $kategori }}
+                                        class="w-full text-left px-5 py-3 text-sm font-semibold text-gray-600 border-l-4 border-transparent hover:bg-emerald-50 hover:text-emerald-700 transition-colors menu-btn">
+                                        <i class="fas fa-tag mr-2 text-xs text-gray-300"></i>{{ $kategori }}
                                     </button>
                                 </li>
                             @endforeach
@@ -40,30 +44,36 @@
 
                 {{-- KONTEN --}}
                 <div class="md:col-span-3">
-                    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 md:p-8 min-h-[500px]">
-                        <h2 class="text-xl font-bold text-gray-800 mb-6 border-b pb-3">Daftar Dokumen</h2>
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 min-h-[500px]">
+                        <h3 class="text-base font-bold text-gray-800 mb-6 pb-3 border-b border-gray-100 flex items-center">
+                            <i class="fas fa-file-lines text-emerald-600 mr-2"></i> Daftar Dokumen
+                        </h3>
                         <div class="space-y-3">
                             {{-- Looping Dokumen --}}
                             @forelse ($dokumen as $doc)
                                 {{-- Kita gunakan strtoupper agar konsisten dengan data di database --}}
-                                <div class="doc-item flex flex-col sm:flex-row sm:items-center justify-between p-3 border border-gray-100 rounded-lg hover:shadow-md transition bg-gray-50 hover:bg-white group"
+                                <div class="doc-item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 border border-gray-100 rounded-xl hover:shadow-md hover:border-emerald-100 transition bg-gray-50/60 hover:bg-white group"
                                     data-kategori="{{ strtoupper($doc->kategori) }}">
 
-                                    <div class="flex items-center gap-4">
-                                        <div class="bg-red-100 p-2 rounded-lg text-red-500">
+                                    <div class="flex items-center gap-4 min-w-0">
+                                        <div class="bg-red-50 p-2.5 rounded-lg text-red-500 flex-shrink-0">
                                             <i class="fas fa-file-pdf text-xl"></i>
                                         </div>
-                                        <div>
-                                            <h4 class="font-semibold text-gray-800 text-sm md:text-base">{{ $doc->uraian }}
-                                            </h4>
-                                            <p class="text-[11px] text-gray-400">
-                                                Diunggah: {{ $doc->created_at->format('d F Y') }} | {{ $doc->kategori }}
+                                        <div class="min-w-0">
+                                            <h4 class="font-semibold text-gray-800 text-sm md:text-base truncate">
+                                                {{ $doc->uraian }}</h4>
+                                            <p class="text-[11px] text-gray-400 mt-0.5">
+                                                <i
+                                                    class="far fa-calendar mr-1 text-emerald-400"></i>{{ $doc->created_at->format('d F Y') }}
+                                                <span class="mx-1">·</span>
+                                                <span
+                                                    class="uppercase font-semibold text-emerald-600">{{ $doc->kategori }}</span>
                                             </p>
                                         </div>
                                     </div>
                                     <a href="{{ asset('storage/dokumen/' . $doc->file) }}" target="_blank"
-                                        class="bg-emerald-100 text-emerald-700 px-5 py-2.5 rounded-lg text-xs font-bold hover:bg-emerald-600 hover:text-white transition">
-                                        <i class="fas fa-download mr-1"></i> Download
+                                        class="flex-shrink-0 inline-flex items-center justify-center bg-emerald-600 text-white px-5 py-2.5 rounded-lg text-xs font-bold hover:bg-emerald-700 transition shadow-sm">
+                                        <i class="fas fa-download mr-1.5"></i> Download
                                     </a>
                                 </div>
                             @empty
@@ -96,11 +106,11 @@
             // Styling tombol aktif
             let allButtons = document.querySelectorAll('.menu-btn');
             allButtons.forEach(btn => {
-                btn.classList.remove('bg-emerald-50', 'text-emerald-700', 'border-l-4', 'border-emerald-600');
-                btn.classList.add('text-gray-600');
+                btn.classList.remove('bg-emerald-50', 'text-emerald-700', 'border-emerald-600');
+                btn.classList.add('text-gray-600', 'border-transparent');
             });
-            clickedElement.classList.remove('text-gray-600');
-            clickedElement.classList.add('bg-emerald-50', 'text-emerald-700', 'border-l-4', 'border-emerald-600');
+            clickedElement.classList.remove('text-gray-600', 'border-transparent');
+            clickedElement.classList.add('bg-emerald-50', 'text-emerald-700', 'border-emerald-600');
         }
     </script>
 @endsection

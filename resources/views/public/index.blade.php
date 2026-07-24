@@ -44,7 +44,6 @@
                             </div>
                         </div>
 
-
                     </div>
                 </div>
             </div>
@@ -52,7 +51,7 @@
 
         <section class="relative h-[500px] flex items-center overflow-hidden bg-emerald-900">
             <div class="absolute inset-0 opacity-40">
-                <img src="{{ asset('storage/background/petani-tembakau.jpeg') }}" alt="Background"
+                <img src="{{ asset('storage/background/' . ($header->gambar ?? 'petani-tembakau.jpeg')) }}" alt="Background"
                     class="w-full h-full object-cover" />
             </div>
             <div class="container mx-auto px-4 relative z-10 text-white">
@@ -162,10 +161,6 @@
                         class="group relative overflow-hidden mobile-card flex-shrink-0 transition duration-300 hover:-translate-y-2 w-64 p-4 bg-slate-200 border border-slate-100 rounded-xl">
                         <span
                             class="absolute bottom-0 left-1/2 w-0 h-1 bg-slate-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
-                        {{-- <div
-                            class="w-16 h-16 bg-slate-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
-                            <i class="fa fa-briefcase"></i>
-                        </div> --}}
 
                         <h3 class="font-bold text-xl mb-2 text-slate-900 text-center">
                             Sekretariat
@@ -181,10 +176,6 @@
                         <span
                             class="absolute bottom-0 left-1/2 w-0 h-1 bg-blue-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
 
-                        {{-- <div
-                            class="w-16 h-16 bg-blue-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
-                            <i class="fa-solid fa-tractor"></i>
-                        </div> --}}
                         <h3 class="font-bold text-xl mb-2 text-blue-900 text-center">
                             PSP
                         </h3>
@@ -198,10 +189,6 @@
                         <span
                             class="absolute bottom-0 left-1/2 w-0 h-1 bg-amber-600 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
 
-                        {{-- <div
-                            class="w-16 h-16 bg-amber-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
-                            <i class="fa-solid fa-seedling"></i>
-                        </div> --}}
                         <h3 class="font-bold text-xl mb-2 text-amber-900 text-center">
                             Tanaman Pangan
                         </h3>
@@ -215,10 +202,6 @@
                         <span
                             class="absolute bottom-0 left-1/2 w-0 h-1 bg-emerald-700 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
 
-                        {{-- <div
-                            class="w-16 h-16 bg-emerald-700 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
-                            <i class="fa fa-tree"></i>
-                        </div> --}}
                         <h3 class="font-bold text-xl mb-2 text-emerald-900 text-center">
                             Perkebunan
                         </h3>
@@ -232,10 +215,6 @@
                         <span
                             class="absolute bottom-0 left-1/2 w-0 h-1 bg-rose-600 transition-all duration-300 -translate-x-1/2 group-hover:w-full"></span>
 
-                        {{-- <div
-                            class="w-16 h-16 bg-rose-600 text-white rounded-2xl flex items-center justify-center text-3xl mb-4 mx-auto shadow-lg">
-                            <i class="fa-solid fa-pepper-hot"></i>
-                        </div> --}}
                         <h3 class="font-bold text-xl mb-2 text-rose-900 text-center">
                             Hortikultura
                         </h3>
@@ -247,7 +226,7 @@
             </div>
         </section>
 
-        <section class="pengaduan  bg-center py-6">
+        <section class="pengaduan  bg-center py-6" id="lapor">
             <div class="relative max-w-4xl mx-auto px-4">
                 <div class="text-center mb-4">
                     <h2 class="text-3xl md:text-4xl font-bold  text-emerald-900">Unit Pengaduan / LAPOR!</h2>
@@ -295,7 +274,6 @@
             </div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                {{-- Menggunakan lg:grid-cols-5 agar 5 elemen terbagi rata dalam 1 baris --}}
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     {{-- Kotak 1: Alamat --}}
                     <div
@@ -327,8 +305,6 @@
                         <small class="text-gray-700 text-md">{{ $profile->email }}</small>
                     </div>
 
-
-
                     {{-- Kotak 5: Peta --}}
                     <div class=" shadow-xl rounded-xl overflow-hidden border-4 border-white h-full min-h-[250px]">
                         <iframe
@@ -341,25 +317,61 @@
             </div>
         </section>
 
+        {{-- SCRIPT: Typed.js, Suara Otomatis & Popup --}}
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
+                // 1. Inisialisasi Typed.js
                 var typed = new Typed('#typing-text', {
                     strings: ['Dinas Pertanian<br />Kabupaten Grobogan'],
-                    typeSpeed: 60, // Kecepatan mengetik
-                    backSpeed: 40, // Kecepatan menghapus teks (biasanya lebih cepat dari mengetik)
-                    backDelay: 3000, // Jeda teks terdiam setelah selesai diketik (3 detik) sebelum dihapus
+                    typeSpeed: 60,
+                    backSpeed: 40,
+                    backDelay: 3000,
                     showCursor: true,
                     cursorChar: '|',
-                    loop: true, // Mengubah ini menjadi true agar mengetik terus-menerus
+                    loop: true,
                     startDelay: 300
                 });
+
+                // 2. Fungsi Audio Otomatis (Web Speech API)
+                function playWelcomeVoice() {
+                    if ('speechSynthesis' in window) {
+                        window.speechSynthesis.cancel(); // Hentikan jika ada suara yang sedang berjalan
+                        var textToSpeech =
+                            "Selamat Datang di Website Dinas Pertanian Kabupaten Grobogan. Portal resmi Dinas Pertanian Kabupaten Grobogan.";
+                        var speech = new SpeechSynthesisUtterance(textToSpeech);
+                        speech.lang = 'id-ID';
+                        speech.rate = 0.95;
+                        speech.pitch = 1;
+                        window.speechSynthesis.speak(speech);
+                    }
+                }
+
+                // Coba putar otomatis saat halaman dimuat (delay 1 detik)
+                setTimeout(playWelcomeVoice, 1000);
+
+                // Fallback: Putar otomatis saat ada interaksi pertama dari user (antisipasi aturan keamanan browser)
+                var hasPlayedAudio = false;
+
+                function triggerAudioOnInteraction() {
+                    if (!hasPlayedAudio) {
+                        playWelcomeVoice();
+                        hasPlayedAudio = true;
+                        // Hapus event listener agar tidak berbunyi berulang-ulang setiap kali diklik
+                        window.removeEventListener('click', triggerAudioOnInteraction);
+                        window.removeEventListener('scroll', triggerAudioOnInteraction);
+                        window.removeEventListener('keydown', triggerAudioOnInteraction);
+                    }
+                }
+
+                // Tambahkan pendeteksi interaksi pengguna
+                window.addEventListener('click', triggerAudioOnInteraction);
+                window.addEventListener('scroll', triggerAudioOnInteraction);
+                window.addEventListener('keydown', triggerAudioOnInteraction);
             });
         </script>
 
-        {{-- ========================================== --}}
-        {{-- SCRIPT POPUP: Tampil otomatis sekali per sesi browser --}}
-        {{-- ========================================== --}}
+        {{-- SCRIPT: Logika untuk Menutup Popup (Hanya dirender jika ada popup) --}}
         @if (isset($popup) && $popup->gambar)
             <script>
                 // Gunakan fungsi langsung agar lebih stabil
@@ -378,11 +390,7 @@
                 document.addEventListener('DOMContentLoaded', function() {
                     var popup = document.getElementById('homePopup');
 
-                    // TEST: Hapus baris 'sessionStorage' di bawah ini untuk
-                    // memastikan apakah masalahnya ada di session atau di kode lain
-                    // var alreadyShown = sessionStorage.getItem('homePopupShown');
-
-                    // Langsung tampilkan tanpa kondisi session untuk test:
+                    // Langsung tampilkan tanpa kondisi session (sesuai testing Anda):
                     if (popup) {
                         popup.classList.remove('hidden');
                         popup.classList.add('flex');
@@ -396,9 +404,6 @@
                 });
             </script>
         @endif
+
     </main>
-
-
-
-
 @endsection

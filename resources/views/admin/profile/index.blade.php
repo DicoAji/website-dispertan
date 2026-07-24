@@ -116,8 +116,8 @@
             </div>
         </div>
 
-        {{-- STRUKTUR ORGANISASI, MAKLUMAT PELAYANAN & SOP PELAYANAN (1 BARIS) --}}
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+        {{-- STRUKTUR ORGANISASI, MAKLUMAT PELAYANAN  (1 BARIS) --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
             {{-- STRUKTUR ORGANISASI --}}
             <div class="bg-white border border-[#E7E1D2] rounded-2xl p-6 h-full">
                 <div class="flex items-center space-x-3 mb-2">
@@ -172,31 +172,7 @@
                 </div>
             </div>
 
-            {{-- SOP PELAYANAN --}}
-            <div class="bg-white border border-[#E7E1D2] rounded-2xl p-6 h-full">
-                <div class="flex items-center space-x-3 mb-2">
-                    <div
-                        class="w-9 h-9 rounded-lg bg-[#F6F2E6] text-[#234D2C] flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-diagram-project"></i>
-                    </div>
-                    <div>
-                        <p class="text-[11px] font-bold tracking-widest uppercase text-[#C68A2E]">Prosedur Baku</p>
-                        <h3 class="text-sm font-semibold text-[#4A3728]">SOP Pelayanan</h3>
-                    </div>
-                </div>
-                <div class="h-[3px] w-12 rounded-full bg-gradient-to-r from-[#C68A2E] to-[#E8C077] mb-6"></div>
-                <div class="bg-[#F6F2E6] rounded-xl p-4 flex justify-center overflow-hidden">
-                    @if ($profile->sop_pelayanan)
-                        <img src="{{ asset('storage/profil_dinas/' . $profile->sop_pelayanan) }}" alt="SOP Pelayanan"
-                            class="max-w-full h-auto rounded-lg shadow-md hover:scale-[1.01] transition-transform duration-300">
-                    @else
-                        <div class="text-center py-10 text-gray-400">
-                            <i class="fas fa-image fa-3x mb-3"></i>
-                            <p>Gambar SOP pelayanan belum diunggah</p>
-                        </div>
-                    @endif
-                </div>
-            </div>
+
         </div>
 
         {{-- TUGAS DAN FUNGSI (1 BARIS: KIRI FILE, KANAN URAIAN) --}}
@@ -368,24 +344,7 @@
                             <p class="text-[10px] text-gray-400 mt-1 italic">*Format: JPG, PNG, JPEG.</p>
                         </div>
 
-                        {{-- Input Gambar SOP Pelayanan --}}
-                        <div class="md:col-span-2 border-t pt-4 mt-2">
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Update SOP Pelayanan
-                                (Gambar)</label>
-                            @if ($profile->sop_pelayanan)
-                                <div class="mb-2">
-                                    <p class="text-[10px] font-bold mb-1 flex items-center text-[#234D2C]">
-                                        <i class="fas fa-image mr-1"></i> File saat ini: {{ $profile->sop_pelayanan }}
-                                    </p>
-                                    <img src="{{ asset('storage/profil_dinas/' . $profile->sop_pelayanan) }}"
-                                        alt="Preview SOP Pelayanan"
-                                        class="h-20 w-auto rounded border border-gray-200 shadow-sm">
-                                </div>
-                            @endif
-                            <input type="file" name="sop_pelayanan" accept="image/*"
-                                class="w-full text-sm pointer-events-auto text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-[#F6F2E6] file:text-[#234D2C] border rounded-lg p-1">
-                            <p class="text-[10px] text-gray-400 mt-1 italic">*Format: JPG, PNG, JPEG.</p>
-                        </div>
+
                     </div>
 
                     <div class="mt-8 flex justify-end space-x-3 border-t pt-5">

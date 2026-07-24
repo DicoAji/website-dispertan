@@ -34,38 +34,38 @@ class AuthController extends Controller
     }
 
     // Menampilkan halaman form pendaftaran
-    public function register()
-    {
-        return view('auth.register');
-    }
+    // public function register()
+    // {
+    //     return view('auth.register');
+    // }
 
-    // Memproses data pendaftaran akun baru
-    public function prosesRegister(Request $request)
-    {
-        // 1. Validasi data yang diinput
-        $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'min:8', 'confirmed'], // confirmed butuh input password_confirmation
-        ], [
-            'name.required' => 'Nama lengkap wajib diisi.',
-            'email.required' => 'Email wajib diisi.',
-            'email.unique' => 'Email ini sudah terdaftar di sistem.',
-            'password.required' => 'Kata sandi wajib diisi.',
-            'password.min' => 'Kata sandi minimal 8 karakter.',
-            'password.confirmed' => 'Konfirmasi kata sandi tidak cocok.',
-        ]);
+    // // Memproses data pendaftaran akun baru
+    // public function prosesRegister(Request $request)
+    // {
+    //     // 1. Validasi data yang diinput
+    //     $request->validate([
+    //         'name' => ['required', 'string', 'max:255'],
+    //         'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+    //         'password' => ['required', 'min:8', 'confirmed'], // confirmed butuh input password_confirmation
+    //     ], [
+    //         'name.required' => 'Nama lengkap wajib diisi.',
+    //         'email.required' => 'Email wajib diisi.',
+    //         'email.unique' => 'Email ini sudah terdaftar di sistem.',
+    //         'password.required' => 'Kata sandi wajib diisi.',
+    //         'password.min' => 'Kata sandi minimal 8 karakter.',
+    //         'password.confirmed' => 'Konfirmasi kata sandi tidak cocok.',
+    //     ]);
 
-        // 2. Simpan data ke database dengan enkripsi otomatis
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password), // Enkripsi Bcrypt otomatis
-        ]);
+    //     // 2. Simpan data ke database dengan enkripsi otomatis
+    //     User::create([
+    //         'name' => $request->name,
+    //         'email' => $request->email,
+    //         'password' => Hash::make($request->password), // Enkripsi Bcrypt otomatis
+    //     ]);
 
-        // 3. Arahkan kembali ke halaman login dengan pesan sukses
-        return redirect('/login')->with('sukses', 'Akun berhasil dibuat! Silakan masuk.');
-    }
+    //     // 3. Arahkan kembali ke halaman login dengan pesan sukses
+    //     return redirect('/login')->with('sukses', 'Akun berhasil dibuat! Silakan masuk.');
+    // }
     public function logout(Request $request)
     {
         Auth::logout();

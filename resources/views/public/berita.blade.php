@@ -2,13 +2,15 @@
 @section('title', 'Berita')
 
 @section('content')
-    <section class="pt-12 pb-16">
+    <section class="pt-12 pb-16 bg-gray-50">
         <div class="container mx-auto px-4 max-w-7xl space-y-10">
 
-            {{-- Header Judul --}}
+            {{-- HEADER --}}
             <div class="text-center">
-                <h2 class="text-2xl font-bold text-gray-900 mb-1">Berita dan Publikasi</h2>
-                <p class="text-green-600 italic">{{ $profile->nama_opd ?? 'Dinas Pertanian Kabupaten Grobogan' }}</p>
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-1">Berita dan Publikasi</h2>
+                <p class="text-emerald-600 italic text-sm">{{ $profile->nama_opd ?? 'Dinas Pertanian Kabupaten Grobogan' }}
+                </p>
+                <div class="w-12 h-1 bg-emerald-500 rounded-full mx-auto mt-3"></div>
             </div>
 
             {{-- Mengambil Data Berita dari Database --}}

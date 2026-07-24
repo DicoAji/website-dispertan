@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 21 Jul 2026 pada 09.20
+-- Waktu pembuatan: 24 Jul 2026 pada 07.56
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `dispertan_db`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `aplikasi_lain`
+--
+
+CREATE TABLE `aplikasi_lain` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama_aplikasi` varchar(255) NOT NULL,
+  `icon` varchar(100) NOT NULL COMMENT 'Contoh: fas fa-globe atau fas fa-desktop',
+  `link` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -135,19 +150,32 @@ CREATE TABLE `file_dinas` (
 --
 
 INSERT INTO `file_dinas` (`id`, `uraian`, `file`, `tahun`, `kategori`, `created_at`, `updated_at`) VALUES
-(1, 'Standar Pelayanan Dinas Pertanian Kabupaten Grobogan', '1771909356_SOP_compressed.pdf', '2026', 'SOP', '2026-02-23 21:33:14', '2026-07-18 11:48:37'),
-(2, 'SOP Pelayanan', '1771915384_19. Perbup 78 Th 2021 SOTK Dispertan Hsl PB blm td tgn.pdf', '2026', 'SOP', '2026-02-23 23:43:04', '2026-07-18 11:59:34'),
-(3, 'Rencana Kerja Dinas Pertanian 2026', '1778243570_RENJA DISPERTAN 2026.pdf', '2026', 'RENJA', '2026-04-01 19:31:48', '2026-07-18 11:48:45'),
-(4, 'LKjIP DINAS PERTANIAN TAHUN 2025', '1776342402_LKjIP DINAS PERTANIAN TAHUN 2025.pdf', '2026', 'LKJIP', '2026-04-16 05:26:42', '2026-07-18 11:48:48'),
-(5, 'Program Kegiatan (dummy)', '1776392657_Program Kegiatan.pdf', '2026', 'Lain-lain', '2026-04-16 19:24:17', '2026-07-18 12:05:04'),
-(7, 'Inovasi Daerah dummy', '1776392998_Inovasi Daerah.pdf', '2026', 'Lain-lain', '2026-04-16 19:29:58', '2026-07-18 12:05:09'),
-(8, 'Standar Pelayanan Dummy', '1776393326_Standar Pelayanan.pdf', '2026', 'SOP', '2026-04-16 19:35:26', '2026-07-18 11:49:00'),
-(9, 'Informasi OPT dan Perkiraan Iklim dummy', '1777434517_Informasi OPT dan Perkiraan Iklim.pdf', '2026', 'Lain-lain', '2026-04-28 20:48:37', '2026-07-18 12:05:13'),
-(10, 'Penyuluhan dan Artikel Teknis dummy', '1777434830_Penyuluhan dan Artikel Teknis.pdf', '2026', 'Lain-lain', '2026-04-28 20:53:50', '2026-07-18 12:05:19'),
-(11, 'Renstra dinas dummy', '1777448366_Rensra Dinas.pdf', '2026', 'RENSTRA', '2026-04-29 00:39:26', '2026-07-18 11:49:44'),
-(12, 'RTP/SPIP dummy', '1777448595_RTPSPIP.pdf', '2026', 'RTP/SPIP', '2026-04-29 00:43:15', '2026-07-18 11:49:47'),
-(13, 'Rencana Aksi OPD dummy', '1777448648_Rencana Aksi OPD.pdf', '2026', 'RENSI', '2026-04-29 00:44:08', '2026-07-18 11:49:50'),
-(14, 'SOP Bidang Dummy', '1777448678_SOP bidang.pdf', '2026', 'SOP', '2026-04-29 00:44:38', '2026-07-18 05:43:03');
+(3, 'Rencana Kerja 2026', '1778243570_RENJA DISPERTAN 2026.pdf', '2026', 'RENJA', '2026-04-01 19:31:48', '2026-07-23 20:02:04'),
+(4, 'LKjIP 2025', '1776342402_LKjIP DINAS PERTANIAN TAHUN 2025.pdf', '2025', 'LKJIP', '2026-04-16 05:26:42', '2026-07-23 20:02:40'),
+(16, 'Renstra 2025-2029', '1784860634_1784163915_RESTRA_DISPERTAN_2025_2029_compressed.pdf', '2025', 'RENSTRA', '2026-07-23 19:37:14', '2026-07-23 20:03:01'),
+(17, 'Renstra 2021-2026', '1784860767_1718316102_2. PERUBAHAN_RENSTRA_2021-2026_DINAS_PERTANIAN.pdf', '2021', 'RENSTRA', '2026-07-23 19:39:27', '2026-07-23 19:59:07'),
+(18, 'Rencana Kerja 2024', '1784860831_1718316202_4. RENJA DISPERTAN TAHUN 2024.pdf', '2024', 'RENJA', '2026-07-23 19:40:31', '2026-07-23 19:40:31'),
+(19, 'Rencana Kerja 2023', '1784860878_1718316270_3. RENJA DISPERTAN TAHUN 2023.pdf', '2023', 'RENJA', '2026-07-23 19:41:18', '2026-07-23 19:58:52'),
+(20, 'DPA Penetapan 2024', '1784861052_1718316525_DPA Penetapan TA 2024_compressed.pdf', '2024', 'DPA', '2026-07-23 19:44:12', '2026-07-23 19:44:12'),
+(21, 'LKJIP 2023', '1784861155_1718316716_22. LKjIP_DINAS_PERTANIAN_TAHUN_2023_FIX_.pdf', '2023', 'LKJIP', '2026-07-23 19:45:55', '2026-07-23 19:46:08'),
+(22, 'IKU', '1784861261_1718316800_17. Kertas Kerja IKU Dispertan.pdf', '2026', 'IKU', '2026-07-23 19:47:41', '2026-07-23 19:47:41'),
+(23, 'Perjanjian Kinerja 2023', '1784861392_1718317472_8. Perjanjian Kinerja_DISPERTAN_2023_compressed.pdf', '2023', 'PERJA', '2026-07-23 19:49:52', '2026-07-23 19:49:52'),
+(24, 'Perjanjian Kinerja 2024', '1784861549_1718317553_9. Perjanjian Kinerja_DISPERTAN_2024_compressed.pdf', '2024', 'PERJA', '2026-07-23 19:52:29', '2026-07-23 19:52:29'),
+(25, 'LKJIP 2024', '1784861590_1748241187_LKjIP DINAS PERTANIAN TAHUN 2024.pdf', '2024', 'LKJIP', '2026-07-23 19:53:10', '2026-07-23 19:53:10'),
+(26, 'Perjanjian Kinerja 2025', '1784861682_1750042455_PK Dispertan 2025_compressed.pdf', '2025', 'PERJA', '2026-07-23 19:54:42', '2026-07-23 19:54:42'),
+(27, 'Rencana Kerja 2025', '1784861734_1750042688_RENJA_DISPERTAN_2025_FINISH1-1 (1).pdf', '2025', 'RENJA', '2026-07-23 19:55:34', '2026-07-23 19:55:40'),
+(28, 'Perjanjian Kinerja 2026', '1784861871_1784787336_PK Dispertan 2026_compressed.pdf', '2026', 'PERJA', '2026-07-23 19:57:51', '2026-07-23 19:57:51'),
+(29, 'Standar Pelayanan dan SOP', '1784862776_standar pelayanan dan SOP.pdf', '2022', 'SOP', '2026-07-23 20:12:56', '2026-07-23 20:12:56'),
+(30, 'Neraca 2024', '1784862874_Neraca 1.pdf', '2024', 'NERACA', '2026-07-23 20:14:34', '2026-07-23 20:14:34'),
+(31, 'LRA 2024', '1784862911_LRA 1 (1).pdf', '2024', 'LRA', '2026-07-23 20:15:11', '2026-07-23 20:15:11'),
+(32, 'CALK 2024', '1784862975_CALK Full.pdf', '2024', 'CALK', '2026-07-23 20:16:15', '2026-07-23 20:16:15'),
+(33, 'Aset dan Inventaris 2021', '1784863035_3 d. aset dan inventaris 2021.pdf', '2021', 'Aset Inventaris', '2026-07-23 20:17:15', '2026-07-23 20:17:15'),
+(34, 'Laporan PPID 2021', '1784863145_Laporan PPID Th 2021.pdf', '2021', 'PPID', '2026-07-23 20:19:05', '2026-07-23 20:19:05'),
+(35, 'Form Pengajuan Keberatan', '1784863231_Form_Pengajuan_Keberatan.pdf', '2026', 'Lain-lain', '2026-07-23 20:20:31', '2026-07-23 20:20:31'),
+(36, 'DPA Penetapan 2026', '1784866944_SKPD.pdf', '2026', 'DPA', '2026-07-23 21:22:24', '2026-07-23 21:22:24'),
+(37, 'DPA Pergeseran 2 2026', '1784867000_Rekap SKPD.pdf', '2026', 'DPA', '2026-07-23 21:23:20', '2026-07-23 21:23:20'),
+(38, 'LRA Smt 1 2026', '1784867236_lra-dinas-pertanian-kab-grobogan per semester 1 2026.pdf', '2026', 'LRA', '2026-07-23 21:27:16', '2026-07-23 21:27:16'),
+(39, 'CALK 2025', '1784867738_CALK BAB I PENDAHULUAN-merged.pdf', '2025', 'CALK', '2026-07-23 21:35:38', '2026-07-23 21:35:38');
 
 -- --------------------------------------------------------
 
@@ -274,6 +302,33 @@ INSERT INTO `laporan` (`id`, `nama`, `telp`, `pengaduan`, `created_at`, `updated
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `layanan`
+--
+
+CREATE TABLE `layanan` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `file` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `layanan`
+--
+
+INSERT INTO `layanan` (`id`, `nama`, `link`, `file`, `created_at`, `updated_at`) VALUES
+(1, 'Rekomendasi BBM', 'https://taksi-alsintan-grobogan.lovable.app/rekomendasi-bbm', NULL, '2026-07-21 23:25:54', '2026-07-21 23:25:54'),
+(2, 'Lapor Aduan', 'http://127.0.0.1:8000/#Lapor', NULL, '2026-07-21 23:28:22', '2026-07-21 23:28:22'),
+(3, 'Ngopi Tani', 'https://www.youtube.com/@dispertangrobogan/videos', NULL, '2026-07-21 23:29:21', '2026-07-21 23:29:21'),
+(4, 'Seed Center', NULL, '1784783813_layanan_BpYx3hVAkrLp7TfAPr3AQsuiilqA5N78eCtiOj0n.pdf', '2026-07-22 22:16:53', '2026-07-22 22:16:53'),
+(5, 'Balai Penyuluhan Pertanian', NULL, '1784783942_layanan_qTFcvhxSiaqa4MtqEW8gOiw8Cri1zjZFU802gan6.pdf', '2026-07-22 22:19:02', '2026-07-22 22:19:02'),
+(6, 'Rumah Kedelai Grobogan', 'https://beta.grobogan.go.id/berita/rumah-kedelai-grobogan-harus-jadi-ikon-baru', NULL, '2026-07-23 18:47:44', '2026-07-23 18:47:44');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `menu`
 --
 
@@ -292,7 +347,8 @@ CREATE TABLE `menu` (
 
 INSERT INTO `menu` (`id`, `menu`, `link`, `file`, `created_at`, `updated_at`) VALUES
 (3, 'Profesor Tani', 'https://profesortani.com/', NULL, '2026-07-12 21:19:22', '2026-07-12 21:19:22'),
-(4, 'Taksi Tani', 'https://taksi-alsintan-grobogan.lovable.app/', NULL, '2026-07-16 00:47:22', '2026-07-16 00:47:22');
+(4, 'Taksi Tani', 'https://taksi-alsintan-grobogan.lovable.app/', NULL, '2026-07-16 00:47:22', '2026-07-16 00:47:22'),
+(5, 'ERDKK', 'https://e-rdkk.dispertan.grobogan.go.id/', NULL, '2026-07-23 20:43:34', '2026-07-23 20:43:34');
 
 -- --------------------------------------------------------
 
@@ -377,6 +433,38 @@ INSERT INTO `pegawai` (`nip`, `nama_lengkap`, `jabatan`, `tingkat`, `foto`, `cre
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `permohonan`
+--
+
+CREATE TABLE `permohonan` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama_lengkap` varchar(255) NOT NULL,
+  `nik` varchar(20) NOT NULL,
+  `alamat` text NOT NULL,
+  `no_telepon` varchar(25) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `pekerjaan` varchar(100) NOT NULL,
+  `kategori_permohonan` enum('perorangan','organisasi','pelajar') NOT NULL,
+  `rincian_informasi` text NOT NULL,
+  `tujuan_penggunaan` text NOT NULL,
+  `cara_memperoleh` enum('ambil langsung','email','kurir','pos','fax') NOT NULL,
+  `foto_ktp` varchar(255) DEFAULT NULL,
+  `berkas_pendukung` varchar(255) DEFAULT NULL,
+  `status` enum('Belum Ditindak','Selesai') NOT NULL DEFAULT 'Belum Ditindak',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `permohonan`
+--
+
+INSERT INTO `permohonan` (`id`, `nama_lengkap`, `nik`, `alamat`, `no_telepon`, `email`, `pekerjaan`, `kategori_permohonan`, `rincian_informasi`, `tujuan_penggunaan`, `cara_memperoleh`, `foto_ktp`, `berkas_pendukung`, `status`, `created_at`, `updated_at`) VALUES
+(1, 'Dico Aji', '12313121232132131312', 'sadasdsadadsa', '2313123131312', 'dicoaji12@gmail.com', 'Petani', 'perorangan', 'dadsadadsa', 'asdadad', 'ambil langsung', '1784866312_ktp_nlwE3cCYzVFEYiMUgGRcLqstcQRwbeXNLyobzd5C.png', NULL, 'Belum Ditindak', '2026-07-23 21:11:52', '2026-07-23 21:11:52');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `popup_ads`
 --
 
@@ -391,7 +479,37 @@ CREATE TABLE `popup_ads` (
 --
 
 INSERT INTO `popup_ads` (`id`, `kegiatan`, `gambar`) VALUES
-(1, 'anti korupsi', '1784519681_NiVA5rXt0UNCg2TpQ911BI0V749Zqho4NnrWRCwC.jpg');
+(1, 'anti korupsi', '1784519681_NiVA5rXt0UNCg2TpQ911BI0V749Zqho4NnrWRCwC.jpg'),
+(2, 'Background Header', '1784689378_header_4gggoVaTXmWCxfAJyXkykstYdMGYIWrhOoqoeU4g.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `ppid`
+--
+
+CREATE TABLE `ppid` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `kategori` varchar(100) NOT NULL COMMENT 'Berkala, Serta Merta, Setiap Saat, Dikecualikan',
+  `file` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `ppid`
+--
+
+INSERT INTO `ppid` (`id`, `nama`, `kategori`, `file`, `link`, `created_at`, `updated_at`) VALUES
+(3, 'Sejarah dan Dasar Hukum', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/sejarah-dasar-hukum', '2026-07-23 20:55:15', '2026-07-23 20:55:15'),
+(4, 'Struktur Organisasi', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/struktur-organisasi', '2026-07-23 20:58:39', '2026-07-23 20:58:39'),
+(5, 'Visi dan Misi', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/visimisi', '2026-07-23 20:59:03', '2026-07-23 20:59:03'),
+(6, 'Tugas dan Fungsi', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/tugas-fungsi', '2026-07-23 20:59:38', '2026-07-23 20:59:38'),
+(7, 'Daftar Pegawai', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/pegawai', '2026-07-23 21:00:18', '2026-07-23 21:00:18'),
+(8, 'SOP Pelayanan', 'Informasi Berkala', '1784865717_ppid_DaJishwlVjGGFBW6MJOxxUNdv0W7PdB1cVNdzVGN.pdf', NULL, '2026-07-23 21:01:57', '2026-07-23 21:01:57'),
+(9, 'Grobogan Siaga', 'Informasi Serta Merta', '1784865860_ppid_cYx0A95qhLo7CBff3CptU1V43tq83ttUc1JnR6nF.pdf', NULL, '2026-07-23 21:04:20', '2026-07-23 21:04:20');
 
 -- --------------------------------------------------------
 
@@ -415,7 +533,6 @@ CREATE TABLE `profile` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `maklumat_layanan` varchar(255) DEFAULT NULL,
-  `sop_pelayanan` varchar(255) DEFAULT NULL,
   `tugas_fungsi` varchar(255) DEFAULT NULL,
   `narasi_tugas_fungsi` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -424,8 +541,8 @@ CREATE TABLE `profile` (
 -- Dumping data untuk tabel `profile`
 --
 
-INSERT INTO `profile` (`id`, `nama_opd`, `visi`, `misi`, `sejarah`, `alamat`, `email`, `telp`, `facebook`, `instagram`, `youtube`, `struktur_organisasi`, `created_at`, `updated_at`, `maklumat_layanan`, `sop_pelayanan`, `tugas_fungsi`, `narasi_tugas_fungsi`) VALUES
-(1, 'Dinas Pertanian Kabupaten Grobogan', 'Menuju Grobogan Maju, Sejahtera dan Berkelanjutan', 'Menguatkan pertumbuhan dan daya saing ekonomi masyarakat berbasis sektor unggulan <br> \r\nMengurangi kemiskinan dan pengangguran <br>\r\nMeningkatkan kualitas sumber daya manusia yang sehat, cerdas, dan berbudaya <br> \r\nMembangun infrastruktur yang handal dan merata, serta meningkatkan ketangguhan wilayah dan lingkungan hidup yang berkualitas <br>\r\nMeningkatkan kualitas tata kelola pemerintahan dan pelayanan publik dengan penguatan reformasi birokrasi', 'LLLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'Jl. Pangeran Diponegoro No.20, 58114, Area Sawah, Kalongan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 5811', '@dispertan_grobogan', '(0292) 421478', 'https://www.facebook.com/dinaspertaniankabupatengrobogan', 'https://www.instagram.com/dispertan_grobogan/', 'https://www.youtube.com/channel/UCsrzepHBJH06Dxbtr3E2zeA', 'struktur-1771744736.png', '2026-02-22 04:44:47', '2026-07-20 23:46:38', 'maklumat-1776052028.jpg', 'sop-1784616398.jpg', 'tugas-fungsi-1778242529.pdf', 'LLLIt is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).');
+INSERT INTO `profile` (`id`, `nama_opd`, `visi`, `misi`, `sejarah`, `alamat`, `email`, `telp`, `facebook`, `instagram`, `youtube`, `struktur_organisasi`, `created_at`, `updated_at`, `maklumat_layanan`, `tugas_fungsi`, `narasi_tugas_fungsi`) VALUES
+(1, 'Dinas Pertanian Kabupaten Grobogan', 'Menuju Grobogan Maju, Sejahtera dan Berkelanjutan', 'Menguatkan pertumbuhan dan daya saing ekonomi masyarakat berbasis sektor unggulan <br> \r\nMengurangi kemiskinan dan pengangguran <br>\r\nMeningkatkan kualitas sumber daya manusia yang sehat, cerdas, dan berbudaya <br> \r\nMembangun infrastruktur yang handal dan merata, serta meningkatkan ketangguhan wilayah dan lingkungan hidup yang berkualitas <br>\r\nMeningkatkan kualitas tata kelola pemerintahan dan pelayanan publik dengan penguatan reformasi birokrasi', 'Dinas Pertanian Kabupaten Grobogan adalah salah satu Dinas Teknis di lingkungan Pemerintah Kabupaten Grobogan, yang menyelenggarakan kewenangan urusan pemerintahan di sektor pertanian. Dinas Pertanian Kabupaten Grobogan mempunyai tugas membantu Bupati dalam melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuannya di bidang pertanian yaitu merumuskan kebijakan teknis perencanaan,pelaksanaan dan pengendalian teknis bidang pertanian tanaman pangan, hortikultura, dan perkebunan, memimpin dan mengkoordinasikan pelaksanaan tugas dan fungsi dinas, melaksanakan bimbingan dan pembinaan, pengelolaan administrasi, ketatausahaan, pengawasan terhadap penyelenggaraan kegiatan Balai Penyuluhan Pertanian\r\n\r\nKedudukan Dinas Pertanian Kabupaten Grobogan diatur dalam Peraturan Bupati Grobogan No. 78 Tahun 2021 tentang Kedudukan,Susunan Organisasi, Tugas Pokok, Fungsi, Uraian Tugas Jabatan danTata Kerja Dinas Pertanian Kabupaten Grobogan\r\nSecara historis nama Dinas pertanian sepanjang berdirinya senantiasa mengalami perubahan sesuai dengan situasi dan politik pemerintah saat itu. Sebelum masa reformasi Dinas pertanian berdiri sendiri dengan nama Dinas Pertanian Tanaman Pangan. \r\nSelanjutnya pada reformasi dengan diterbitkan undang-undang nomor 32 tahun 2004 tentang pemerintah daerah atau dikenal dengan otonomi daerah Dinas Pertanian tanaman pangan berubah menjadi Dinas Kehutanan, Pertanian dan Urusan Ketahanan Pangan melalui penetapan peraturan daerah nomor 6 tahun 2004. \r\nKemudian pada tahun 2009 melalui penetapan perda nomor 11 tahun 2009 berubah menjadi Dinas Pertanian, Kehutanan, Perkebunan, dan Peternakan. Selanjutnya melalui penetapan perda kabupaten Grobogan nomor 15 tahun 2016 tentang perangkat daerah yang melahirkan Dinas Pertanian sejak Februari 2017.', 'Jl. Pangeran Diponegoro No.20, 58114, Area Sawah, Kalongan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 5811', '@dispertan_grobogan', '(0292) 421478', 'https://www.facebook.com/dinaspertaniankabupatengrobogan', 'https://www.instagram.com/dispertan_grobogan/', 'https://www.youtube.com/channel/UCsrzepHBJH06Dxbtr3E2zeA', 'struktur-1771744736.png', '2026-02-22 04:44:47', '2026-07-23 21:47:18', 'maklumat-1784868438.jpg', 'tugas-fungsi-1778242529.pdf', 'Selanjutnya berdasarkan Peraturan Bupati Grobogan Nomor 78 Tahun 2021 tentang Kedudukan, Susunan Organisasi, Tugas Pokok, Fungsi dan Uraian Jabatan dan Tata Kerja Organisasi Dinas Pertanian Kabupaten Grobogan,');
 
 -- --------------------------------------------------------
 
@@ -486,11 +603,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Dico Aji', 'dicoaji12@gmail.com', NULL, '$2y$12$6zBXEoMMEbimoAJx8OqLHOPdMkVIbXyI7O1vdsz.9lFyh0WzZUuzq', NULL, '2026-06-10 21:02:05', '2026-06-10 21:02:05');
+(1, 'Dico Aji', 'dicoaji12@gmail.com', NULL, '$2y$12$6zBXEoMMEbimoAJx8OqLHOPdMkVIbXyI7O1vdsz.9lFyh0WzZUuzq', NULL, '2026-06-10 21:02:05', '2026-06-10 21:02:05'),
+(2, 'Admin Dispertan', 'admin@pertanian.com', NULL, '$2y$12$RRPKohlWE0d05hPpuMEQb.3lQnvNSP2gK8OmTJE3muZBLSQq4xMNS', NULL, '2026-07-23 21:50:38', '2026-07-23 21:50:38');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `aplikasi_lain`
+--
+ALTER TABLE `aplikasi_lain`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indeks untuk tabel `berita`
@@ -569,6 +693,12 @@ ALTER TABLE `laporan`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `layanan`
+--
+ALTER TABLE `layanan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `menu`
 --
 ALTER TABLE `menu`
@@ -593,9 +723,21 @@ ALTER TABLE `pegawai`
   ADD PRIMARY KEY (`nip`);
 
 --
+-- Indeks untuk tabel `permohonan`
+--
+ALTER TABLE `permohonan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `popup_ads`
 --
 ALTER TABLE `popup_ads`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indeks untuk tabel `ppid`
+--
+ALTER TABLE `ppid`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -630,6 +772,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `aplikasi_lain`
+--
+ALTER TABLE `aplikasi_lain`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
@@ -651,7 +799,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `file_dinas`
 --
 ALTER TABLE `file_dinas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT untuk tabel `galeri_fotos`
@@ -684,10 +832,16 @@ ALTER TABLE `laporan`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT untuk tabel `layanan`
+--
+ALTER TABLE `layanan`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT untuk tabel `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -696,10 +850,22 @@ ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT untuk tabel `permohonan`
+--
+ALTER TABLE `permohonan`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT untuk tabel `popup_ads`
 --
 ALTER TABLE `popup_ads`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `ppid`
+--
+ALTER TABLE `ppid`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT untuk tabel `profile`
@@ -717,7 +883,7 @@ ALTER TABLE `skms`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

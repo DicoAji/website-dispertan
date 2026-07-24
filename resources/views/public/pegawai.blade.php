@@ -3,25 +3,32 @@
 @section('title', 'Pegawai')
 
 @section('content')
-    <section class="pt-12">
+    <section class="pt-12 pb-20 bg-gray-50">
         <div class="container mx-auto px-4 max-w-7xl space-y-8">
-            {{-- Header Halaman --}}
-            <div class="text-center  mb-3">
-                <h2 class="text-2xl font-bold text-gray-900 mb-1">Daftar Pegawai</h2>
-                <p class="text-green-600  italic">{{ $profile->nama_opd ?? 'Dinas Pertanian Kabupaten Grobogan' }}
+
+            {{-- HEADER --}}
+            <div class="text-center">
+                {{-- <div
+                    class="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-700 text-white text-lg mb-3 shadow-sm">
+                    <i class="fas fa-users"></i>
+                </div>
+                <p class="text-[11px] font-bold tracking-widest uppercase text-emerald-600 mb-1">Sumber Daya Manusia</p> --}}
+                <h2 class="text-2xl md:text-3xl font-bold text-gray-900">Daftar Pegawai</h2>
+                <p class="text-gray-400 text-sm italic mt-1">{{ $profile->nama_opd ?? 'Dinas Pertanian Kabupaten Grobogan' }}
                 </p>
             </div>
 
             {{-- Filter Pencarian --}}
-            <div class="max-w-3xl mx-auto  p-3 bg-green-50 rounded-full shadow-md">
+            <div class="max-w-3xl mx-auto p-2 bg-white rounded-full shadow-md border border-gray-100">
                 <div class="flex items-center">
                     <label for="simple-search" class="sr-only">Cari Pegawai</label>
                     <div class="relative w-full">
+                        <i class="fas fa-search absolute left-4 top-1/2 -translate-y-1/2 text-gray-300 text-sm"></i>
                         <input type="text" id="simple-search"
-                            class="bg-white border border-gray-50 text-gray-900 text-sm rounded-full focus:ring-green-500 focus:border-green-500 block w-full pl-6 pr-12 p-3"
+                            class="bg-transparent border-0 text-gray-900 text-sm rounded-full focus:ring-0 block w-full pl-11 pr-4 py-3"
                             placeholder="Cari berdasarkan nama, atau jabatan..." />
                     </div>
-                    <div class="p-3 ml-2 text-sm font-medium text-white bg-green-700 rounded-full border border-green-700">
+                    <div class="p-3 mr-1 text-sm font-medium text-white bg-emerald-700 rounded-full flex-shrink-0">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -41,11 +48,11 @@
                             strtolower($p->gender) == 'p' ? 'foto_default_perempuan.png' : 'foto_default_laki.png';
                     @endphp
 
-                    <div class="item-pegawai bg-white shadow rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all duration-300 group"
+                    <div class="item-pegawai bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
                         data-search="{{ strtolower($p->nama_lengkap . ' ' . $p->nip . ' ' . $p->jabatan) }}">
 
                         {{-- Foto Pegawai --}}
-                        <div class="aspect-[1/1] overflow-hidden bg-gray-200">
+                        <div class="aspect-[1/1] overflow-hidden bg-gray-100">
                             <img src="{{ $p->foto && $p->foto !== 'default.jpg' ? asset('storage/pegawai/' . $p->foto) : asset('storage/foto/default/' . $foto_default) }}"
                                 alt="{{ $p->nama_lengkap }}"
                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -55,10 +62,10 @@
                         {{-- Detail Pegawai --}}
                         <div class="p-3 text-center">
                             <h4
-                                class="font-bold text-gray-900 text-xs md:text-sm leading-tight mb-1 group-hover:text-green-700">
+                                class="font-bold text-gray-900 text-xs md:text-sm leading-tight mb-1 group-hover:text-emerald-700 transition-colors">
                                 {{ $p->nama_lengkap }}
                             </h4>
-                            <p class="text-green-600 text-[10px] md:text-xs font-semibold leading-tight uppercase">
+                            <p class="text-emerald-600 text-[10px] md:text-xs font-semibold leading-tight uppercase">
                                 {{ $p->jabatan }}
                             </p>
                             @if ($p->nip)

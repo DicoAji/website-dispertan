@@ -51,6 +51,21 @@
                     <i class="fas fa-folder-open w-6 text-center"></i>
                     <span class="ml-2">Dokumen</span>
                 </a>
+                <a href="{{ route('admin.ppid.index') }}"
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('admin.ppid.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-file-signature w-6 text-center"></i>
+                    <span class="ml-2">PPID</span>
+                </a>
+                <a href="{{ route('admin.permohonan.index') }}"
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('admin.permohonan.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-inbox w-6 text-center"></i>
+                    <span class="ml-2">Permohonan Informasi</span>
+                </a>
+                <a href="{{ route('admin.layanan.index') }}"
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('admin.layanan.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-concierge-bell w-6 text-center"></i>
+                    <span class="ml-2">Layanan</span>
+                </a>
 
                 <a href="{{ route('pegawai.index') }}"
                     class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('pegawai.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
@@ -61,24 +76,25 @@
                 <a href="{{ route('admin.galeri.index') }}"
                     class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('admin.galeri.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
                     <i class="fas fa-images w-6 text-center"></i>
-                    <span class="ml-2">Galeri</span>
+                    <span class="ml-2">Artikel/Foto/Video</span>
                 </a>
 
                 <a href="{{ route('admin.laporan.index') }}"
                     class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->is('admin/laporan*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
                     <i class="fas fa-clipboard-list w-6 text-center"></i>
-                    <span class="ml-2">Laporan</span>
+                    <span class="ml-2">Laporan/Aduan</span>
                 </a>
-                <a href="{{ route('admin.informasi.index') }}"
-                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('admin.informasi.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
-                    <i class="fas fa-info-circle w-6 text-center"></i>
-                    <span class="ml-2">Informasi</span>
-                </a>
+
 
                 <a href="{{ route('admin.tambahan_menu.index') }}"
                     class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('admin.tambahan_menu.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
                     <i class="fas fa-folder-plus w-6 text-center"></i>
                     <span class="ml-2">Tambahan Menu</span>
+                </a>
+                <a href="{{ route('admin.aplikasi_lain.index') }}"
+                    class="flex items-center py-2.5 px-4 rounded-lg transition-all duration-300 {{ request()->routeIs('admin.aplikasi_lain.*') ? 'bg-green-900 shadow-md text-white font-semibold' : 'text-green-50 hover:bg-green-800/80 hover:translate-x-1.5' }}">
+                    <i class="fas fa-th-large w-6 text-center"></i>
+                    <span class="ml-2">Aplikasi Lain</span>
                 </a>
 
                 <style>

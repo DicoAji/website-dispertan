@@ -29,7 +29,6 @@ class ProfileController extends Controller
             'youtube'  => 'nullable|url',
             'struktur_organisasi' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
             'maklumat_layanan'    => 'nullable|image|mimes:jpg,png,jpeg|max:5120',
-            'sop_pelayanan'       => 'nullable|image|mimes:jpg,png,jpeg|max:5120',
             'tugas_fungsi'        => 'nullable|mimes:pdf|max:5120',
             'narasi_tugas_fungsi' => 'nullable|string',
         ]);
@@ -93,27 +92,6 @@ class ProfileController extends Controller
         }
 
 
-        // --- Penanganan Unggah SOP Pelayanan (Gambar) ---
-        if ($request->hasFile('sop_pelayanan')) {
-            $file = $request->file('sop_pelayanan');
-
-            // Hapus file lama jika ada di database dan fisik file tersedia
-            if ($profile->sop_pelayanan) {
-                $oldFilePath = $destinationPath . '/' . $profile->sop_pelayanan;
-                if (File::exists($oldFilePath)) {
-                    File::delete($oldFilePath);
-                }
-            }
-
-            // Beri nama file baru
-            $filename = 'sop-' . time() . '.' . $file->getClientOriginalExtension();
-
-            // Pindahkan file ke folder tujuan
-            $file->move($destinationPath, $filename);
-
-            // Simpan nama file ke dalam array data untuk update database
-            $data['sop_pelayanan'] = $filename;
-        }
 
 
         // --- 5. Penanganan Tugas dan Fungsi (PDF) ---

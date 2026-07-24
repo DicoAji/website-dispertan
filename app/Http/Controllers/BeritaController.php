@@ -56,4 +56,14 @@ class BeritaController extends Controller
         $berita->delete();
         return redirect()->back()->with('success', 'Berita berhasil dihapus!');
     }
+    public function show($id)
+    {
+        // Ambil berita berdasarkan ID, jika tidak ada akan memunculkan error 404
+        $berita = Berita::findOrFail($id);
+        // Ambil profil instansi (jika dibutuhkan di layout/view)
+        $profile = \App\Models\Profile::first();
+        // Ambil berita lain untuk rekomendasi/sidebar (opsional, misal 3 berita terbaru selain berita yang sedang dibuka)
+        $beritaLainnya = Berita::where('id', '!=', $id)->orderBy('tanggal_berita', 'desc')->take(3)->get();
+        return view('public.detail_berita', compact('berita', 'profile', 'beritaLainnya'));
+    }
 }

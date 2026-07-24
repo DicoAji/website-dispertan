@@ -65,12 +65,12 @@
             </button>
         </form>
 
-        <p class="mt-6 text-center text-sm text-gray-600">
+        {{-- <p class="mt-6 text-center text-sm text-gray-600">
             Belum punya akun admin?
             <a href="{{ url('/register') }}"
                 class="text-green-700 font-semibold hover:text-green-800 hover:underline transition duration-150">Daftar
                 di sini</a>
-        </p>
+        </p> --}}
     </div>
 </body>
 
