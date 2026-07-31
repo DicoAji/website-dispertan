@@ -38,7 +38,7 @@
                         {{-- Gambar --}}
                         <div class="relative bg-gray-50">
                             <img src="{{ asset('storage/popup/' . $popup->gambar) }}"
-                                alt="{{ $popup->kegiatan ?? 'Informasi' }}" class="w-full max-h-[65vh] object-contain">
+                                alt="{{ $popup->kegiatan ?? 'Informasi' }}" class="w-full max-h-[95vh] object-contain">
                             <div
                                 class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/30 to-transparent pointer-events-none">
                             </div>
@@ -76,10 +76,10 @@
         <section class="py-16 bg-gray-50" id="berita">
             <div class="container mx-auto px-4">
                 <div class="flex items-center justify-between mb-8">
-                    <div class="">
-                        <h2 class="text-3xl md:text-4xl font-bold  text-emerald-900">Berita Terkini!</h2>
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold text-emerald-900">Berita Terkini!</h2>
                         <p class="text-gray-500 mt-1">
-                            Berikut adalah beberapa berita terbaru dari Dinas Pertanian Kab.Grobogan
+                            Berikut adalah beberapa berita terbaru dari Dinas Pertanian Kab. Grobogan
                         </p>
                     </div>
                     <a href="/berita"
@@ -87,11 +87,18 @@
                         Lihat Semua
                     </a>
                 </div>
+
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
                     @if (isset($berita) && $berita->count() > 0)
                         @php
-                            $sortedBerita = $berita->sortByDesc('tanggal_berita');
+                            // Pastikan urutan benar dari yang paling baru
+                            // (values() digunakan untuk me-reset index array/collection)
+                            $sortedBerita = $berita->sortByDesc('tanggal_berita')->values();
+
+                            // Ambil 1 berita pertama
                             $beritaTerbaru = $sortedBerita->first();
+
+                            // Ambil 3 berita setelah berita pertama
                             $beritaSelanjutnya = $sortedBerita->skip(1)->take(3);
                         @endphp
 
@@ -99,30 +106,33 @@
                         @if ($beritaTerbaru)
                             <article
                                 class="lg:col-span-7 relative rounded-xl overflow-hidden shadow-sm hover:shadow-md transition group">
-                                <a href="{{ url('/berita/' . $beritaTerbaru->id) }}" class="block relative h-80">
+                                <a href="{{ url('/berita/' . $beritaTerbaru->id) }}"
+                                    class="block relative h-full min-h-[320px]">
                                     <img src="{{ asset('storage/berita/' . $beritaTerbaru->foto_berita) }}"
                                         alt="{{ $beritaTerbaru->judul }}"
-                                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                        class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                                         onerror="this.onerror=null;this.src='{{ asset('img/no-image.png') }}'" />
 
                                     {{-- Overlay Gradient & Teks --}}
                                     <div
-                                        class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 text-white">
-                                        <span class="text-xs text-gray-300 mb-1">
+                                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6 text-white">
+                                        <span class="text-xs font-semibold text-emerald-300 mb-2 drop-shadow-md">
+                                            <i class="fas fa-calendar-alt mr-1"></i>
                                             {{ \Carbon\Carbon::parse($beritaTerbaru->tanggal_berita)->translatedFormat('d F Y') }}
                                         </span>
-                                        <h2 class="font-bold text-xl mb-2 leading-tight  transition-colors">
-                                            {{ $beritaTerbaru->judul }}</h2>
-
+                                        <h2 class="font-bold text-2xl mb-2 leading-tight transition-colors drop-shadow-md">
+                                            {{ $beritaTerbaru->judul }}
+                                        </h2>
                                     </div>
                                 </a>
                             </article>
                         @endif
 
-                        {{-- BAGIAN KANAN: 3 Berita Selanjutnya (Tanpa Padding Kotak) --}}
-                        <div class="lg:col-span-5 flex flex-col justify-between gap-4 py-1">
+                        {{-- BAGIAN KANAN: 3 Berita Selanjutnya --}}
+                        <div class="lg:col-span-5 flex flex-col justify-between gap-4">
                             @foreach ($beritaSelanjutnya as $b)
-                                <article class="flex gap-4 items-center group">
+                                <article
+                                    class="flex gap-4 items-center group bg-white p-3 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                                     <a href="{{ url('/berita/' . $b->id) }}"
                                         class="w-32 h-24 flex-shrink-0 overflow-hidden rounded-lg shadow-sm">
                                         <img src="{{ asset('storage/berita/' . $b->foto_berita) }}"
@@ -130,17 +140,22 @@
                                             class="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                                             onerror="this.onerror=null;this.src='{{ asset('img/no-image.png') }}'" />
                                     </a>
-                                    <div class="min-w-0">
-                                        <span class="text-[11px] text-gray-500">
+                                    <div class="min-w-0 flex flex-col justify-center">
+                                        <span class="text-[11px] font-semibold text-emerald-600 mb-1">
                                             {{ \Carbon\Carbon::parse($b->tanggal_berita)->translatedFormat('d F Y') }}
                                         </span>
                                         <h3
-                                            class="font-semibold text-sm leading-snug line-clamp-2 mt-1 text-gray-800 group-hover:text-emerald-700 transition-colors">
+                                            class="font-bold text-sm leading-snug line-clamp-2 text-gray-800 group-hover:text-emerald-700 transition-colors">
                                             <a href="{{ url('/berita/' . $b->id) }}">{{ $b->judul }}</a>
                                         </h3>
                                     </div>
                                 </article>
                             @endforeach
+                        </div>
+                    @else
+                        <div
+                            class="col-span-12 text-center py-12 text-gray-400 italic bg-white rounded-xl border border-gray-100">
+                            Belum ada berita yang diterbitkan.
                         </div>
                     @endif
                 </div>
@@ -265,6 +280,9 @@
             </div>
         </section>
 
+
+
+        {{-- SECTION APLIKASI LAIN (HORIZONTAL SCROLL & HOVER EFFECT) --}}
         {{-- SECTION APLIKASI LAIN (HORIZONTAL SCROLL & HOVER EFFECT) --}}
         <section class="py-16 bg-gradient-to-b from-gray-50/50 to-white border-y border-gray-100 overflow-hidden mt-8">
             <div class="text-center mb-12">
@@ -275,21 +293,26 @@
             </div>
 
             {{-- Container Geser Kanan-Kiri --}}
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex items-center gap-5 overflow-x-auto pb-6 pt-2 no-scrollbar scroll-smooth">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+
+                {{-- Tambahkan class 'no-scrollbar', 'cursor-grab', dan id 'slider-aplikasi' --}}
+                <div id="slider-aplikasi"
+                    class="flex items-center gap-5 overflow-x-auto pb-6 pt-2 scroll-smooth no-scrollbar cursor-grab active:cursor-grabbing w-full">
                     @forelse($aplikasiLain ?? [] as $app)
-                        <a href="{{ $app->link }}" target="_blank"
-                            class="flex flex-col items-center justify-between bg-white hover:bg-emerald-50/30 border border-gray-200/80 hover:border-emerald-300 rounded-2xl min-w-[170px] md:min-w-[190px] h-[140px] flex-shrink-0 transition-all duration-300 transform hover:-translate-y-1.5 group shadow-sm hover:shadow-xl">
+                        {{-- Tambahkan draggable="false" dan select-none agar teks/gambar tidak ikut tersorot biru saat diseret --}}
+                        <a href="{{ $app->link }}" target="_blank" draggable="false"
+                            class="flex flex-col items-center p-2 justify-between bg-white hover:bg-emerald-50/30 rounded-md min-w-[170px] md:min-w-[190px] h-[140px] flex-shrink-0 transition-all duration-300 transform hover:-translate-y-1.5 group select-none">
 
                             {{-- Logo / Gambar (Hitam Putih ke Berwarna) --}}
-                            <div class="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center my-auto">
+                            <div class="flex items-center justify-center my-auto pointer-events-none">
                                 <img src="{{ asset('storage/aplikasi/' . $app->logo) }}" alt="{{ $app->nama_aplikasi }}"
+                                    draggable="false"
                                     class="w-full h-full object-contain filter grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">
                             </div>
 
                             {{-- Nama Aplikasi --}}
                             <span
-                                class="text-xs md:text-sm  text-gray-700 group-hover:text-emerald-800 text-center tracking-tight transition-colors line-clamp-1 w-full mt-2">
+                                class="text-xs md:text-sm text-gray-700 group-hover:text-emerald-800 text-center tracking-tight transition-colors line-clamp-1 w-full pointer-events-none">
                                 {{ $app->nama_aplikasi }}
                             </span>
                         </a>
@@ -302,6 +325,7 @@
                 </div>
             </div>
         </section>
+        {{-- END SECTION APLIKASI LAIN --}}
         {{-- END SECTION APLIKASI LAIN --}}
 
         <section class="bg-gray-50 py-20" id="kontak">
@@ -407,6 +431,35 @@
                 window.addEventListener('click', triggerAudioOnInteraction);
                 window.addEventListener('scroll', triggerAudioOnInteraction);
                 window.addEventListener('keydown', triggerAudioOnInteraction);
+            });
+            const slider = document.getElementById('slider-aplikasi');
+            let isDown = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener('mouseleave', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mouseup', () => {
+                isDown = false;
+                slider.classList.remove('active');
+            });
+
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2; // Angka 2 adalah kecepatan scroll
+                slider.scrollLeft = scrollLeft - walk;
             });
         </script>
 

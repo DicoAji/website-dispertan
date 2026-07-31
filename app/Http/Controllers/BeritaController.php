@@ -21,10 +21,10 @@ class BeritaController extends Controller
             'judul' => 'required|string|max:255',
             'tanggal_berita' => 'required|date',
             'deskripsi' => 'required',
-            'foto_berita' => 'nullable|image|mimes:jpg,jpeg,png|max:1024', // Maksimal 1MB
+            'foto_berita' => 'nullable|image|mimes:jpg,jpeg,png|max:5120', // Maksimal 5MB
         ], [
             // Pesan kustom jika validasi gagal
-            'foto_berita.max' => 'Gagal menambahkan berita! Ukuran foto tidak boleh lebih dari 1 MB.',
+            'foto_berita.max' => 'Gagal menambahkan berita! Ukuran foto tidak boleh lebih dari 5 MB.',
             'foto_berita.image' => 'File yang diunggah harus berupa gambar.',
         ]);
 

@@ -6,6 +6,7 @@ use App\Models\Profile;
 use App\Models\Berita;
 use Illuminate\Http\Request;
 use App\Models\PopupAd;
+use App\Models\AplikasiLain;
 
 class PublicController extends Controller
 {
@@ -18,16 +19,16 @@ class PublicController extends Controller
         // 2. Ambil Header
         $header = PopupAd::find(2);
 
-        // 3. Ambil Berita (disamakan dengan logika di route lama agar tidak rusak)
-        $berita = Berita::latest()->take(6)->get();
+        // 3. PERBAIKAN: Ambil 4 Berita, urutkan berdasarkan 'tanggal_berita' paling baru
+        $berita = Berita::orderBy('tanggal_berita', 'desc')->take(4)->get();
 
         // 4. Ambil Profile
         $profile = Profile::first();
 
-        // 5. Ambil Data Aplikasi Lain untuk ditampilkan di atas Kontak
-        $aplikasiLain = \App\Models\AplikasiLain::orderBy('id', 'desc')->get();
+        // 5. Ambil Data Aplikasi Lain
+        $aplikasiLain = AplikasiLain::orderBy('id', 'desc')->get();
 
-        // 6. Kirim semuanya ke view 'public.index'
+        // 6. Kirim semuanya ke view
         return view('public.index', compact('popup', 'header', 'berita', 'profile', 'aplikasiLain'));
     }
     public function visimisi()

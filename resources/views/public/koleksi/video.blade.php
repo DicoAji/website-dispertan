@@ -17,7 +17,7 @@
                 @forelse ($video as $item)
                     {{-- Pembungkus utama: flex-col pada mobile, flex-row pada desktop --}}
                     <div
-                        class="flex flex-col md:flex-row items-center bg-white p-3 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-emerald-100 transition-all duration-300">
+                        class="flex flex-col md:flex-row items-center bg-white p-2 rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:border-emerald-100 transition-all duration-300">
 
                         {{-- KIRI: Thumbnail --}}
                         <div
@@ -35,7 +35,7 @@
 
                         {{-- TENGAH: Judul & Info --}}
                         <div class="flex-grow w-full px-0 md:px-6 py-4 md:py-0">
-                            <h3 class="text-lg font-bold text-gray-800 mb-1 leading-tight">{{ $item->kegiatan }}</h3>
+                            <h3 class="text-sm font-semibold text-gray-800 mb-1 leading-tight">{{ $item->kegiatan }}</h3>
                             <div class="flex items-center text-xs text-gray-500 gap-4">
                                 <span><i class="fas fa-calendar-alt mr-1 text-emerald-500"></i>
                                     {{ $item->created_at->format('d M Y') }}</span>
@@ -45,7 +45,7 @@
 
                         {{-- KANAN: Tombol Link Video --}}
                         <a href="{{ $item->deskripsi }}" target="_blank"
-                            class="w-full md:w-auto justify-center px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md transition-all hover:scale-105 flex items-center gap-2 flex-shrink-0">
+                            class="w-full md:w-auto justify-center px-3 py-1 bg-red-600 hover:bg-red-700 text-white rounded-lg shadow-md transition-all hover:scale-105 flex items-center gap-2 flex-shrink-0">
                             <i class="fas fa-external-link-alt"></i> Tonton
                         </a>
                     </div>

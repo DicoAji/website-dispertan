@@ -50,15 +50,15 @@
                                 <tbody class="divide-y divide-gray-50">
                                     @foreach ($dokumen as $item)
                                         <tr class="hover:bg-gray-50 transition-colors group">
-                                            <td class="py-4 px-4 text-center text-gray-500">{{ $loop->iteration }}</td>
-                                            <td class="py-4 px-4 font-medium text-gray-800">{{ $item->nama }}</td>
-                                            <td class="py-4 px-4">
+                                            <td class="py-2 px-3 text-center text-gray-500">{{ $loop->iteration }}</td>
+                                            <td class="py-2 px-3 text-sm text-gray-800">{{ $item->nama }}</td>
+                                            <td class="py-2 px-3">
                                                 <div class="flex items-center justify-center gap-2 flex-wrap">
 
                                                     {{-- Tampilkan Tombol Link jika ada --}}
                                                     @if ($item->link)
                                                         <a href="{{ $item->link }}" target="_blank"
-                                                            class="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 text-xs font-bold rounded-lg hover:bg-blue-600 hover:text-white transition-all shadow-sm">
+                                                            class="inline-flex items-center px-3 py-2 bg-blue-50 text-blue-700 text-xs font-bold rounded-lg hover:bg-blue-600 hover:text-white transition-all shadow-sm">
                                                             <i class="fas fa-external-link-alt mr-1.5"></i> Buka Link
                                                         </a>
                                                     @endif

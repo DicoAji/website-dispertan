@@ -115,6 +115,10 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::post('/popup-ads', [DashboardController::class, 'updatePopup'])->name('admin.popup.update');
     Route::post('/header-update', [DashboardController::class, 'updateHeader'])->name('admin.header.update');
 
+    // ROUTE MENU LAYANAN (CRUD)
+    Route::post('/menu-layanan', [DashboardController::class, 'storeMenuLayanan'])->name('admin.menu_layanan.store');
+    Route::put('/menu-layanan/{id}', [DashboardController::class, 'updateMenuLayanan'])->name('admin.menu_layanan.update');
+    Route::delete('/menu-layanan/{id}', [DashboardController::class, 'destroyMenuLayanan'])->name('admin.menu_layanan.destroy');
     // Route untuk melihat data pegawai
     Route::get('/pegawai', [PegawaiController::class, 'index'])->name('pegawai.index');
     Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');

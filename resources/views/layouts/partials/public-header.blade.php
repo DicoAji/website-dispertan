@@ -25,7 +25,7 @@
                 <div
                     class="absolute hidden group-hover:block top-full left-0 bg-white border border-gray-100 shadow-xl rounded-lg py-2 w-56 animate-in fade-in slide-in-from-top-2 z-50">
                     <a href="{{ url('/sejarah-dasar-hukum') }}"
-                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Sejarah dan Dasar Hukum</a>
+                        class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Profil</a>
                     <a href="{{ url('/visimisi') }}"
                         class="block px-4 py-2 hover:bg-emerald-50 hover:text-emerald-700">Visi Misi</a>
                     <a href="{{ url('/struktur-organisasi') }}"
@@ -214,8 +214,7 @@
                 <div class="text-gray-700 font-medium mb-2">Profil</div>
                 <div class="flex flex-col pl-4 border-l-2 border-emerald-100 space-y-3">
                     <a href="{{ url('/sejarah-dasar-hukum') }}"
-                        class="text-sm text-gray-600 hover:text-emerald-700">Sejarah dan
-                        Dasar Hukum</a>
+                        class="text-sm text-gray-600 hover:text-emerald-700">Profil</a>
                     <a href="{{ url('/visimisi') }}" class="text-sm text-gray-600 hover:text-emerald-700">Visi
                         Misi</a>
                     <a href="{{ url('/struktur-organisasi') }}"

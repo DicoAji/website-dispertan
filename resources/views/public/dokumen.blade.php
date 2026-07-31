@@ -44,25 +44,26 @@
 
                 {{-- KONTEN --}}
                 <div class="md:col-span-3">
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 min-h-[500px]">
-                        <h3 class="text-base font-bold text-gray-800 mb-6 pb-3 border-b border-gray-100 flex items-center">
+                    <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 md:p-5 min-h-[400px]">
+                        <h3 class="text-md font-bold text-gray-800 mb-4 pb-2 border-b border-gray-100 flex items-center">
                             <i class="fas fa-file-lines text-emerald-600 mr-2"></i> Daftar Dokumen
                         </h3>
-                        <div class="space-y-3">
+
+                        <div class="space-y-2">
                             {{-- Looping Dokumen --}}
                             @forelse ($dokumen as $doc)
                                 {{-- Kita gunakan strtoupper agar konsisten dengan data di database --}}
-                                <div class="doc-item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 border border-gray-100 rounded-xl hover:shadow-md hover:border-emerald-100 transition bg-gray-50/60 hover:bg-white group"
+                                <div class="doc-item flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-3 border border-gray-100 rounded-lg hover:shadow-md hover:border-emerald-100 transition bg-gray-50/60 hover:bg-white group"
                                     data-kategori="{{ strtoupper($doc->kategori) }}">
 
-                                    <div class="flex items-center gap-4 min-w-0">
-                                        <div class="bg-red-50 p-2.5 rounded-lg text-red-500 flex-shrink-0">
-                                            <i class="fas fa-file-pdf text-xl"></i>
+                                    <div class="flex items-center gap-3 min-w-0">
+                                        <div class="bg-red-50 p-2 rounded-md text-red-500 flex-shrink-0">
+                                            <i class="fas fa-file-pdf text-lg"></i>
                                         </div>
                                         <div class="min-w-0">
-                                            <h4 class="font-semibold text-gray-800 text-sm md:text-base truncate">
+                                            <h4 class="font-semibold text-gray-800 text-sm truncate">
                                                 {{ $doc->uraian }}</h4>
-                                            <p class="text-[11px] text-gray-400 mt-0.5">
+                                            <p class="text-[10px] text-gray-400 mt-0.5">
                                                 <i
                                                     class="far fa-calendar mr-1 text-emerald-400"></i>{{ $doc->created_at->format('d F Y') }}
                                                 <span class="mx-1">·</span>
@@ -71,15 +72,16 @@
                                             </p>
                                         </div>
                                     </div>
+
                                     <a href="{{ asset('storage/dokumen/' . $doc->file) }}" target="_blank"
-                                        class="flex-shrink-0 inline-flex items-center justify-center bg-emerald-600 text-white px-5 py-2.5 rounded-lg text-xs font-bold hover:bg-emerald-700 transition shadow-sm">
-                                        <i class="fas fa-download mr-1.5"></i> Download
+                                        class="flex-shrink-0 inline-flex items-center justify-center bg-emerald-600 text-white px-3 py-1.5 rounded-md text-[11px] font-bold hover:bg-emerald-700 transition shadow-sm mt-2 sm:mt-0">
+                                        <i class="fas fa-download mr-1"></i> Download
                                     </a>
                                 </div>
                             @empty
-                                <div class="text-center py-20 text-gray-400">
-                                    <i class="fas fa-folder-open fa-4x mb-4 text-gray-200"></i>
-                                    <p>Belum ada dokumen yang diunggah.</p>
+                                <div class="text-center py-12 text-gray-400">
+                                    <i class="fas fa-folder-open fa-3x mb-3 text-gray-200"></i>
+                                    <p class="text-sm">Belum ada dokumen yang diunggah.</p>
                                 </div>
                             @endforelse
                         </div>

@@ -74,7 +74,7 @@
                 </div>
                 <div>
                     <p class="text-[11px] font-bold tracking-widest uppercase text-[#C68A2E]">Rekam Jejak</p>
-                    <h3 class="text-base font-semibold text-[#4A3728]">Sejarah</h3>
+                    <h3 class="text-base font-semibold text-[#4A3728]">Profil</h3>
                 </div>
             </div>
             <div class="h-[3px] w-12 rounded-full bg-gradient-to-r from-[#C68A2E] to-[#E8C077] mb-5"></div>
@@ -251,7 +251,7 @@
                                 class="w-full rounded-lg border-gray-300 p-2.5 border focus:ring-2 focus:ring-[#234D2C] focus:outline-none">
                         </div>
                         <div class="md:col-span-2">
-                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Sejarah</label>
+                            <label class="block text-xs font-bold text-gray-500 uppercase mb-1">Profil</label>
                             <textarea name="sejarah" rows="6"
                                 class="w-full rounded-lg border-gray-300 p-2.5 border focus:ring-2 focus:ring-[#234D2C] focus:outline-none">{{ $profile->sejarah }}</textarea>
                         </div>

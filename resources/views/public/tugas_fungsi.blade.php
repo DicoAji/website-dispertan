@@ -48,7 +48,7 @@
 
                     {{-- 1. Menampilkan Narasi --}}
                     @if ($profile && $profile->narasi_tugas_fungsi)
-                        <div class="text-gray-700 mt-5 leading-relaxed text-justify">
+                        <div class="text-gray-700 mt-5 leading-relaxed text-sm text-justify">
                             {!! nl2br($profile->narasi_tugas_fungsi) !!}
                         </div>
                     @endif

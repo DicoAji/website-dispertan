@@ -45,11 +45,23 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-    </style>
 
+        /* Sembunyikan scrollbar untuk Chrome, Safari dan Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Sembunyikan scrollbar untuk IE, Edge dan Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+    </style>
 </head>
 
-<body class="font-sans antialiased text-gray-800">
+<body class="font-sans antialiased text-gray-800 relative">
 
     @include('layouts.partials.public-header')
 
@@ -58,29 +70,116 @@
     </main>
 
     @include('layouts.partials.public-footer')
+
+    @php
+        // Mengambil data dari tabel menu_layanan langsung di layout
+        $menuLayanan = \App\Models\MenuLayanan::all();
+
+        // Daftar warna gradasi untuk tombol (akan diulang jika menu lebih dari jumlah warna ini)
+        $fabColors = [
+            'from-red-500 to-rose-600 hover:shadow-red-500/50 border-red-400/50',
+            'from-blue-500 to-indigo-600 hover:shadow-blue-500/50 border-blue-400/50',
+            'from-emerald-500 to-teal-600 hover:shadow-emerald-500/50 border-emerald-400/50',
+            'from-orange-500 to-amber-600 hover:shadow-orange-500/50 border-orange-400/50',
+            'from-purple-500 to-fuchsia-600 hover:shadow-purple-500/50 border-purple-400/50',
+        ];
+    @endphp
+
+    {{-- FLOATING ACTION BUTTON (Selalu muncul di pojok kanan bawah) --}}
+    <div class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
+
+        {{-- Menu Item (Secara default tersembunyi dengan scale-0) --}}
+        <div id="fabMenu"
+            class="flex flex-col gap-3 mb-4 origin-bottom scale-0 opacity-0 transition-all duration-300 pointer-events-none items-end">
+
+            @foreach ($menuLayanan as $index => $menu)
+                @php
+                    // Logika URL: Prioritaskan file, jika tidak ada gunakan link
+                    $url = '#';
+                    $target = '_self';
+
+                    if ($menu->file) {
+                        $url = asset('storage/menu_layanan/' . $menu->file);
+                        $target = '_blank';
+                    } elseif ($menu->link) {
+                        $url = url($menu->link);
+                        // Buka di tab baru jika link eksternal (http/https)
+                        if (str_starts_with($menu->link, 'http')) {
+                            $target = '_blank';
+                        }
+                    }
+
+                    // Ambil kelas warna berdasarkan urutan index (modulo agar warna berulang jika menu banyak)
+                    $colorClass = $fabColors[$index % count($fabColors)];
+                @endphp
+
+                <a href="{{ $url }}" target="{{ $target }}"
+                    class="group transform transition-transform duration-300 hover:-translate-x-2">
+                    <div
+                        class="px-6 py-2.5 bg-gradient-to-r {{ $colorClass }} text-white font-bold text-sm tracking-widest rounded-full shadow-lg border min-w-[120px] text-center flex items-center justify-center uppercase">
+                        {{ $menu->nama }}
+                    </div>
+                </a>
+            @endforeach
+
+        </div>
+
+        {{-- Tombol Utama --}}
+        <button id="fabMainBtn"
+            class="w-14 h-14 bg-emerald-600 text-white rounded-full shadow-[0_0_20px_rgba(5,150,105,0.4)] hover:bg-emerald-700 hover:scale-105 transition-all duration-300 flex items-center justify-center text-2xl relative z-10 focus:outline-none">
+            <i class="fas fa-headset transition-transform duration-300" id="fabIcon"></i>
+        </button>
+    </div>
+    {{-- END FLOATING ACTION BUTTON --}}
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     <script>
-        // script header
+        // Script Header
         const menuBtn = document.getElementById("menuBtn");
         const mobileMenu = document.getElementById("mobileMenu");
         const menuIcon = menuBtn.querySelector("i");
 
-        menuBtn.addEventListener("click", () => {
-            // Toggle menu
-            mobileMenu.classList.toggle("hidden");
+        if (menuBtn && mobileMenu && menuIcon) {
+            menuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+                if (mobileMenu.classList.contains("hidden")) {
+                    menuIcon.classList.remove("fa-times");
+                    menuIcon.classList.add("fa-bars");
+                } else {
+                    menuIcon.classList.remove("fa-bars");
+                    menuIcon.classList.add("fa-times");
+                }
+            });
+        }
 
-            // Ubah ikon dari 'burger' ke 'silang (x)'
-            if (mobileMenu.classList.contains("hidden")) {
-                menuIcon.classList.remove("fa-times");
-                menuIcon.classList.add("fa-bars");
-            } else {
-                menuIcon.classList.remove("fa-bars");
-                menuIcon.classList.add("fa-times");
-            }
-        });
+        // Script Floating Action Button
+        const fabMainBtn = document.getElementById('fabMainBtn');
+        const fabMenu = document.getElementById('fabMenu');
+        const fabIcon = document.getElementById('fabIcon');
+
+        if (fabMainBtn) {
+            fabMainBtn.addEventListener('click', () => {
+                // Cek apakah menu sedang tertutup
+                const isClosed = fabMenu.classList.contains('scale-0');
+
+                if (isClosed) {
+                    // Buka menu
+                    fabMenu.classList.remove('scale-0', 'opacity-0', 'pointer-events-none');
+                    fabMenu.classList.add('scale-100', 'opacity-100', 'pointer-events-auto');
+                    // Putar ikon dan ganti jadi tanda silang
+                    fabIcon.classList.remove('fa-headset');
+                    fabIcon.classList.add('fa-times', 'rotate-90');
+                } else {
+                    // Tutup menu
+                    fabMenu.classList.remove('scale-100', 'opacity-100', 'pointer-events-auto');
+                    fabMenu.classList.add('scale-0', 'opacity-0', 'pointer-events-none');
+                    // Kembalikan ikon awal
+                    fabIcon.classList.remove('fa-times', 'rotate-90');
+                    fabIcon.classList.add('fa-headset');
+                }
+            });
+        }
     </script>
-    {{-- <script src="{{ asset('js/script.js') }}"></script> --}}
-    {{-- <script src="{{ asset('js/efek.js') }}"></script> --}}
 </body>
 
 </html>

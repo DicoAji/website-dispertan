@@ -40,24 +40,24 @@
                             <div class="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end pointer-events-none">
 
                                 {{-- Tanggal --}}
-                                <span class="text-xs md:text-sm text-gray-300 mb-2 font-medium">
-                                    <i class="fa fa-calendar-o mr-1"></i>
+                                <span class="text-xs md:text-sm text-gray-300 mb-2">
+                                    <i class="fa fa-calendar-o "></i>
                                     {{ \Carbon\Carbon::parse($b->tanggal_berita)->translatedFormat('d F Y') }}
                                 </span>
 
                                 {{-- Judul --}}
                                 <a href="{{ url('/berita/' . $b->id) }}" class="pointer-events-auto">
                                     <h3
-                                        class="font-bold text-lg text-white mb-3 line-clamp-2 leading-snug group-hover:text-emerald-400 transition-colors">
+                                        class="font-semibold text-md text-white mb-3 line-clamp-2 leading-snug  transition-colors">
                                         {{ $b->judul }}
                                     </h3>
                                 </a>
 
                                 {{-- Tombol Baca --}}
-                                <a href="{{ url('/berita/' . $b->id) }}"
+                                {{-- <a href="{{ url('/berita/' . $b->id) }}"
                                     class="text-emerald-400 font-bold hover:text-emerald-300 flex items-center text-sm pointer-events-auto w-max">
                                     Baca <i class="fa fa-arrow-right ml-2"></i>
-                                </a>
+                                </a> --}}
                             </div>
 
                         </article>

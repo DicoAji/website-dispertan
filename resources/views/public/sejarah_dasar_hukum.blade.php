@@ -24,12 +24,12 @@
                     <i class="fas fa-quote-left"></i>
                 </div>
 
-                <div class="prose max-w-none text-gray-700 leading-relaxed pt-3">
+                <div class="prose max-w-none text-sm text-gray-700  leading-relaxed pt-3">
                     @if ($profile->sejarah)
                         {!! nl2br(e($profile->sejarah)) !!}
                     @else
                         <div class="text-center py-16 text-gray-400 not-prose">
-                            <i class="fas fa-book fa-3x mb-4 text-gray-200"></i>
+                            <i class="fas fa-book fa-3x mb-4  text-gray-200"></i>
                             <p class="italic">Uraian sejarah belum diisi.</p>
                         </div>
                     @endif

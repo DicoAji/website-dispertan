@@ -100,7 +100,7 @@
                             <label class="text-xs font-bold text-gray-500 uppercase mb-1">Foto Berita</label>
                             <input type="file" name="foto_berita"
                                 class="w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-[#F6F2E6] file:text-[#234D2C] border rounded-lg p-1">
-                            <p class="text-[10px] text-gray-400 mt-1 italic">*Ukuran file maksimal 1 MB</p>
+                            <p class="text-[10px] text-gray-400 mt-1 italic">*Ukuran file maksimal 5 MB</p>
 
                             {{-- Menampilkan pesan error jika validasi gagal --}}
                             @error('foto_berita')

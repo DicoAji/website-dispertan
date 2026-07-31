@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Jul 2026 pada 08.48
+-- Waktu pembuatan: 31 Jul 2026 pada 05.52
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -44,7 +44,10 @@ INSERT INTO `aplikasi_lain` (`id`, `nama_aplikasi`, `logo`, `link`, `created_at`
 (1, 'PPID Grobogan', '1784875155_logo_ySbUY4vQw4JzrkbXPTxAhFAGcBeb8O6lIP46kKq0.svg', 'https://ppid.grobogan.go.id', '2026-07-23 23:05:00', '2026-07-23 23:39:15'),
 (2, 'Lapor', '1784875140_logo_L5jHdSCrXtETQEva5L4bqBO9IXyzdzwWorQPsZZY.svg', 'https://www.lapor.go.id', '2026-07-23 23:05:33', '2026-07-23 23:39:00'),
 (3, 'Sidamba', '1784875127_logo_bS0v3CxPG6A6w2mMgINpTRPUUObIi9nMck9sFPgk.svg', 'http://sidamba.dpupr.grobogan.go.id', '2026-07-23 23:05:54', '2026-07-23 23:38:47'),
-(4, 'Silakip Grobogan', '1784875110_logo_gdkL1ObIGSkAu7zpUj61cmZZW42bXrEOPANhWFwH.svg', 'http://www.silakip.grobogan.go.id', '2026-07-23 23:06:20', '2026-07-23 23:38:30');
+(4, 'Silakip Grobogan', '1784875110_logo_gdkL1ObIGSkAu7zpUj61cmZZW42bXrEOPANhWFwH.svg', 'http://www.silakip.grobogan.go.id', '2026-07-23 23:06:20', '2026-07-23 23:38:30'),
+(5, 'Portal Data Grobogan', '1785120671_logo_SYvEQFRaDr3suwJIpn0hM7F1WlmSaFcZpXSLaoOS.svg', 'https://portaldata.grobogan.go.id/', '2026-07-26 19:51:11', '2026-07-26 19:51:11'),
+(6, 'JDIH Kab Grobogan', '1785120693_logo_l4cve8SSuLlEhNaaNM8bi1LCSWf9jDPx1JfjOPOz.svg', 'https://jdih.grobogan.go.id/', '2026-07-26 19:51:33', '2026-07-26 19:51:33'),
+(7, 'Pemeritah Kab Grobogan', '1785120711_logo_h6Kz9wSsrZfdXq0miN1hwI6Rf6eNaQ6vJqetiUQh.svg', 'https://grobogan.go.id/', '2026-07-26 19:51:51', '2026-07-26 19:51:51');
 
 -- --------------------------------------------------------
 
@@ -67,10 +70,16 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id`, `judul`, `tanggal_berita`, `foto_berita`, `deskripsi`, `created_at`, `updated_at`) VALUES
-(12, 'Selamat memperingati Hari Krida Pertanian 21 Juni 2025', '2026-04-16', '1776316199_berita1 (1).png', 'Hari ini, kita memperingati perjuangan dan dedikasi para petani Indonesia.\r\nMereka yang setiap hari menanam asa, memanen harapan, dan menjaga ketahanan pangan negeri.\r\nMari kita dukung sektor pertanian dengan semangat inovasi, kolaborasi, dan keberlanjutan.\r\nKarena dari benih yang bermutu, tumbuh negeri yang maju.', '2026-04-15 22:09:59', '2026-04-15 22:09:59'),
-(13, 'Grobogan Gelar Panen Raya Jagung Serentak Kuartal II, Produksi Capai 800 Ribu Ton per Tahun', '2026-04-16', '1776316379_berita2.png', 'GROBOGAN, Suaramerdeka.com - Pemerintah Kabupaten Grobogan menggelar kegiatan Panen Raya Jagung Serentak Kuartal II Tahun 2025 di Desa Tambakselo, Kecamatan Wirosari, Rabu 5 Juni 2025.\r\nKegiatan ini menjadi simbol keberhasilan Grobogan dalam mempertahankan predikat sebagai lumbung pangan Provinsi Jawa Tengah, sekaligus penghasil jagung terbesar di Indonesia.', '2026-04-15 22:12:59', '2026-04-15 22:12:59'),
-(14, 'Panen Raya, Harga Gabah di Grobogan Masih Tembus Rp 7.100 /kg', '2026-04-16', '1776316543_ilustrasi-panen-padi-di-kabupaten-grobogan-jawa-te-20260213101410.jpg', 'Murianews, Grobogan – Memasuki puncak musim panen raya pertama di tahun 2026, harga gabah di tingkat petani Kabupaten Grobogan, Jawa Tengah masih menggembirakan. Saat ini, harga Gabah Kering Panen (GKP) menyentuh angka Rp 710.000 per kwintalnya atau Rp 7.100 per kilogram.\r\n\r\nKepala Bidang Tanaman Pangan Dinas Pertanian Grobogan, Cahyo Mulyadi, menyampaikan, harga gabah petani Grobogan tersebut tergolong stabil. Dan masih tetap menguntungkan bagi para petani di tengah melimpahnya pasokan gabah.\r\n\r\nMenurutnya, di Kabupaten Grobogan luas panen pada bulan Februari ini diperkirakan mencapai sekitar 25 ribu hektare. Luasan itu tersebar di berbagai wilayah kecamatan se Kabupaten Grobogan.\r\n\r\nArtikel ini telah tayang di Murianews.com dengan judul \"Panen Raya, Harga Gabah di Grobogan Masih Tembus Rp 7.100 /kg\", Klik untuk baca: https://berita.murianews.com/saiful-anwar/460470/panen-raya-harga-gabah-di-grobogan-masih-tembus-rp-7-100-kg .', '2026-04-15 22:15:43', '2026-04-15 22:15:43'),
-(16, 'Berita 4', '2026-07-16', '1784188392_Petani-Grobogan.jpg', 'Petani di Sukorejo Grobogan dapat Bantuan 13.625 Kg Benih Padi', '2026-07-16 00:53:12', '2026-07-16 00:53:12');
+(17, 'Kegiatan Tanam Padi dengan Metode PM-AAS di Desa DImoro', '2026-07-24', '1784983651_1784860178_photo-collage.png (3).png', 'Kegiatan Tanam Padi dengan Metode PM-AAS di Desa DImoro\r\n\r\nKamis, 23 Juli 2026, dilaksanakan Kegiatan Tanam Padi dengan Metode PM-AAS (Pertanian Modern – Advanced Agricultural System) di lahan Desa Dimoro, Kecamatan Toroh, Kabupaten Grobogan, yang dihadiri oleh Direktur Jenderal Prasarana dan Sarana Pertanian Bapak Andi Nur Alam Syah S.TP., M.T. didampingi oleh Direktur Alat dan Mesin Pertanian Pasca Panen Bapak Muhammad Rizal Ismail, S.P, M.Si. dan Direktur Alat dan Mesin Pertanian Pra Panen Bapak Achmad Yusuf , S.TP, M.M. Acara tersebut juga dihadiri Staf Ahli Bupati Bidang Sosial, Kemasyarakatan dan Sumberdaya Manusia Bapak Kukuh Prasetyo Rusady , S.H., M.M., Kepala Dinas Pertanian Kabupaten Grobogan Bapak Wakid Mutowal, S.TP, M.Sc., Para Kepala Bidang di DInas Pertanian Kabupaten Grobogan, Camat Toroh, Serta Kepala Desa Dimoro yang diwakili oleh Sekretaris Desa Dimoro, penyuluh pertanian Kabupaten Grobogan, dan petani setempat.', '2026-07-25 05:47:31', '2026-07-25 05:47:31'),
+(18, '“Aksi Bersih Sampah” Dinas Pertanian Kabupaten Grobogan', '2026-07-21', '1784983741_1784602400_WhatsApp Image 2026-07-21 at 08.45.44.jpeg', '“Aksi Bersih Sampah” Dinas Pertanian Kabupaten Grobogan\r\n\r\n“Aksi Bersih Sampah” Dinas Pertanian Kabupaten Grobogan Selasa, 21 Juli 2026\r\n\r\nDinas Pertanian Kabupaten Grobogan melaksanakan Aksi Pembersihan Lingkungan Kerja di area Rumah Kedelai Grobogan sebagai bagian dari upaya menjaga kebersihan, kenyamanan, dan fungsi fasilitas publik yang mendukung pengolahan serta pemasaran produk kedelai lokal. Kegiatan ini melibatkan pegawai Dinas Pertanian bersama Penyuluh Pertanian , dilaksanakan di lahan dan halaman Rumah Kedelai Grobogan dengan kegiatan pembersihan sampah, pemangkasan tanaman yang mengganggu, penyapuan area, pengangkutan limbah organik untuk komposting, serta penataan ulang ruang publik agar aman dan representatif untuk pengunjung', '2026-07-25 05:49:01', '2026-07-25 05:49:01'),
+(19, 'Apel pagi karyawan & karyawati Dinas Pertanian Kab Grobogan, senin 20/07/2026', '2026-07-20', '1784983824_1784522615_WhatsApp Image 2026-07-20 at 07.35.13.jpeg', 'Apel pagi karyawan & karyawati Dinas Pertanian Kab Grobogan, senin 20/07/2026\r\n\r\nApel pagi karyawan & karyawati Dinas Pertanian Kab Grobogan, senin 20/07/2026', '2026-07-25 05:50:24', '2026-07-25 05:50:24'),
+(20, 'Forum Perangkat Daerah Dalam Rangka Penyusunan Rencana Kerja Dinas Pertanian Tahun 2027', '2026-02-27', '1784983902_1772173361_photo-collage.png (1).png', 'Forum Perangkat Daerah Dalam Rangka Penyusunan Rencana Kerja Dinas Pertanian Tahun 2027\r\n\r\nKamis, 26 Februari 2026\r\n\r\nDinas Pertanian Kabupaten Grobogan menggelar Rapat Forum Perangkat Daerah dalam rangka Penyusunan Rencana Kerja Perangkat Daerah (RKPD) Tahun 2027 yang dirangkaikan dengan Forum Konsultasi Publik. Kegiatan ini menjadi salah satu tahapan strategis dalam proses perencanaan pembangunan daerah guna menyelaraskan arah kebijakan, program, dan kegiatan antar perangkat daerah.\r\n\r\nRapat tersebut dihadiri oleh Kepala Bidang Hortikultura, Kepala Bidang Perkebunan, serta sejumlah Organisasi Perangkat Daerah (OPD) terkait. Turut mendampingi dalam kegiatan ini perwakilan dari Perencanaan Pembangunan Riset dan Inovasi Daerah Kabupaten Grobogan (Bapperida), Kepala Dinas Perternakan dan Perikanan Kab. Grobogan, Dinas Pangan Kab. Grobogan, Dinas Koperasi, Usaha Kecil dan Menengah Kab. Grobogan, Dinas Perindustrian dan Perdagangan Kab. Grobogan, Dinas Lingkungan Hidup Kab. Grobogan, serta Dinas Penanaman Modal dan Pelayanan Terpadu Satu Pintu Kabupaten Jombang (DPMPTSP).\r\n\r\nRapat dibuka oleh Pelaksana Tugas (Plt) Kepala Dinas Pertanian Kabupaten Grobogan Bapak Kukuh Prasetyo Rusady, S.H., M.M. Dalam sambutannya, beliau menyampaikan bahwa forum ini merupakan wadah strategis untuk menyampaikan rancangan awal rencana kerja perangkat daerah sekaligus menghimpun masukan dari berbagai pemangku kepentingan.\r\n\r\n“Forum Perangkat Daerah dan Konsultasi Publik ini menjadi momentum penting untuk memastikan bahwa program dan kegiatan tahun 2027 benar-benar disusun berdasarkan kebutuhan riil masyarakat serta selaras dengan prioritas pembangunan daerah,” ujarnya.', '2026-07-25 05:51:42', '2026-07-25 05:51:42'),
+(21, 'Koordinasi Percepatan Pelaksanaan Program Kegiatan Pembangunan Pertanian TA 2026', '2026-02-24', '1784983961_1771913142_MixCollage-24-Feb-2026-01-02-PM-8546.jpg', 'Koordinasi Percepatan Pelaksanaan Program Kegiatan Pembangunan Pertanian TA 2026\r\n\r\nSelasa, 24/02/2026 Plt kepala Dinas Pertanian Kabupaten Grobogan mengikuti Koordinasi Percepatan Pelaksanaan Program Kegiatan Pembangunan Pertanian TA 2026 kementerian Pertanian RI.', '2026-07-25 05:52:41', '2026-07-25 05:52:41'),
+(22, 'Aksi Bersih Sampah Serentak', '2026-02-24', '1784984016_1771899728_MixCollage-24-Feb-2026-09-18-AM-4478.jpg', 'Aksi Bersih Sampah Serentak\r\n\r\nSelasa, 22 Februari 2026 Dinas Pertanian Kabupaten Grobogan dan juga semua BPP Kecamatan di Kabupaten Grobogan melakukan Aksi Bersih Sampah Serentak dalam rangka Peringatan Hari Peduli Sampah Nasional (HPSN) Tahun 2026, serta sebagai bentuk dukungan terhadap Gerakan Indonesia ASRI (Aman, Sehat, Resik, Indah).', '2026-07-25 05:53:36', '2026-07-25 05:53:36'),
+(23, 'RESIK - RESIK DESA LAN KUTHA', '2026-02-13', '1784984069_1770953678_photo-collage.png.png', 'RESIK - RESIK DESA LAN KUTHA\r\n\r\nJumat, 13 Februari 2026\r\n\r\nSampah sering menimbulkan berbagai dampak negatif, antara lain pencemaran, bau tidak sedap, menyumbat saluran dan mengganggu kesehatan masyarakat maupun lingkungan, sehingga perlu kepedulian dari semua pihak dalam pengelolaan sampah, agar dapat memberikan manfaat secara ekonomi, sehat bagi masyarakat dan aman bagi lingkungan.\r\n\r\nSehubungan hal tersebut, sekaligus menindaklanjuti arahan Presiden Republik Indonesia dalam Rakornas Pemerintah Pusat dan Daerah Tahun 2026 di Sentul Jawa Barat sekaligus dalam rangka menyambut Hari Jadi Ke-300 Kabupaten Grobogan serta Peringatan Hari Peduli Sampah Nasional (HPSN) Tahun 2026.', '2026-07-25 05:54:29', '2026-07-25 05:54:29'),
+(24, 'ZIARAH MAKAM KI AGENG GETAS PENDOWO', '2026-02-12', '1784984118_1770878265_WhatsApp Image 2026-02-12 at 12.58.27.jpeg', 'ZIARAH MAKAM KI AGENG GETAS PENDOWO\r\n\r\nKamis, 12 Februari 2026\r\n\r\nDalam Rangkaian Hari Jadi Kabupaten Grobogan ke - 300. Plt Dinas Pertanian Mendampingi Mendampingai, wakil bupati & forkompinda dalam rangkaian acara tersebut.', '2026-07-25 05:55:18', '2026-07-25 05:55:18'),
+(25, 'DUKUNG LTT PADI, PENYULUH GROBOGAN DORONG KEAKTIFAN KELOMPOK TANI', '2025-10-22', '1784984171_1761109422_WhatsApp Image 2025-10-22 at 07.46.58.jpeg', 'DUKUNG LTT PADI, PENYULUH GROBOGAN DORONG KEAKTIFAN KELOMPOK TANI\r\n\r\nKEDUNGJATI – Dalam upaya meningkatkan produktivitas dan kemandirian petani, Pemerintah Desa Kalimaro, Kecamatan Kedungjati, Kabupaten Grobogan, Provinsi Jawa Tengah, menggelar pertemuan bersama penyuluh pertanian dan kelompok tani, Selasa (22/4/2025) di Desa Kalimaro.\r\n\r\nKegiatan ini bertujuan untuk membangun kembali semangat kebersamaan serta meningkatkan partisipasi aktif para anggota kelompok tani dalam setiap program pertanian mendukung ketahanan pangan nasional.\r\n\r\nMenteri Pertanian Andi Amran Sulaiman menegaskan bahwa peran penyuluh merupakan ujung tombak dalam keberhasilan program ketahanan dan swasembada pangan.\r\n\r\n“Penyuluh adalah penggerak utama di lapangan. Mereka yang mendampingi petani, memastikan tanam terjadi, dan melaporkan capaian secara real-time. Dukungan dan penguatan peran mereka adalah prioritas kami,” ujarnya.\r\n\r\nSementara itu, Kepala Badan Penyuluhan dan Pengembangan SDM Pertanian (BPPSDMP), Idha Widi Arsanti, turut menekankan pentingnya fungsi koordinatif dan kolaboratif yang dijalankan oleh penyuluh. Ia menyampaikan bahwa keberhasilan swasembada pangan sangat bergantung pada kecepatan aksi di lapangan serta keakuratan data yang dilaporkan.\r\n\r\nPertemuan di Desa Kalimaro, dihadiri 34 petani yang tergabung dalam kelompok tani (Poktan) Katon Rejo IV, dihadiri juga oleh perangkat desa, serta penyuluh pertanian dari Balai Penyuluhan Pertanian (BPP) Kecamatan Kedungjati.\r\n\r\nKepala Dusun Kalimaro, Ahmad Fauzi, membuka pertemuan dengan memberikan sambutan yang menekankan pentingnya sinergi antara petani, pemerintah desa, dan penyuluh pertanian.\r\n\r\nFauzi berharap, kegiatan ini menjadi langkah awal dalam membangkitkan semangat gotong royong di bidang pertanian terlebih menghadapi musim tanam (MT) II komoditas padi seluas 52 hektare mendukung program ketahanan pangan nasional.\r\n\r\n“Selama ini, banyak program bagus dari pemerintah yang belum maksimal terserap karena kurangnya komunikasi dan keaktifan kelompok tani. Mari kita bangun kembali semangat kebersamaan,” harap Fauzi.\r\n\r\nKetua Poktan Katon Rejo IV, Asrori, menyampaikan bahwa pertemuan ini sangat dibutuhkan di tengah tantangan yang dihadapi petani, mulai dari harga pupuk yang mahal hingga sulitnya mengakses informasi pertanian terbaru.\r\n\r\n“Kami merasa dihargai dan didengar. Semoga ini bukan yang terakhir, tapi awal dari komunikasi yang lebih intens antara kelompok tani dan pemerintah,” kata Asrori.\r\n\r\nSebagai koordinator penyuluh pertanian dari BPP Kedungjati, Harmoko, turut memberikan materi tentang pentingnya kelembagaan kelompok tani yang aktif dan berdaya guna.\r\n\r\n“Kelompok tani bukan hanya untuk administrasi, tapi sebagai alat perjuangan petani. Kalau aktif, permasalahan yang dihadapi akan mudah diselesaikan,” jelas Harmoko.\r\n\r\nDalam sesi tersebut, Harmoko juga menjelaskan poktan yang aktif akan mendorong perencanaan kegiatan baik on farm maupun off farm sehingga manfaatnya akan dirasakan oleh semua anggota.\r\n\r\nIa menambahkan bahwa kelompok tani harus proaktif mendukung upaya percepatan tanam padi dengan mengoptimalkan irigasi perpompaan besar dalam menambah luas tambah tanam (LTT) untuk mendukung ketahanan pangan.\r\n\r\nDiskusi juga menyoroti perlunya regenerasi petani muda, mengingat mayoritas petani di Kalimaro sudah berusia di atas 50 tahun. Hal ini menjadi perhatian serius yang perlu ditangani bersama.\r\n\r\nPertemuan ditutup dengan pembentukan tim kecil yang bertugas menyusun rencana kerja kelompok tani selama enam bulan ke depan, termasuk agenda pelatihan dan pertemuan rutin.\r\n\r\nHarmoko memastikan pihaknya akan terus mendampingi proses penyusunan rencana kerja dan membantu mengawal agar program-program berjalan sesuai rencana.\r\n\r\n“Langkah awal ini harus dijaga. Kita jangan semangatnya hanya sesaat, tapi terus menyala,” pungkas Harmoko kepada seluruh peserta pertemuan.', '2026-07-25 05:56:11', '2026-07-25 05:56:11'),
+(26, 'Sosialisasi Sistem Informasi Perencanaan Pembangunan Pertanian (SIPENTA)', '2024-10-11', '1784984338_1728614647_WhatsApp Image 2024-10-10 at 11.15.05.jpeg', 'Sosialisasi Sistem Informasi Perencanaan Pembangunan Pertanian (SIPENTA)\r\n\r\nDinas Pertanian  Kabupaten Grobogan menyelenggarakan acara sosialisasi Sistem Informasi Perencanaan Pembangunan Pertanian (SIPENTA) Berbasis Usulan Kelompok Tani, yang diikuti oleh Koordinator PPL beserta operator BPP Kecamatan dan staf lingkup Dinas Pertanian Kabupaten Grobogan di Aula Dinas Pertanian Kabupaten Grobogan. (09/10)\r\n\r\nSIPENTA merupakan aksi perubahan yang digagas oleh Kepala Subbag Perencanaan Dinas Pertanian Kabupaten Grobogan, selaku peserta Pelatihan Kepemimpinan Pengawas (PKP) Angkatan IX Tahun 2024 BPSDMD Provinsi Jawa Tengah. Sebagai upaya untuk mendapatkan database berbasis usulan kelompok tani secara efektif untuk mendapatkan database usulan yang valid, akurat dan update sesuai kebutuhan dilapangan.\r\n\r\nAcara dibuka oleh Kepala Dinas Pertanian yang di wakili oleh Pujiyono, STP selaku Kepala Bidang Tanaman Pangan Dinas Pertanian sekaligus menyampaikan latar belakang dan tujuan SIPENTA.\r\n\r\nDalam sambutannya memberikan apresiasi dan dukungan penuh atas penggunaan SIPENTA yang diharapkan menjadi inovasi yang efektif untuk meningkatkan kinerja Dinas Pertanian Kabupaten Grobogan serta dapat meningkatkan pembangunan pertanian di Kabupaten Grobogan.\r\n\r\nSIPENTA diharapkan dapat tersinkronisasi dengan perencanaan dari Kementan dan Bappenas. Acara dilanjutkan demonstrasi SIPENTA oleh Wiwit selaku penggagas aksi perubahan kepada seluruh peserta sosialisasi. (Admin-Dispertan)', '2026-07-25 05:58:58', '2026-07-25 05:58:58');
 
 -- --------------------------------------------------------
 
@@ -185,7 +194,9 @@ INSERT INTO `file_dinas` (`id`, `uraian`, `file`, `tahun`, `kategori`, `created_
 (36, 'DPA Penetapan 2026', '1784866944_SKPD.pdf', '2026', 'DPA', '2026-07-23 21:22:24', '2026-07-23 21:22:24'),
 (37, 'DPA Pergeseran 2 2026', '1784867000_Rekap SKPD.pdf', '2026', 'DPA', '2026-07-23 21:23:20', '2026-07-23 21:23:20'),
 (38, 'LRA Smt 1 2026', '1784867236_lra-dinas-pertanian-kab-grobogan per semester 1 2026.pdf', '2026', 'LRA', '2026-07-23 21:27:16', '2026-07-23 21:27:16'),
-(39, 'CALK 2025', '1784867738_CALK BAB I PENDAHULUAN-merged.pdf', '2025', 'CALK', '2026-07-23 21:35:38', '2026-07-23 21:35:38');
+(39, 'CALK 2025', '1784867738_CALK BAB I PENDAHULUAN-merged.pdf', '2025', 'CALK', '2026-07-23 21:35:38', '2026-07-23 21:35:38'),
+(40, 'Aset dan Inventaris 2024', '1785116609_Rekap Aset Dispertan 2024.pdf', '2024', 'Aset Inventaris', '2026-07-26 18:43:29', '2026-07-26 18:43:29'),
+(41, 'Aset dan Inventaris 2025', '1785116637_Rekap Aset Dispertan 2025.pdf', '2025', 'Aset Inventaris', '2026-07-26 18:43:57', '2026-07-26 18:43:57');
 
 -- --------------------------------------------------------
 
@@ -208,9 +219,8 @@ CREATE TABLE `galeri_fotos` (
 --
 
 INSERT INTO `galeri_fotos` (`id`, `kegiatan`, `file`, `kategori`, `deskripsi`, `created_at`, `updated_at`) VALUES
-(1, 'foto kegiatan 2', '1778465632_Y172XTS0bYo9dExPpgGIzsWNCkXG32PYXmDl727N.jpg', 'foto', 'loremm lasdajgdhaf dsafdhgasd asafhdad', '2026-05-10 19:13:52', '2026-07-19 03:51:02'),
-(2, 'Artikel 1 lorem ipsum data dumy', '1784452988_ePDomQIArGq6aKoWejiNKkT1ieTHqSDF9yyu2Wn6.pdf', 'artikel', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet quam fringilla libero rutrum lobortis. Nam id vulputate odio. Cras molestie quis ante et vestibulum. Nullam viverra leo quis libero vulputate ultricies sit amet et lorem. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas vestibulum ligula ac tortor faucibus, eget viverra elit faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum eu diam interdum, luctus velit in, vehicula erat. Aliquam dapibus mauris eget nulla faucibus, vitae commodo massa placerat. Nam luctus felis nec fermentum lobortis. Aliquam ac odio a neque suscipit mollis. Cras sit amet felis dolor. Nam consequat, nulla vitae lacinia malesuada, ipsum nibh pulvinar mi, sit amet eleifend elit velit id nulla. Cras pretium elit luctus, laoreet turpis sed, scelerisque tellus. Fusce venenatis feugiat diam, id tristique ligula pellentesque vitae.', '2026-07-19 02:17:46', '2026-07-19 02:23:08'),
-(3, 'video 1', '1784455276_FhUSi4rvWx9NNKAFwafKScz2nsR0QM2peBGNbDf8.jpg', 'video', 'https://www.youtube.com/watch?v=DUSktnYQUVE&pp=ygUYZGluYXMgcGVydGFuaWFuIGdyb2JvZ2Fu', '2026-07-19 03:01:16', '2026-07-19 03:01:16');
+(4, 'Ngopi Tani Vol 104 - Dampak Perubahan Iklim pada Tanaman: Antisipasi Ledakan Hama dan Penyakit Baru', '1784985158_l2FZ9nZbttrifHrreYmoDpKZb6txsJ1TfDE8PJRh.png', 'video', 'https://www.youtube.com/watch?v=cY74sDu_SLU', '2026-07-22 06:12:38', '2026-07-25 06:12:38'),
+(5, 'Pembukaan Grobogan Agro Expo VIII 2026', '1785116014_yZnBWw70Sdqdzr6oY0ECQknyozS643sWW185rAf8.png', 'video', 'https://www.youtube.com/watch?v=ciQL3lTpRg8&t=7400s', '2026-06-02 18:33:34', '2026-06-02 18:33:34');
 
 -- --------------------------------------------------------
 
@@ -329,12 +339,13 @@ CREATE TABLE `layanan` (
 --
 
 INSERT INTO `layanan` (`id`, `nama`, `link`, `file`, `created_at`, `updated_at`) VALUES
-(1, 'Rekomendasi BBM', 'https://taksi-alsintan-grobogan.lovable.app/rekomendasi-bbm', NULL, '2026-07-21 23:25:54', '2026-07-21 23:25:54'),
-(2, 'Lapor Aduan', 'http://127.0.0.1:8000/#Lapor', NULL, '2026-07-21 23:28:22', '2026-07-21 23:28:22'),
-(3, 'Ngopi Tani', 'https://www.youtube.com/@dispertangrobogan/videos', NULL, '2026-07-21 23:29:21', '2026-07-21 23:29:21'),
-(4, 'Seed Center', NULL, '1784783813_layanan_BpYx3hVAkrLp7TfAPr3AQsuiilqA5N78eCtiOj0n.pdf', '2026-07-22 22:16:53', '2026-07-22 22:16:53'),
-(5, 'Balai Penyuluhan Pertanian', NULL, '1784783942_layanan_qTFcvhxSiaqa4MtqEW8gOiw8Cri1zjZFU802gan6.pdf', '2026-07-22 22:19:02', '2026-07-22 22:19:02'),
-(6, 'Rumah Kedelai Grobogan', 'https://beta.grobogan.go.id/berita/rumah-kedelai-grobogan-harus-jadi-ikon-baru', NULL, '2026-07-23 18:47:44', '2026-07-23 18:47:44');
+(7, 'Standar Pelayanan', NULL, '1785135915_layanan_3r45YUoNWhotpkO1Z2tjaj6nisdf2ug5wCv5hTNc.pdf', '2026-07-27 00:05:15', '2026-07-27 00:05:15'),
+(8, 'SOP BBM', NULL, '1785136016_layanan_xjLOgaSFNsRRs28pwiW798zLfD77GSMlGS5ZkmfZ.pdf', '2026-07-27 00:06:56', '2026-07-27 00:06:56'),
+(9, 'Rekomendasi BBM', 'https://taksi-alsintan-grobogan.lovable.app/rekomendasi-bbm', NULL, '2026-07-27 00:07:14', '2026-07-27 00:07:14'),
+(10, 'SOP PASCA PANEN', NULL, '1785136064_layanan_BeNIB4U35AJ9yVM7DszY5LHGwUmHVcu5cBfsTzTf.pdf', '2026-07-27 00:07:44', '2026-07-27 00:07:44'),
+(11, 'SOP PRA PANEN', NULL, '1785136081_layanan_51BIHcV0wKYyKBiOYPolSqbOeZhSKDWUeNpyrInq.pdf', '2026-07-27 00:08:01', '2026-07-27 00:08:01'),
+(13, 'Ngopi Tani', 'https://www.youtube.com/@dispertangrobogan/videos', NULL, '2026-07-30 20:36:07', '2026-07-30 20:36:07'),
+(14, 'Layanan Tani Maju', NULL, '1785469855_layanan_6lO6d46tgEvnRMkhM96MZf3elNCHsQ8slIXdQGzw.jpg', '2026-07-30 20:50:55', '2026-07-30 20:50:55');
 
 -- --------------------------------------------------------
 
@@ -358,7 +369,32 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`id`, `menu`, `link`, `file`, `created_at`, `updated_at`) VALUES
 (3, 'Profesor Tani', 'https://profesortani.com/', NULL, '2026-07-12 21:19:22', '2026-07-12 21:19:22'),
 (4, 'Taksi Tani', 'https://taksi-alsintan-grobogan.lovable.app/', NULL, '2026-07-16 00:47:22', '2026-07-16 00:47:22'),
-(5, 'ERDKK', 'https://e-rdkk.dispertan.grobogan.go.id/', NULL, '2026-07-23 20:43:34', '2026-07-23 20:43:34');
+(5, 'ERDKK', 'https://e-rdkk.dispertan.grobogan.go.id/', NULL, '2026-07-23 20:43:34', '2026-07-23 20:43:34'),
+(7, 'Rumah Kedelai Grobogan', 'https://drive.google.com/file/d/1usSdMzZT8hcr2_nKoyyWIX7hveCmvSh2/view?usp=drive_link', NULL, '2026-07-30 20:34:01', '2026-07-30 20:34:01'),
+(8, 'RUT Hunter', 'https://drive.google.com/file/d/1Av_ymi7NkolzvpkUt_4Dbu-gzF4NxoGI/view?usp=drive_link', NULL, '2026-07-30 20:34:37', '2026-07-30 20:34:37');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `menu_layanan`
+--
+
+CREATE TABLE `menu_layanan` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `nama` varchar(255) NOT NULL COMMENT 'Contoh: WBS, LAPOR, SKM',
+  `file` varchar(255) DEFAULT NULL COMMENT 'Menyimpan nama file PDF atau Gambar',
+  `link` varchar(255) DEFAULT NULL COMMENT 'Menyimpan URL tujuan jika diklik',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data untuk tabel `menu_layanan`
+--
+
+INSERT INTO `menu_layanan` (`id`, `nama`, `file`, `link`, `created_at`, `updated_at`) VALUES
+(1, 'WBS', NULL, 'https://wise.inspektorat.grobogan.go.id/', '2026-07-30 20:22:22', '2026-07-30 20:22:22'),
+(2, 'SKM TW II', '1785468215_skm_tw_ii_4v6vSerEtvkBixWIa9Zft4i0CyRcFTywB5C7hHRf.pdf', NULL, '2026-07-30 20:23:35', '2026-07-30 20:23:35');
 
 -- --------------------------------------------------------
 
@@ -489,7 +525,7 @@ CREATE TABLE `popup_ads` (
 --
 
 INSERT INTO `popup_ads` (`id`, `kegiatan`, `gambar`) VALUES
-(1, 'anti korupsi', '1784519681_NiVA5rXt0UNCg2TpQ911BI0V749Zqho4NnrWRCwC.jpg'),
+(1, 'anti korupsi', '1785469312_popup_XvReUCIgjcpmN0j8XfGZwBHjDDl3T9thgE6gTm5p.jpg'),
 (2, 'Background Header', '1784689378_header_4gggoVaTXmWCxfAJyXkykstYdMGYIWrhOoqoeU4g.jpg');
 
 -- --------------------------------------------------------
@@ -513,13 +549,39 @@ CREATE TABLE `ppid` (
 --
 
 INSERT INTO `ppid` (`id`, `nama`, `kategori`, `file`, `link`, `created_at`, `updated_at`) VALUES
-(3, 'Sejarah dan Dasar Hukum', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/sejarah-dasar-hukum', '2026-07-23 20:55:15', '2026-07-23 20:55:15'),
+(3, 'Profile Dinas Pertanian Kab. Grobogan', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/sejarah-dasar-hukum', '2026-07-23 20:55:15', '2026-07-26 20:44:30'),
 (4, 'Struktur Organisasi', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/struktur-organisasi', '2026-07-23 20:58:39', '2026-07-23 20:58:39'),
-(5, 'Visi dan Misi', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/visimisi', '2026-07-23 20:59:03', '2026-07-23 20:59:03'),
-(6, 'Tugas dan Fungsi', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/tugas-fungsi', '2026-07-23 20:59:38', '2026-07-23 20:59:38'),
+(5, 'Visi dan Misi Dinas Pertanian Kab. Grobogan', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/visimisi', '2026-07-23 20:59:03', '2026-07-26 20:25:20'),
+(6, 'Tugas dan Fungsi berdasarkan Perbup 78 Th 2021 SOTK Dispertan', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/tugas-fungsi', '2026-07-23 20:59:38', '2026-07-26 20:24:37'),
 (7, 'Daftar Pegawai', 'Informasi Berkala', NULL, 'http://127.0.0.1:8000/pegawai', '2026-07-23 21:00:18', '2026-07-23 21:00:18'),
 (8, 'SOP Pelayanan', 'Informasi Berkala', '1784865717_ppid_DaJishwlVjGGFBW6MJOxxUNdv0W7PdB1cVNdzVGN.pdf', NULL, '2026-07-23 21:01:57', '2026-07-23 21:01:57'),
-(9, 'Grobogan Siaga', 'Informasi Serta Merta', '1784865860_ppid_cYx0A95qhLo7CBff3CptU1V43tq83ttUc1JnR6nF.pdf', NULL, '2026-07-23 21:04:20', '2026-07-23 21:04:20');
+(9, 'Grobogan Siaga', 'Informasi Serta Merta', '1784865860_ppid_cYx0A95qhLo7CBff3CptU1V43tq83ttUc1JnR6nF.pdf', NULL, '2026-07-23 21:04:20', '2026-07-23 21:04:20'),
+(11, 'Penanggungjawab dan Pelaksana Program 2026', 'Informasi Berkala', '1785117460_ppid_jVhUoOKO96EtUVNuwxVrFKIqazvywjslcviRmBu7.pdf', NULL, '2026-07-26 18:57:40', '2026-07-26 18:57:40'),
+(12, 'Laporan Akses Informasi Publik', 'Informasi Berkala', '1785122769_ppid_xtcEODJCmVEob5Gr9AU7PN5LeHJ3LOpP9P5yQjFh.pdf', NULL, '2026-07-26 20:26:09', '2026-07-26 20:26:09'),
+(13, 'Laporan Keuangan Tahun 2025', 'Informasi Berkala', '1785122819_ppid_4lfCqaz7mZDmJO9CkNjUV9htlsepyRs6ZXTUKJrm.pdf', NULL, '2026-07-26 20:26:59', '2026-07-26 20:26:59'),
+(14, 'Peraturan Kebijakan Publik', 'Informasi Berkala', '1785122898_ppid_9Hk0GFGL51D4JeMPQr0861fHu4E7aWdKroAk6oyD.pdf', NULL, '2026-07-26 20:28:18', '2026-07-26 20:28:18'),
+(15, 'Dokumen Kebencanaan', 'Informasi Serta Merta', NULL, 'https://bpbd.grobogan.go.id/elementor-2370/', '2026-07-26 20:30:45', '2026-07-26 20:30:45'),
+(16, 'Program dan Kegiatan', 'Informasi Berkala', '1785123837_ppid_hOxGdWIu8edQyowoFCtAqGoaC8TdNAwNZjSlBwgO.pdf', NULL, '2026-07-26 20:43:57', '2026-07-26 20:43:57'),
+(17, 'SK PPID 2026', 'Informasi Berkala', '1785123900_ppid_EkjjatAfH3KrS3eCRnzUTEcghtQASZuByS0Hni3V.pdf', NULL, '2026-07-26 20:45:00', '2026-07-26 20:45:00'),
+(18, 'SOP PELAYANAN PUBLIK', 'Informasi Berkala', '1785123996_ppid_HrlYVXgdXaTiUEn56CRZk7FC7VNnYto3DzSlZHfu.pdf', NULL, '2026-07-26 20:46:36', '2026-07-26 20:46:36'),
+(19, 'DPA Rekap Belanja TA 2026', 'Informasi Berkala', '1785124228_ppid_ooyZu6EoFGIB5zlVITZdu6DBhj5qjX0c2nIWC3i3.pdf', NULL, '2026-07-26 20:50:28', '2026-07-26 20:50:28'),
+(20, 'DPPA Rekap Belanja TA 2025', 'Informasi Berkala', '1785124254_ppid_eDSZe4dij3XEC7lRO9W6yszKfbxHqtHGzal5dV6n.pdf', NULL, '2026-07-26 20:50:54', '2026-07-26 20:50:54'),
+(21, 'RENCANA KINERJA TAHUNAN ( RKT ) 2026', 'Informasi Berkala', '1785124275_ppid_1FhkTnRjPJhSYm3AVuwUkMimx4azyEF8dJ8csfHg.pdf', NULL, '2026-07-26 20:51:15', '2026-07-26 20:51:15'),
+(22, 'RENJA DISPERTAN 2027', 'Informasi Berkala', '1785124301_ppid_b8RL8AasMN8x9dWtHHMH7DOt1MyBj7trlfHjg70C.pdf', NULL, '2026-07-26 20:51:41', '2026-07-26 20:51:41'),
+(23, 'RESTRA DINAS PERTANIAN 2025 - 2029', 'Informasi Berkala', '1785124889_ppid_r2mPeJgPpG5bXaJ5klWu18v0xrv3trSEyNsnbF7B.pdf', NULL, '2026-07-26 21:01:29', '2026-07-26 21:01:29'),
+(24, 'LKjIP_DISPERTAN_2025', 'Informasi Berkala', '1785125191_ppid_0KOWJdOFReHxcnuzff3y0N8CVJu6Qqu9d4YSulS0.pdf', NULL, '2026-07-26 21:06:31', '2026-07-26 21:06:31'),
+(25, 'Informasi Dikecualikan', 'Informasi Dikecualikan', '1785125269_ppid_LrRiJzNwpriCaet67sckdfbhThsUpa0ldeB4jmjk.pdf', NULL, '2026-07-26 21:07:49', '2026-07-26 21:07:49'),
+(26, 'Daftar Pegawai Dinas Pertanian', 'Informasi Setiap Saat', NULL, 'http://127.0.0.1:8000/pegawai', '2026-07-26 21:08:58', '2026-07-26 21:08:58'),
+(27, 'Laporan SKM-Dinas Pertanian Triwulan 1 2026', 'Informasi Setiap Saat', '1785126653_ppid_D6QsohDZeMIyLZoS0vZhz4QrvK8v6fkfJdHHF5p8.pdf', NULL, '2026-07-26 21:30:53', '2026-07-26 21:30:53'),
+(28, 'Laporan SKM-Dinas Pertanian Triwulan 2 Tahun 2026', 'Informasi Setiap Saat', '1785126683_ppid_xDAmjr2s7yLrEXk6Z4ih8SuNHOP3yXLR3dXWXcF6.pdf', NULL, '2026-07-26 21:31:23', '2026-07-26 21:31:23'),
+(29, 'Laporan SKM-Dinas Pertanian Triwulan 4 2025', 'Informasi Setiap Saat', '1785126702_ppid_f2axdn0cShGNWbRlibWNbbvwMhzb852vW5PkQxvV.pdf', NULL, '2026-07-26 21:31:42', '2026-07-26 21:31:42'),
+(30, 'SKM Triwulan III Th 2025 Dinas Pertanian Kab. Grobogan', 'Informasi Setiap Saat', '1785126792_ppid_jFWR34Pas55UgzY5LCMAiSrkdE4TeznpkAkjsTTv.pdf', NULL, '2026-07-26 21:33:12', '2026-07-26 21:33:12'),
+(31, 'BA rekon Aset TW1 2025', 'Informasi Setiap Saat', '1785126984_ppid_0fMKwErM5C8jPKuVXlbujH9n7tiKTYHmPQHcEiAL.pdf', NULL, '2026-07-26 21:36:24', '2026-07-26 21:36:24'),
+(32, 'BA rekon Aset TW1 2026', 'Informasi Setiap Saat', '1785126998_ppid_Y3zZO99eKsG1qzBjzd8Ow8NGKVva3EK5ZyhMVS6x.pdf', NULL, '2026-07-26 21:36:38', '2026-07-26 21:36:38'),
+(33, 'BA rekon Aset TW2 2025', 'Informasi Setiap Saat', '1785127023_ppid_EL4aqZyGboBAuXADD0zxp7Bn9w1giaQtAhDHrASM.pdf', NULL, '2026-07-26 21:37:03', '2026-07-26 21:37:03'),
+(34, 'BA rekon Aset TW2 2026', 'Informasi Setiap Saat', '1785127042_ppid_ho3VSZcXV8LcHNM5fM1XLrV5Yb53d1tQQVkvRxBI.pdf', NULL, '2026-07-26 21:37:22', '2026-07-26 21:37:22'),
+(35, 'BA rekon Aset TW3 2025', 'Informasi Setiap Saat', '1785127061_ppid_pms1rYPqxn5tZOitQ3FkUDIeViRPmX9okWi0o8Y0.pdf', NULL, '2026-07-26 21:37:41', '2026-07-26 21:37:41'),
+(36, 'BA rekon Aset TW4 2025', 'Informasi Setiap Saat', '1785127081_ppid_SvuK9CRNEyu5IGUWP2K2TJ7QlJGMgps5pFkhfwkK.pdf', NULL, '2026-07-26 21:38:01', '2026-07-26 21:38:01');
 
 -- --------------------------------------------------------
 
@@ -552,7 +614,7 @@ CREATE TABLE `profile` (
 --
 
 INSERT INTO `profile` (`id`, `nama_opd`, `visi`, `misi`, `sejarah`, `alamat`, `email`, `telp`, `facebook`, `instagram`, `youtube`, `struktur_organisasi`, `created_at`, `updated_at`, `maklumat_layanan`, `tugas_fungsi`, `narasi_tugas_fungsi`) VALUES
-(1, 'Dinas Pertanian Kabupaten Grobogan', 'Menuju Grobogan Maju, Sejahtera dan Berkelanjutan', 'Menguatkan pertumbuhan dan daya saing ekonomi masyarakat berbasis sektor unggulan <br> \r\nMengurangi kemiskinan dan pengangguran <br>\r\nMeningkatkan kualitas sumber daya manusia yang sehat, cerdas, dan berbudaya <br> \r\nMembangun infrastruktur yang handal dan merata, serta meningkatkan ketangguhan wilayah dan lingkungan hidup yang berkualitas <br>\r\nMeningkatkan kualitas tata kelola pemerintahan dan pelayanan publik dengan penguatan reformasi birokrasi', 'Dinas Pertanian Kabupaten Grobogan adalah salah satu Dinas Teknis di lingkungan Pemerintah Kabupaten Grobogan, yang menyelenggarakan kewenangan urusan pemerintahan di sektor pertanian. Dinas Pertanian Kabupaten Grobogan mempunyai tugas membantu Bupati dalam melaksanakan urusan pemerintahan yang menjadi kewenangan daerah dan tugas pembantuannya di bidang pertanian yaitu merumuskan kebijakan teknis perencanaan,pelaksanaan dan pengendalian teknis bidang pertanian tanaman pangan, hortikultura, dan perkebunan, memimpin dan mengkoordinasikan pelaksanaan tugas dan fungsi dinas, melaksanakan bimbingan dan pembinaan, pengelolaan administrasi, ketatausahaan, pengawasan terhadap penyelenggaraan kegiatan Balai Penyuluhan Pertanian\r\n\r\nKedudukan Dinas Pertanian Kabupaten Grobogan diatur dalam Peraturan Bupati Grobogan No. 78 Tahun 2021 tentang Kedudukan,Susunan Organisasi, Tugas Pokok, Fungsi, Uraian Tugas Jabatan danTata Kerja Dinas Pertanian Kabupaten Grobogan\r\nSecara historis nama Dinas pertanian sepanjang berdirinya senantiasa mengalami perubahan sesuai dengan situasi dan politik pemerintah saat itu. Sebelum masa reformasi Dinas pertanian berdiri sendiri dengan nama Dinas Pertanian Tanaman Pangan. \r\nSelanjutnya pada reformasi dengan diterbitkan undang-undang nomor 32 tahun 2004 tentang pemerintah daerah atau dikenal dengan otonomi daerah Dinas Pertanian tanaman pangan berubah menjadi Dinas Kehutanan, Pertanian dan Urusan Ketahanan Pangan melalui penetapan peraturan daerah nomor 6 tahun 2004. \r\nKemudian pada tahun 2009 melalui penetapan perda nomor 11 tahun 2009 berubah menjadi Dinas Pertanian, Kehutanan, Perkebunan, dan Peternakan. Selanjutnya melalui penetapan perda kabupaten Grobogan nomor 15 tahun 2016 tentang perangkat daerah yang melahirkan Dinas Pertanian sejak Februari 2017.', 'Jl. Pangeran Diponegoro No.20, 58114, Area Sawah, Kalongan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 5811', '@dispertan_grobogan', '(0292) 421478', 'https://www.facebook.com/dinaspertaniankabupatengrobogan', 'https://www.instagram.com/dispertan_grobogan/', 'https://www.youtube.com/channel/UCsrzepHBJH06Dxbtr3E2zeA', 'struktur-1771744736.png', '2026-02-22 04:44:47', '2026-07-23 21:47:18', 'maklumat-1784868438.jpg', 'tugas-fungsi-1778242529.pdf', 'Selanjutnya berdasarkan Peraturan Bupati Grobogan Nomor 78 Tahun 2021 tentang Kedudukan, Susunan Organisasi, Tugas Pokok, Fungsi dan Uraian Jabatan dan Tata Kerja Organisasi Dinas Pertanian Kabupaten Grobogan,');
+(1, 'Dinas Pertanian Kabupaten Grobogan', 'Menuju Grobogan Maju, Sejahtera dan Berkelanjutan', 'Menguatkan pertumbuhan dan daya saing ekonomi masyarakat berbasis sektor unggulan <br> \r\nMengurangi kemiskinan dan pengangguran <br>\r\nMeningkatkan kualitas sumber daya manusia yang sehat, cerdas, dan berbudaya <br> \r\nMembangun infrastruktur yang handal dan merata, serta meningkatkan ketangguhan wilayah dan lingkungan hidup yang berkualitas <br>\r\nMeningkatkan kualitas tata kelola pemerintahan dan pelayanan publik dengan penguatan reformasi birokrasi', 'PROFIL DINAS PERTANIAN KABUPATEN GROBOGAN\r\n\r\nA. Gambaran Umum\r\nDinas Pertanian Kabupaten Grobogan merupakan perangkat daerah di lingkungan Pemerintah Kabupaten Grobogan yang mempunyai tugas melaksanakan urusan pemerintahan daerah di bidang pertanian, meliputi tanaman pangan, hortikultura, dan perkebunan sesuai dengan ketentuan peraturan perundang-undangan. Dinas Pertanian berada di bawah dan bertanggung jawab kepada Bupati Grobogan melalui Sekretaris Daerah.\r\nKabupaten Grobogan dikenal sebagai salah satu lumbung pangan nasional dengan komoditas unggulan seperti padi, jagung, kedelai, bawang merah, semangka, dan melon. Potensi tersebut menjadikan sektor pertanian sebagai penggerak utama perekonomian daerah dan sumber penghidupan sebagian besar masyarakat.\r\n\r\nB. Program Strategis\r\n- Peningkatan produksi tanaman pangan.\r\n- Pengembangan hortikultura.\r\n- Pengembangan perkebunan.\r\n- Penyediaan sarana dan prasarana pertanian.\r\n- Penguatan penyuluhan pertanian.\r\n- Perlindungan tanaman dan pengendalian organisme pengganggu tanaman.\r\n- Pengembangan mekanisasi dan teknologi pertanian.\r\n- Pemberdayaan kelembagaan petani.\r\n\r\nC. Komitmen Pelayanan\r\nDinas Pertanian Kabupaten Grobogan berkomitmen memberikan pelayanan yang profesional, cepat, transparan, akuntabel, dan berorientasi pada kepuasan masyarakat guna mendukung terwujudnya pertanian Grobogan yang maju, mandiri, modern, dan berkelanjutan.', 'Jl. Pangeran Diponegoro No.20, 58114, Area Sawah, Kalongan, Kec. Purwodadi, Kabupaten Grobogan, Jawa Tengah 5811', '@dispertan_grobogan', '(0292) 421478', 'https://www.facebook.com/dinaspertaniankabupatengrobogan', 'https://www.instagram.com/dispertan_grobogan/', 'https://www.youtube.com/channel/UCsrzepHBJH06Dxbtr3E2zeA', 'struktur-1771744736.png', '2026-02-22 04:44:47', '2026-07-26 20:40:20', 'maklumat-1784868438.jpg', 'tugas-fungsi-1778242529.pdf', 'TUGAS\r\nMelaksanakan urusan pemerintahan daerah berdasarkan asas otonomi daerah dan tugas pembantuan di bidang pertanian yang meliputi tanaman pangan, hortikultura, dan perkebunan.\r\n\r\nFUNGSI\r\nDalam melaksanakan tugas tersebut, Dinas Pertanian Kabupaten Grobogan menyelenggarakan fungsi:\r\n- Perumusan kebijakan teknis di bidang tanaman pangan, hortikultura, dan perkebunan.\r\n- Pengoordinasian, pengembangan, dan fasilitasi kegiatan bidang pertanian.\r\n- Pembinaan dan pengendalian pelaksanaan program pertanian.\r\n- Monitoring, evaluasi, dan pelaporan pelaksanaan program.\r\n- Pengelolaan administrasi dan kesekretariatan.\r\n- Pembinaan Unit Pelaksana Teknis Daerah (UPTD).\r\n- Pelaksanaan tugas lain yang diberikan oleh Bupati sesuai ketentuan peraturan perundang-undangan.');
 
 -- --------------------------------------------------------
 
@@ -583,13 +645,6 @@ CREATE TABLE `skms` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data untuk tabel `skms`
---
-
-INSERT INTO `skms` (`id`, `tahun`, `triwulan`, `file`, `created_at`, `updated_at`) VALUES
-(2, '2026', 'Triwulan II', 'SKM_1771916665_BILLING_CODE_1771816650.pdf', '2026-02-24 00:04:25', '2026-02-24 00:04:25');
 
 -- --------------------------------------------------------
 
@@ -715,6 +770,12 @@ ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indeks untuk tabel `menu_layanan`
+--
+ALTER TABLE `menu_layanan`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeks untuk tabel `migrations`
 --
 ALTER TABLE `migrations`
@@ -785,13 +846,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `aplikasi_lain`
 --
 ALTER TABLE `aplikasi_lain`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT untuk tabel `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT untuk tabel `bidang`
@@ -809,13 +870,13 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT untuk tabel `file_dinas`
 --
 ALTER TABLE `file_dinas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT untuk tabel `galeri_fotos`
 --
 ALTER TABLE `galeri_fotos`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `informasi`
@@ -845,13 +906,19 @@ ALTER TABLE `laporan`
 -- AUTO_INCREMENT untuk tabel `layanan`
 --
 ALTER TABLE `layanan`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT untuk tabel `menu_layanan`
+--
+ALTER TABLE `menu_layanan`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -875,7 +942,7 @@ ALTER TABLE `popup_ads`
 -- AUTO_INCREMENT untuk tabel `ppid`
 --
 ALTER TABLE `ppid`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT untuk tabel `profile`

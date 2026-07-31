@@ -9,6 +9,7 @@ use App\Models\FileDinas;
 use App\Models\GaleriFoto;
 use App\Models\Laporan;
 use App\Models\PopupAd;
+use App\Models\MenuLayanan;
 
 class DashboardController extends Controller
 {
@@ -22,12 +23,22 @@ class DashboardController extends Controller
         $totalGaleri = GaleriFoto::count();
         $totalLaporan = Laporan::count();
 
-        // Ambil data popup pertama
-        // $popup = PopupAd::first();
-        $popup = \App\Models\PopupAd::find(1);
-        $header = \App\Models\PopupAd::find(2);
+        // Ambil data popup & header
+        $popup = PopupAd::find(1);
+        $header = PopupAd::find(2);
 
-        return view('admin.dashboard', compact('totalBerita', 'totalDokumen', 'totalGaleri', 'totalLaporan', 'popup', 'header'));
+        // Ambil data Menu Layanan (FAB)
+        $menuLayanan = MenuLayanan::all();
+
+        return view('admin.dashboard', compact(
+            'totalBerita',
+            'totalDokumen',
+            'totalGaleri',
+            'totalLaporan',
+            'popup',
+            'header',
+            'menuLayanan'
+        ));
     }
 
     /**
@@ -40,10 +51,9 @@ class DashboardController extends Controller
             'gambar'    => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        // Cari ID 1, jika tidak ada buat baru dan set ID-nya 1
-        $popup = \App\Models\PopupAd::find(1);
+        $popup = PopupAd::find(1);
         if (!$popup) {
-            $popup = new \App\Models\PopupAd();
+            $popup = new PopupAd();
             $popup->id = 1;
         }
 
@@ -63,18 +73,21 @@ class DashboardController extends Controller
 
         return redirect()->back()->with('success', 'Pop-up berhasil disimpan!');
     }
+
+    /**
+     * Memproses form upload/simpan Header
+     */
     public function updateHeader(Request $request)
     {
         $request->validate([
             'gambar' => 'required|image|mimes:jpeg,png,jpg|max:5120',
         ]);
 
-        // Cari ID 2, jika tidak ada buat baru dan set ID-nya 2
-        $header = \App\Models\PopupAd::find(2);
+        $header = PopupAd::find(2);
         if (!$header) {
-            $header = new \App\Models\PopupAd();
+            $header = new PopupAd();
             $header->id = 2;
-            $header->kegiatan = 'Background Header'; // Sebagai penanda saja di database
+            $header->kegiatan = 'Background Header';
         }
 
         if ($request->hasFile('gambar')) {
@@ -85,12 +98,89 @@ class DashboardController extends Controller
             $namaFile = time() . '_header_' . $file->hashName();
             $file->move(public_path('storage/background'), $namaFile);
 
-            // Masuk ke kolom yang sama yaitu 'gambar'
             $header->gambar = $namaFile;
         }
 
         $header->save();
 
         return redirect()->back()->with('success', 'Gambar Background Header berhasil diperbarui!');
+    }
+
+    // =========================================================================
+    // FITUR MENU LAYANAN (FAB) - CRUD
+    // =========================================================================
+
+    /**
+     * Menyimpan Menu Layanan Baru (Create)
+     */
+    public function storeMenuLayanan(Request $request)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'link' => 'nullable|url',
+            'file' => 'nullable|file|mimes:pdf,png,jpg,jpeg|max:5120',
+        ]);
+
+        $menu = new MenuLayanan();
+        $menu->nama = $request->nama;
+        $menu->link = $request->link;
+
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $namaFile = time() . '_' . str_replace(' ', '_', strtolower($menu->nama)) . '_' . $file->hashName();
+            $file->move(public_path('storage/menu_layanan'), $namaFile);
+            $menu->file = $namaFile;
+        }
+
+        $menu->save();
+        return redirect()->back()->with('success', 'Menu Layanan berhasil ditambahkan!');
+    }
+
+    /**
+     * Memperbarui Satu Menu Layanan (Update)
+     */
+    public function updateMenuLayanan(Request $request, $id)
+    {
+        $request->validate([
+            'nama' => 'required|string|max:255',
+            'link' => 'nullable|url',
+            'file' => 'nullable|file|mimes:pdf,png,jpg,jpeg|max:5120',
+        ]);
+
+        $menu = MenuLayanan::findOrFail($id);
+        $menu->nama = $request->nama;
+        $menu->link = $request->link;
+
+        if ($request->hasFile('file')) {
+            // Hapus file lama jika ada
+            if ($menu->file && File::exists(public_path('storage/menu_layanan/' . $menu->file))) {
+                File::delete(public_path('storage/menu_layanan/' . $menu->file));
+            }
+            // Simpan file baru
+            $file = $request->file('file');
+            $namaFile = time() . '_' . str_replace(' ', '_', strtolower($menu->nama)) . '_' . $file->hashName();
+            $file->move(public_path('storage/menu_layanan'), $namaFile);
+
+            $menu->file = $namaFile;
+        }
+
+        $menu->save();
+        return redirect()->back()->with('success', 'Menu Layanan berhasil diperbarui!');
+    }
+
+    /**
+     * Menghapus Menu Layanan (Delete)
+     */
+    public function destroyMenuLayanan($id)
+    {
+        $menu = MenuLayanan::findOrFail($id);
+
+        // Hapus file fisik jika ada di storage
+        if ($menu->file && File::exists(public_path('storage/menu_layanan/' . $menu->file))) {
+            File::delete(public_path('storage/menu_layanan/' . $menu->file));
+        }
+
+        $menu->delete();
+        return redirect()->back()->with('success', 'Menu Layanan berhasil dihapus!');
     }
 }
