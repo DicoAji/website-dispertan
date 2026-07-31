@@ -284,7 +284,7 @@
 
         {{-- SECTION APLIKASI LAIN (HORIZONTAL SCROLL & HOVER EFFECT) --}}
         {{-- SECTION APLIKASI LAIN (HORIZONTAL SCROLL & HOVER EFFECT) --}}
-        <section class="py-16 bg-gradient-to-b from-gray-50/50 to-white border-y border-gray-100 overflow-hidden mt-8">
+        <section class="py-16 bg-gradient-to-b from-gray-50/50 to-white border-y border-gray-100 overflow-hidden mt-8 ">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold  text-emerald-900">Aplikasi Lain</h2>
                 <p class="text-gray-500 mt-2">
@@ -293,7 +293,7 @@
             </div>
 
             {{-- Container Geser Kanan-Kiri --}}
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center w-full ">
 
                 {{-- Tambahkan class 'no-scrollbar', 'cursor-grab', dan id 'slider-aplikasi' --}}
                 <div id="slider-aplikasi"

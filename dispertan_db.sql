@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 31 Jul 2026 pada 05.52
+-- Waktu pembuatan: 31 Jul 2026 pada 08.01
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -41,13 +41,11 @@ CREATE TABLE `aplikasi_lain` (
 --
 
 INSERT INTO `aplikasi_lain` (`id`, `nama_aplikasi`, `logo`, `link`, `created_at`, `updated_at`) VALUES
-(1, 'PPID Grobogan', '1784875155_logo_ySbUY4vQw4JzrkbXPTxAhFAGcBeb8O6lIP46kKq0.svg', 'https://ppid.grobogan.go.id', '2026-07-23 23:05:00', '2026-07-23 23:39:15'),
-(2, 'Lapor', '1784875140_logo_L5jHdSCrXtETQEva5L4bqBO9IXyzdzwWorQPsZZY.svg', 'https://www.lapor.go.id', '2026-07-23 23:05:33', '2026-07-23 23:39:00'),
-(3, 'Sidamba', '1784875127_logo_bS0v3CxPG6A6w2mMgINpTRPUUObIi9nMck9sFPgk.svg', 'http://sidamba.dpupr.grobogan.go.id', '2026-07-23 23:05:54', '2026-07-23 23:38:47'),
-(4, 'Silakip Grobogan', '1784875110_logo_gdkL1ObIGSkAu7zpUj61cmZZW42bXrEOPANhWFwH.svg', 'http://www.silakip.grobogan.go.id', '2026-07-23 23:06:20', '2026-07-23 23:38:30'),
-(5, 'Portal Data Grobogan', '1785120671_logo_SYvEQFRaDr3suwJIpn0hM7F1WlmSaFcZpXSLaoOS.svg', 'https://portaldata.grobogan.go.id/', '2026-07-26 19:51:11', '2026-07-26 19:51:11'),
-(6, 'JDIH Kab Grobogan', '1785120693_logo_l4cve8SSuLlEhNaaNM8bi1LCSWf9jDPx1JfjOPOz.svg', 'https://jdih.grobogan.go.id/', '2026-07-26 19:51:33', '2026-07-26 19:51:33'),
-(7, 'Pemeritah Kab Grobogan', '1785120711_logo_h6Kz9wSsrZfdXq0miN1hwI6Rf6eNaQ6vJqetiUQh.svg', 'https://grobogan.go.id/', '2026-07-26 19:51:51', '2026-07-26 19:51:51');
+(2, 'Silakip Grobogan', '1785472071_logo_o1Nl5PTM6WyFI65V0JrWw7VgdA7ASCvwWvFS25Wb.svg', 'http://www.silakip.grobogan.go.id', '2026-07-23 23:06:20', '2026-07-30 21:27:51'),
+(3, 'Lapor', '1784875140_logo_L5jHdSCrXtETQEva5L4bqBO9IXyzdzwWorQPsZZY.svg', 'https://www.lapor.go.id', '2026-07-23 23:05:33', '2026-07-23 23:39:00'),
+(5, 'Portal Data Grobogan', '1785471643_logo_ytTOvdsPPsBpphvLLavXrO6n9Ksuiak5yIKxWDwi.svg', 'https://portaldata.grobogan.go.id/', '2026-07-26 19:51:33', '2026-07-30 21:20:43'),
+(6, 'PPID Grobogan', '1784875155_logo_ySbUY4vQw4JzrkbXPTxAhFAGcBeb8O6lIP46kKq0.svg', 'https://ppid.grobogan.go.id', '2026-07-26 23:05:00', '2026-07-26 23:39:15'),
+(7, 'Pemeritah Kab Grobogan', '1785471900_logo_matENZDpbpI39P1YheGV7iIdi6GCsNkg8BylLYIG.svg', 'https://grobogan.go.id/', '2026-07-26 19:51:51', '2026-07-30 21:25:00');
 
 -- --------------------------------------------------------
 
@@ -562,7 +560,7 @@ INSERT INTO `ppid` (`id`, `nama`, `kategori`, `file`, `link`, `created_at`, `upd
 (14, 'Peraturan Kebijakan Publik', 'Informasi Berkala', '1785122898_ppid_9Hk0GFGL51D4JeMPQr0861fHu4E7aWdKroAk6oyD.pdf', NULL, '2026-07-26 20:28:18', '2026-07-26 20:28:18'),
 (15, 'Dokumen Kebencanaan', 'Informasi Serta Merta', NULL, 'https://bpbd.grobogan.go.id/elementor-2370/', '2026-07-26 20:30:45', '2026-07-26 20:30:45'),
 (16, 'Program dan Kegiatan', 'Informasi Berkala', '1785123837_ppid_hOxGdWIu8edQyowoFCtAqGoaC8TdNAwNZjSlBwgO.pdf', NULL, '2026-07-26 20:43:57', '2026-07-26 20:43:57'),
-(17, 'SK PPID 2026', 'Informasi Berkala', '1785123900_ppid_EkjjatAfH3KrS3eCRnzUTEcghtQASZuByS0Hni3V.pdf', NULL, '2026-07-26 20:45:00', '2026-07-26 20:45:00'),
+(17, 'SK PPID', 'Informasi Berkala', '1785123900_ppid_EkjjatAfH3KrS3eCRnzUTEcghtQASZuByS0Hni3V.pdf', NULL, '2026-07-26 20:45:00', '2026-07-30 22:56:12'),
 (18, 'SOP PELAYANAN PUBLIK', 'Informasi Berkala', '1785123996_ppid_HrlYVXgdXaTiUEn56CRZk7FC7VNnYto3DzSlZHfu.pdf', NULL, '2026-07-26 20:46:36', '2026-07-26 20:46:36'),
 (19, 'DPA Rekap Belanja TA 2026', 'Informasi Berkala', '1785124228_ppid_ooyZu6EoFGIB5zlVITZdu6DBhj5qjX0c2nIWC3i3.pdf', NULL, '2026-07-26 20:50:28', '2026-07-26 20:50:28'),
 (20, 'DPPA Rekap Belanja TA 2025', 'Informasi Berkala', '1785124254_ppid_eDSZe4dij3XEC7lRO9W6yszKfbxHqtHGzal5dV6n.pdf', NULL, '2026-07-26 20:50:54', '2026-07-26 20:50:54'),
@@ -581,7 +579,10 @@ INSERT INTO `ppid` (`id`, `nama`, `kategori`, `file`, `link`, `created_at`, `upd
 (33, 'BA rekon Aset TW2 2025', 'Informasi Setiap Saat', '1785127023_ppid_EL4aqZyGboBAuXADD0zxp7Bn9w1giaQtAhDHrASM.pdf', NULL, '2026-07-26 21:37:03', '2026-07-26 21:37:03'),
 (34, 'BA rekon Aset TW2 2026', 'Informasi Setiap Saat', '1785127042_ppid_ho3VSZcXV8LcHNM5fM1XLrV5Yb53d1tQQVkvRxBI.pdf', NULL, '2026-07-26 21:37:22', '2026-07-26 21:37:22'),
 (35, 'BA rekon Aset TW3 2025', 'Informasi Setiap Saat', '1785127061_ppid_pms1rYPqxn5tZOitQ3FkUDIeViRPmX9okWi0o8Y0.pdf', NULL, '2026-07-26 21:37:41', '2026-07-26 21:37:41'),
-(36, 'BA rekon Aset TW4 2025', 'Informasi Setiap Saat', '1785127081_ppid_SvuK9CRNEyu5IGUWP2K2TJ7QlJGMgps5pFkhfwkK.pdf', NULL, '2026-07-26 21:38:01', '2026-07-26 21:38:01');
+(36, 'BA rekon Aset TW4 2025', 'Informasi Setiap Saat', '1785127081_ppid_SvuK9CRNEyu5IGUWP2K2TJ7QlJGMgps5pFkhfwkK.pdf', NULL, '2026-07-26 21:38:01', '2026-07-26 21:38:01'),
+(37, 'SOP PPID', 'Informasi Berkala', '1785477439_ppid_3jW4j9k07N7w2PhHPtEAXesrlIsIiE7dAuo255t8.pdf', NULL, '2026-07-30 22:57:19', '2026-07-30 22:57:19'),
+(38, 'Penetapan PPID Pembantu', 'Informasi Berkala', '1785477455_ppid_nRHEwDoMeJ1bWt7BALw3MrwoaBQRLoqytzi0gdfo.pdf', NULL, '2026-07-30 22:57:35', '2026-07-30 22:57:35'),
+(39, 'Laporan Akses Informasi Publik', 'Informasi Berkala', '1785477474_ppid_Sv20q0QSJi0MhfYBoYGQJ6gqV5qyPWbV0mWdE0FK.pdf', NULL, '2026-07-30 22:57:54', '2026-07-30 22:57:54');
 
 -- --------------------------------------------------------
 
@@ -846,7 +847,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `aplikasi_lain`
 --
 ALTER TABLE `aplikasi_lain`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT untuk tabel `berita`
@@ -942,7 +943,7 @@ ALTER TABLE `popup_ads`
 -- AUTO_INCREMENT untuk tabel `ppid`
 --
 ALTER TABLE `ppid`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT untuk tabel `profile`
