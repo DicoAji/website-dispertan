@@ -3,47 +3,52 @@
 @section('title', $berita->judul)
 
 @section('content')
-    <main class="py-12 bg-gray-50">
+    <main class="py-8 md:py-12 bg-gray-50">
         <div class="container mx-auto px-4 max-w-7xl">
 
             {{-- Tombol Kembali --}}
-            <div class="mb-6">
+            <div class="mb-5 md:mb-6">
                 <a href="{{ route('berita.index') }}"
-                    class="inline-flex items-center text-sm font-semibold text-emerald-700 hover:text-emerald-900 transition-colors">
+                    class="inline-flex items-center text-xs md:text-sm font-semibold text-emerald-700 hover:text-emerald-900 transition-colors">
                     <i class="fa fa-arrow-left mr-2"></i> Kembali ke Berita
                 </a>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
                 {{-- KONTEN UTAMA BERITA (Kiri) --}}
                 <article
-                    class="lg:col-span-8 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden p-6 md:p-8">
+                    class="lg:col-span-8 bg-white rounded-xl md:rounded-2xl shadow-sm border border-gray-100 overflow-hidden p-4 sm:p-6 md:p-8">
 
                     {{-- Kategori / Informasi OPD --}}
-                    <span class="inline-block bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full mb-4">
+                    <span
+                        class="inline-block bg-emerald-100 text-emerald-800 text-[10px] md:text-xs font-bold px-3 py-1 rounded-full mb-3 md:mb-4">
                         {{ $profile->nama_opd ?? 'Dinas Pertanian Kab. Grobogan' }}
                     </span>
 
                     {{-- Judul Berita --}}
-                    <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-4">
+                    <h1
+                        class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 leading-tight mb-3 md:mb-4">
                         {{ $berita->judul }}
                     </h1>
 
                     {{-- Tanggal Publikasi --}}
-                    <div class="flex items-center text-sm text-gray-500 mb-6 pb-6 border-b border-gray-100">
+                    <div
+                        class="flex items-center text-xs md:text-sm text-gray-500 mb-4 md:mb-6 pb-4 md:pb-6 border-b border-gray-100">
                         <i class="fa fa-calendar-o mr-2 text-emerald-600"></i>
                         <span>{{ \Carbon\Carbon::parse($berita->tanggal_berita)->translatedFormat('d F Y') }}</span>
                     </div>
 
                     {{-- Gambar Utama --}}
-                    <div class="mb-8 rounded-xl overflow-hidden shadow-md max-h-[450px] bg-gray-100">
+                    <div
+                        class="mb-6 md:mb-8 rounded-lg md:rounded-xl overflow-hidden shadow-md max-h-[300px] md:max-h-[450px] bg-gray-100">
                         <img src="{{ asset('storage/berita/' . $berita->foto_berita) }}" alt="{{ $berita->judul }}"
                             class="w-full h-full object-cover"
                             onerror="this.onerror=null;this.src='{{ asset('img/no-image.png') }}'" />
                     </div>
 
                     {{-- Deskripsi / Isi Berita --}}
-                    <div class="prose prose-emerald max-w-none text-gray-700 leading-relaxed space-y-4">
+                    <div
+                        class="prose prose-emerald max-w-none text-xs md:text-sm text-gray-700 leading-relaxed space-y-3 md:space-y-4">
                         {!! nl2br(e($berita->deskripsi)) !!}
                     </div>
 
@@ -51,23 +56,24 @@
 
                 {{-- SIDEBAR / BERITA LAINNYA (Kanan) --}}
                 <aside class="lg:col-span-4 space-y-6">
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                        <h3 class="font-bold text-lg text-emerald-900 mb-4 pb-2 border-b border-gray-100">
+                    <div class="bg-white rounded-xl md:rounded-2xl shadow-sm border border-gray-100 p-4 sm:p-6">
+                        <h3
+                            class="font-bold text-base md:text-lg text-emerald-900 mb-3 md:mb-4 pb-2 border-b border-gray-100">
                             Berita Lainnya
                         </h3>
 
-                        <div class="space-y-4">
+                        <div class="space-y-3.5 md:space-y-4">
                             @forelse($beritaLainnya ?? [] as $lain)
-                                <div class="flex gap-4 items-center group">
+                                <div class="flex gap-3 md:gap-4 items-center group">
                                     <a href="{{ url('/berita/' . $lain->id) }}"
-                                        class="w-20 h-16 flex-shrink-0 overflow-hidden rounded-lg shadow-sm">
+                                        class="w-20 h-16 sm:w-24 sm:h-20 md:w-20 md:h-16 flex-shrink-0 overflow-hidden rounded-lg shadow-sm">
                                         <img src="{{ asset('storage/berita/' . $lain->foto_berita) }}"
                                             alt="{{ $lain->judul }}"
                                             class="w-full h-full object-cover group-hover:scale-110 transition duration-300"
                                             onerror="this.onerror=null;this.src='{{ asset('img/no-image.png') }}'" />
                                     </a>
                                     <div class="min-w-0">
-                                        <span class="text-[11px] text-gray-400 block mb-0.5">
+                                        <span class="text-[10px] md:text-[11px] text-gray-400 block mb-0.5">
                                             {{ \Carbon\Carbon::parse($lain->tanggal_berita)->translatedFormat('d M Y') }}
                                         </span>
                                         <h4
